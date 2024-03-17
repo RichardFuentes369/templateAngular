@@ -1,0 +1,32 @@
+.fondo-encabezado {
+  background-color: blue;
+  color: white;
+}
+
+
+/* navbar */
+.menu {
+  background-color: rgb(209, 209, 207);
+  color: white;
+}
+
+li a:hover {
+  background-color: rgb(156, 155, 155);
+}
+
+.activo {
+  background-color: #065206;
+  a {
+    color: rgb(230, 230, 230);
+  }
+}
+/* fin navbar */
+
+.contenido {
+
+}
+
+.footer {
+  background-color: green;
+  color: white;
+}
