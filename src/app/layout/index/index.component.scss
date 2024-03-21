@@ -25,6 +25,13 @@ $fondoFooter: #008000;
   }
 }
 
+.divider {
+  width: 0;
+  border-right: 1px solid #e3e6f0;
+  height: 2.375rem;
+  margin: auto 0.2rem;
+}
+
 .activo {
   background-color: $opcionNavbarActiva;
   .nav-link {
