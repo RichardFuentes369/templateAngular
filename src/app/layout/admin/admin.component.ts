@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
 
+  minimizarSliderbar: boolean = false;
+
+  mostrarMenuLateral(){
+    this.minimizarSliderbar = !this.minimizarSliderbar
+    console.log(this.minimizarSliderbar)
+  }
+
 }

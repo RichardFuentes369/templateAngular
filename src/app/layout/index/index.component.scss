@@ -1,32 +1,34 @@
-.fondo-encabezado {
-  background-color: blue;
-  color: white;
-}
+$navbarPrincipal: #007bff;
+$textoColor: #ffffff;
 
+$opcionNavbarActiva: #008000;
+$opcionNavbarSelect: #008000;
+$fondoNavbar: #e0e0e0;
+
+$fondoFooter: #008000;
+
+.fondo-encabezado {
+  background-color: $navbarPrincipal;
+  color: $textoColor;
+}
 
 /* navbar */
 .menu {
-  background-color: rgb(209, 209, 207);
-  color: white;
-}
-
-li a:hover {
-  background-color: rgb(156, 155, 155);
+  background-color: $fondoNavbar;
+  color: $textoColor;
+  // position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  a:hover {
+    background-color: $opcionNavbarSelect;
+    color: $textoColor;
+  }
 }
 
 .activo {
-  background-color: #065206;
-  a {
-    color: rgb(230, 230, 230);
+  background-color: $opcionNavbarActiva;
+  .nav-link {
+    color: $textoColor
   }
 }
 /* fin navbar */
-
-.contenido {
-
-}
-
-.footer {
-  background-color: green;
-  color: white;
-}

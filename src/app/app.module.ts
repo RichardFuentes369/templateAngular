@@ -13,10 +13,19 @@ import { UserComponent } from './layout/user/user.component';
 
 /*
 * Modulos personalizados
+* Globales
+* Admin
+* Index
+* User
 */
 import { GlobalesModule } from './globales/globales.module';
-import { IndexPagesModule } from './pages/index/index.module';
+import { AdminLayoutModule } from './layout/admin/admin.module'
 import { AdminPagesModule } from './pages/admin/admin.module';
+
+import { IndexLayoutModule } from './layout/index/index.module'
+import { IndexPagesModule } from './pages/index/index.module';
+
+import { UserLayoutModule } from './layout/user/user.module'
 import { UserPagesModule } from './pages/user/user.module';
 
 @NgModule({
@@ -31,9 +40,15 @@ import { UserPagesModule } from './pages/user/user.module';
     AppRoutingModule,
 
     GlobalesModule,
-    IndexPagesModule,
+
+    AdminLayoutModule,
     AdminPagesModule,
-    UserPagesModule
+
+    IndexLayoutModule,
+    IndexPagesModule,
+
+    UserLayoutModule,
+    UserPagesModule,
   ],
   providers: [
     provideClientHydration()
