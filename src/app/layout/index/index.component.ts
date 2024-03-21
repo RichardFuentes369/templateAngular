@@ -19,9 +19,9 @@ export class IndexComponent {
 
   responsiveMenu(){
     if(window.innerWidth <= 991){
-      const elements = document.querySelectorAll('.divider');
+      const elements = document.querySelectorAll('.menuIndex');
       elements.forEach(element => {
-        this.renderer.addClass(element, 'd-none');
+        this.renderer.removeClass(element, 'borde-menu');
       });
 
       const container = document.querySelectorAll('.navbarPersonalizado');
@@ -29,9 +29,9 @@ export class IndexComponent {
         this.renderer.removeClass(element, 'row');
       });
     }else{
-      const elements = document.querySelectorAll('.divider');
+      const elements = document.querySelectorAll('.menuIndex');
       elements.forEach(element => {
-        this.renderer.removeClass(element, 'd-none');
+        this.renderer.addClass(element, 'borde-menu');
       });
 
       const container = document.querySelectorAll('.navbarPersonalizado');
