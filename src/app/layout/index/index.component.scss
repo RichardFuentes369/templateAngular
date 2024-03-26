@@ -7,6 +7,8 @@ $fondoNavbar: #e0e0e0;
 
 $fondoFooter: #008000;
 
+$bordeColor: coral;
+
 .fondo-encabezado {
   background-color: $navbarPrincipal;
   color: $textoColor;
@@ -14,6 +16,7 @@ $fondoFooter: #008000;
 
 .borde-menu {
   border-left-style: solid;
+  border-left-color: $bordeColor;
 }
 
 .arrastrarSeccion1 {

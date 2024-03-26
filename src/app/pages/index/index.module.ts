@@ -6,7 +6,7 @@ import { GlobalesModule } from '../../globales/globales.module';
 
 import { InicioComponent } from './inicio/inicio.component'
 import { IngresoComponent } from './ingreso/ingreso.component'
-import { PublicacionesComponent } from './publicaciones/publicaciones.component'
+import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 
 @NgModule({
   exports: [

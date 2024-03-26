@@ -22,4 +22,8 @@ export const IndexLayoutRoutes: Routes = [
     path: 'ingreso',
     component: IngresoComponent,
   },
+  {
+    path: 'ingreso/admin',
+    component: IngresoComponent,
+  },
 ];
