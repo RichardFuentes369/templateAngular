@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 
 import { IndexLayoutRoutes } from './index-layout.routing';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -12,4 +11,4 @@ import { IndexLayoutRoutes } from './index-layout.routing';
     RouterModule.forChild(IndexLayoutRoutes),
   ]
 })
-export class IndexLayoutModule { }
+export class IndexModule { }

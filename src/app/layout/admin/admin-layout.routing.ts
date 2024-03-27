@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { IndexComponent } from '../../pages/admin/index/index.component'
-import { UsuariosComponent } from '../../pages/admin/usuarios/usuarios.component'
-import { ConfiguracionComponent } from '../../pages/admin/configuracion/configuracion.component'
+import { AdminComponent } from '../../pages/usuarios/administrador/admin/admin.component'
+import { FinalComponent } from '../../pages/usuarios/administrador/final/final.component'
+import { PublicacionesComponent } from '../../pages/publicaciones/administrador/publicaciones/publicaciones.component'
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -11,19 +11,15 @@ export const AdminLayoutRoutes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'index',
-    component: IndexComponent,
+    path: 'administradores',
+    component: AdminComponent,
   },
   {
-    path: 'usuarios',
-    component: UsuariosComponent,
+    path: 'finales',
+    component: FinalComponent,
   },
   {
     path: 'publicaciones',
-    component: ConfiguracionComponent,
-  },
-  {
-    path: 'configuracion',
-    component: ConfiguracionComponent,
+    component: PublicacionesComponent,
   },
 ];

@@ -5,13 +5,11 @@ import { CommonModule } from '@angular/common';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
-  ],
-  exports: [
   ]
 })
-export class AdminLayoutModule { }
+export class AdminModule { }
+

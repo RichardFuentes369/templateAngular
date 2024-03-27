@@ -1,4 +1,4 @@
 import { Routes } from '@angular/router';
 
-export const AdminLayoutRoutes: Routes = [
+export const UserLayoutRoutes: Routes = [
 ];

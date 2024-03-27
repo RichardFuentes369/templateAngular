@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layout/index/index.module').then(x=>x.IndexLayoutModule)
+        loadChildren: () => import('./layout/index/index.module').then(x=>x.IndexModule)
       }
     ]
   },
@@ -22,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layout/admin/admin.module').then(x=>x.AdminLayoutModule)
+        loadChildren: () => import('./layout/admin/admin.module').then(x=>x.AdminModule)
       }
     ]
   },
@@ -32,7 +32,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layout/user/user.module').then(x=>x.UserLayoutModule)
+        loadChildren: () => import('./layout/user/user.module').then(x=>x.UserModule)
       }
     ]
   }
