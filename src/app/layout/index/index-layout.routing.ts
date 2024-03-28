@@ -19,7 +19,7 @@ export const IndexLayoutRoutes: Routes = [
     component: PublicacionesComponent,
   },
   {
-    path: 'ingreso',
+    path: 'ingreso/user',
     component: IngresoComponent,
   },
   {

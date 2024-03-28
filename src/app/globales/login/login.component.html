@@ -1,17 +1,31 @@
 <div class="card">
   <div class="p-5">
     <div class="text-center">
-        <h1 class="h4 text-gray-900 mb-4">Bienvenido</h1>
+        <h1 class="h4 text-gray-900 mb-4">
+          Bienvenido {{ this.isLoginAdmin ? 'Admin' : '' }}
+        </h1>
     </div>
     <form class="user">
         <div class="form-group">
-            <input type="email" class="form-control form-control-user"
-                id="exampleInputEmail" aria-describedby="emailHelp"
-                placeholder="Enter Email Address...">
+            <input
+              type="email"
+              class="form-control form-control-user"
+              id="exampleInputEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter Email Address..."
+              [(ngModel)]="model.email"
+              name="model.email"
+            >
         </div>
         <div class="form-group">
-            <input type="password" class="form-control form-control-user"
-                id="exampleInputPassword" placeholder="Password">
+            <input
+              type="password"
+              class="form-control form-control-user"
+              id="exampleInputPassword"
+              placeholder="Password"
+              [(ngModel)]="model.password"
+              name="model.password"
+            >
         </div>
         <div class="form-group" *ngIf="this.isLoginAdmin === false">
             <div class="custom-control custom-checkbox small">
@@ -19,19 +33,19 @@
                 <label class="custom-control-label" for="customCheck">Remember Me</label>
             </div>
         </div>
-        <a href="index.html" class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === true">
-          Login admin
+        <a class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === true" (click)="ingresar()">
+          Login
         </a>
-        <a href="index.html" class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === false">
-            Login
+        <a class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === false" (click)="ingresar()">
+          Login
         </a>
     </form>
     <hr>
     <div class="text-center" *ngIf="this.isLoginAdmin === false">
-        <a class="small" href="forgot-password.html">Forgot Password?</a>
+        <a class="small" >Forgot Password?</a>
     </div>
     <div class="text-center" *ngIf="this.isLoginAdmin === false">
-        <a class="small" href="register.html">Create an Account!</a>
+        <a class="small" >Create an Account!</a>
     </div>
 </div>
 </div>
