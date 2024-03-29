@@ -15,6 +15,8 @@ import { UserComponent } from './layout/user/user.component';
 
 import { GlobalesModule } from './globales/globales.module';
 import { IndexPagesModule } from './pages/index/index.module';
+import { NotfoundComponent } from './pages/notfound/admin/notfound/notfound.component';
+import { ConfiguracionComponent } from './pages/configuracion/admin/configuracion/configuracion.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { IndexPagesModule } from './pages/index/index.module';
     IndexComponent,
     AdminComponent,
     UserComponent,
+    NotfoundComponent,
+    ConfiguracionComponent,
   ],
   imports: [
     BrowserModule,

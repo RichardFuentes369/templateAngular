@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { InicioComponent } from '../../pages/index/inicio/inicio.component'
-import { PublicacionesComponent } from '../../pages/index/publicaciones/publicaciones.component'
+import { PublicacionesComponent } from '../../pages/publicaciones/index/publicaciones/publicaciones.component'
 import { IngresoComponent } from '../../pages/index/ingreso/ingreso.component'
 
 export const IndexLayoutRoutes: Routes = [

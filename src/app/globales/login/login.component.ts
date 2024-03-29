@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
   async ingresar(){
     let rol = this.urlPeticion.split('/').find(e => e == 'admin') ? 0 : 1
     let data = {

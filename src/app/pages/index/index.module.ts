@@ -5,19 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { GlobalesModule } from '../../globales/globales.module';
 
 import { InicioComponent } from './inicio/inicio.component'
-import { IngresoComponent } from './ingreso/ingreso.component'
-import { PublicacionesComponent } from './publicaciones/publicaciones.component';
+import { IngresoComponent } from './ingreso/ingreso.component';
 
 @NgModule({
   exports: [
     InicioComponent,
     IngresoComponent,
-    PublicacionesComponent,
   ],
   declarations: [
     InicioComponent,
     IngresoComponent,
-    PublicacionesComponent,
   ],
   imports: [
     CommonModule,
