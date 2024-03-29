@@ -18,7 +18,7 @@ export class AdminComponent {
 
   cerrarSession(){
     localStorage.removeItem('token')
-    this.router.navigate(['/ingreso/admin']);
+    this.router.navigate(['/inicio/ingreso/admin']);
   }
 
   mostrarMenuLateral(){

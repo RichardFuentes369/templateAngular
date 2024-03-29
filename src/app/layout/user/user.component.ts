@@ -15,7 +15,7 @@ export class UserComponent {
 
   cerrarSession(){
     localStorage.removeItem('token')
-    this.router.navigate(['/ingreso/user']);
+    this.router.navigate(['/inicio/ingreso/user']);
   }
 
 }

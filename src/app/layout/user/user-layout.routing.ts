@@ -3,13 +3,21 @@ import { Routes } from '@angular/router';
 import { userGuard } from '../../guards/roles/user/user.guard';
 
 //componentes
-import { ConfiguracionComponent } from '../../pages/configuracion/user/configuracion/configuracion.component'
+import { PerfilComponent } from '../../pages/principal/user/perfil/perfil.component'
+import { ConfiguracionComponent } from '../../pages/principal/user/configuracion/configuracion.component'
 
 export const UserLayoutRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'configuracion',
+    redirectTo: 'perfil',
     pathMatch: 'full',
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+    canActivate: [
+      userGuard
+    ]
   },
   {
     path: 'configuracion',

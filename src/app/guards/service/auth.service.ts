@@ -27,9 +27,8 @@ export class AuthService {
 
   }
 
-  async refreshToken(token: any){
-    let complemento = 'authadmin'
-    let urlCopleta = environment.apiUrl+complemento+'/refresh'
+  async refreshToken(rol:string, token: any){
+    let urlCopleta = environment.apiUrl+rol+'/refresh'
 
     return await axios.request({
       method: 'post',
@@ -44,27 +43,26 @@ export class AuthService {
   async isAuth(rol: string){
     let token = localStorage.getItem('token')
 
+    if(token == null){
+      return false;
+    }
+
     if(!token){
       return false
     }
 
-    const response = await this.validarToken(rol)
-    .then(response => {
-      return true
-    })
-    .catch(err =>{
-      if(err.response.status == 401){
-        this.refreshToken(token).then(response => {
-          localStorage.setItem('token', response.data)
-          return true
-        }).catch(err => {
-          localStorage.removeItem('token')
+    try {
+      const response = await this.validarToken(rol);
+      return true;
+    } catch (err) {
+        try {
+          const refreshTokenResponse = await this.refreshToken(rol, token);
+          localStorage.setItem('token', refreshTokenResponse.data);
+          return true;
+        } catch  {
           return false
-        })
-      }
-    })
-
-    return response;
+        }
+    }
 
   }
 

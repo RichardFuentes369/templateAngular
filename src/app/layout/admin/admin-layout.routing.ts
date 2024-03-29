@@ -6,12 +6,13 @@ import { adminGuard } from '../../guards/roles/admin/admin.guard'
 import { AdminComponent } from '../../pages/usuarios/administrador/admin/admin.component'
 import { FinalComponent } from '../../pages/usuarios/administrador/final/final.component'
 import { PublicacionesComponent } from '../../pages/publicaciones/administrador/publicaciones/publicaciones.component'
-import { ConfiguracionComponent } from '../../pages/configuracion/user/configuracion/configuracion.component'
+import { PerfilComponent } from '../../pages/principal/admin/perfil/perfil.component'
+import { ConfiguracionComponent } from '../../pages/principal/admin/configuracion/configuracion.component'
 
 export const AdminLayoutRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'administradores',
+    redirectTo: 'perfil',
     pathMatch: 'full',
   },
   {
@@ -31,6 +32,13 @@ export const AdminLayoutRoutes: Routes = [
   {
     path: 'publicaciones',
     component: PublicacionesComponent,
+    canActivate: [
+      adminGuard
+    ]
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent,
     canActivate: [
       adminGuard
     ]

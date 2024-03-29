@@ -16,7 +16,8 @@ import { UserComponent } from './layout/user/user.component';
 import { GlobalesModule } from './globales/globales.module';
 import { IndexPagesModule } from './pages/index/index.module';
 import { NotfoundComponent } from './pages/notfound/admin/notfound/notfound.component';
-import { ConfiguracionComponent } from './pages/configuracion/admin/configuracion/configuracion.component';
+import { ConfiguracionComponent } from './pages/principal/admin/configuracion/configuracion.component';
+import { PerfilComponent } from './pages/principal/admin/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ConfiguracionComponent } from './pages/configuracion/admin/configuracio
     UserComponent,
     NotfoundComponent,
     ConfiguracionComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
