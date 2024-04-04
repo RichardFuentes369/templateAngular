@@ -16,27 +16,32 @@ export class AuthService {
   async validarToken(rol: string){
     let urlCopleta = environment.apiUrl+rol+'/profile'
     let token = localStorage.getItem('token')
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    }
 
-    return axios.request({
-      method: 'get',
-      url: urlCopleta,
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
+    try {
+      await axios.get(urlCopleta, {headers})
+      return true
+    } catch(error) {
+      return false
+    }
 
   }
 
   async refreshToken(rol:string, token: any){
     let urlCopleta = environment.apiUrl+rol+'/refresh'
+    let post = {
+      'token': token
+    }
 
-    return await axios.request({
-      method: 'post',
-      url: urlCopleta,
-      data: {
-        "token": token,
-      },
-    })
+    try {
+      let data = (await axios.post(urlCopleta, post)).data
+      return data
+    } catch(error) {
+      localStorage.removeItem('token');
+      return false
+    }
 
   }
 
@@ -51,17 +56,18 @@ export class AuthService {
       return false
     }
 
-    try {
-      const response = await this.validarToken(rol);
+    if(await this.validarToken(rol)){
       return true;
-    } catch (err) {
-        try {
-          const refreshTokenResponse = await this.refreshToken(rol, token);
-          localStorage.setItem('token', refreshTokenResponse.data);
-          return true;
-        } catch  {
-          return false
-        }
+    }
+
+    let refreshTokenResponse = await this.refreshToken(rol, token)
+
+    if(refreshTokenResponse){
+      localStorage.setItem('token', refreshTokenResponse);
+      return true
+    }else{
+      localStorage.removeItem('token');
+      return false
     }
 
   }
