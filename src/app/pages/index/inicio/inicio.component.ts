@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
 
+  nombre = 'Javier rIcardo bAron fueNTes'
+
 }
