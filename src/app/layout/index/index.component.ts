@@ -48,4 +48,8 @@ export class IndexComponent {
     console.log(this.minimizarSliderbar)
   }
 
+  cambiarIdioma(){
+    console.log('aqui estoy')
+  }
+
 }
