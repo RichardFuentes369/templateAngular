@@ -1,3 +1,24 @@
 {
-  "Welcome": "Bienvenido"
+  "Start": "Inicio",
+  "Publications": "Publicaciones",
+  "Login": "Ingreso",
+  "Welcome": "Bienvenido",
+  "Email_Msj": "Correo",
+  "Password_Msj": "Contraseña",
+  "Remember_Msj": "Recordar",
+  "ForgotPassword_Msj": "Olvide mi contraseña!",
+  "CreateAccount_Msj": "Crear una cuenta",
+  "Login_Msj": "Ingresar",
+  "WordSpanish": "Español",
+  "WordEnglish": "Ingles",
+
+  "Modules": "Modulos",
+  "Users": "Usuarios",
+  "Profiles": "Perfiles",
+  "Profile": "Perfil",
+  "Setting": "Ajustes",
+  "Logout": "Salir",
+  "Admin": "Administradores",
+  "End": "Finales",
+  "Categories": "Categorias"
 }

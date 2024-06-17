@@ -20,14 +20,16 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Modulos
+        {{ 'Modules' | translate}}
       </div>
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           <i class="fa fa-user"></i>
-          <span>Usuarios</span>
+          <span>
+            {{ 'Users' | translate}}
+          </span>
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -39,17 +41,23 @@
               aria-controls="collapseOne"
               style="cursor: pointer;"
             >
-              Categorias
+              {{ 'Profiles' | translate}}
             </h6>
-            <a class="collapse-item active" routerLink="administradores" routerLinkActive="active">Administradores</a>
-            <a class="collapse-item" routerLink="finales" routerLinkActive="active">Finales</a>
+            <a class="collapse-item active" routerLink="administradores" routerLinkActive="active">
+              {{ 'Admin' | translate}}
+            </a>
+            <a class="collapse-item" routerLink="finales" routerLinkActive="active">
+              {{ 'End' | translate}}
+            </a>
           </div>
         </div>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <i class="fa fa-newspaper"></i>
-          <span>Publiaciones</span>
+          <span>
+            {{ 'Publications' | translate}}
+          </span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -61,9 +69,11 @@
               aria-controls="collapseTwo"
               style="cursor: pointer;"
             >
-              Categorias
+             {{ 'Categories' | translate}}
             </h6>
-            <a class="collapse-item" routerLink="publicaciones" routerLinkActive="active">Publicaciones</a>
+            <a class="collapse-item" routerLink="publicaciones" routerLinkActive="active">
+              {{ 'Publications' | translate}}
+            </a>
           </div>
         </div>
       </li>
@@ -248,6 +258,7 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
+            <app-globales-idioma (cambioIdiomaEmitt)="idiomaCambiar($event)"></app-globales-idioma>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown"
@@ -259,16 +270,16 @@
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item"  routerLink="perfil" routerLinkActive="active" routerLink="perfil">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  {{ 'Profile' | translate}}
                 </a>
                 <a class="dropdown-item" routerLink="configuracion" routerLinkActive="active" routerLink="configuracion">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Configuraci&oacute;n
+                  {{ 'Setting' | translate}}
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal" (click)="cerrarSession()" style="cursor: pointer;">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  {{ 'Logout' | translate}}
                 </a>
               </div>
             </li>

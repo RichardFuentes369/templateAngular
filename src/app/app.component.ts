@@ -11,10 +11,9 @@ export class AppComponent {
   title = 'template01';
 
   constructor(
-    private translate: TranslateService
+    private translate: TranslateService,
   ){
-    this.translate.setDefaultLang('en');
-    this.translate.use('en')
+    this.translate.setDefaultLang('es');
   }
 
 }

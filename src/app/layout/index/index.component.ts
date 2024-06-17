@@ -1,4 +1,5 @@
-import { Component, Renderer2, HostListener, OnInit  } from '@angular/core';
+import { Component, Renderer2, HostListener, OnInit, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-index',
@@ -6,7 +7,7 @@ import { Component, Renderer2, HostListener, OnInit  } from '@angular/core';
   styleUrl: './index.component.scss'
 })
 export class IndexComponent {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private translate: TranslateService,) {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event:any) {
@@ -48,8 +49,9 @@ export class IndexComponent {
     console.log(this.minimizarSliderbar)
   }
 
-  cambiarIdioma(){
-    console.log('aqui estoy')
+  idiomaCambiar(valor: string){
+    this.translate.use(valor)
   }
+
 
 }

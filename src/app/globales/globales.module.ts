@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { LoginComponent } from './login/login.component'
 import { LoginServiceService } from './login/service/login-service.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { IdiomaComponent } from './idioma/idioma.component';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    IdiomaComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    IdiomaComponent
   ],
   providers: [
     LoginServiceService

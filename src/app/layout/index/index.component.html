@@ -5,16 +5,14 @@
       <div class="p-2 bd-highlight">
         <i class="fas fa-fw fa-tachometer-alt"></i>
       </div>
+      <div class="p-2 ml-auto">
+        <app-globales-idioma (cambioIdiomaEmitt)="idiomaCambiar($event)"></app-globales-idioma>
+      </div>
       <div class="p-2 bd-highlight">
         <div class="sidebar-brand-text">SB Admin <sup>2</sup></div>
-        <select name="" id="" (change)="cambiarIdioma()">
-          <option value="">es</option>
-          <option value="">en</option>
-        </select>
       </div>
     </div>
   </div>
-
   <!-- Navbar 1 -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white topbar static-top shadow menu p-0 mantenerSeccion2">
     <marquee direction="left" class="container">
@@ -38,17 +36,23 @@
           <div class="navbarPersonalizado">
             <div class="col p-1">
               <li routerLinkActive="activo">
-                <a class="nav-link text-center menuIndex borde-menu" routerLink="inicio">Inicio</a>
+                <a class="nav-link text-center menuIndex borde-menu" routerLink="inicio">
+                  {{ 'Start' | translate}}
+                </a>
               </li>
             </div>
             <div class="col p-1">
               <li routerLinkActive="activo">
-                <a class="nav-link text-center menuIndex borde-menu" routerLink="publicaciones">Publicaciones</a>
+                <a class="nav-link text-center menuIndex borde-menu" routerLink="publicaciones">
+                  {{ 'Publications' | translate}}
+                </a>
               </li>
             </div>
             <div class="col p-1">
               <li routerLinkActive="activo">
-                <a class="nav-link text-center menuIndex borde-menu" routerLink="ingreso/user">Ingreso</a>
+                <a class="nav-link text-center menuIndex borde-menu" routerLink="ingreso/user">
+                  {{ 'Login' | translate}}
+                </a>
               </li>
             </div>
           </div>
