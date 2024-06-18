@@ -171,7 +171,9 @@
 
                       <div class="topbar-divider d-none d-sm-block"></div>
 
-                      <app-globales-idioma (cambioIdiomaEmitt)="idiomaCambiar($event)"></app-globales-idioma>
+                      <div class="my-auto">
+                        <app-globales-idioma (cambioIdiomaEmitt)="idiomaCambiar($event)"></app-globales-idioma>
+                      </div>
                       <!-- Nav Item - User Information -->
                       <li class="nav-item dropdown no-arrow">
                           <a class="nav-link dropdown-toggle"  id="userDropdown" role="button"
@@ -185,16 +187,16 @@
                               aria-labelledby="userDropdown">
                               <a class="dropdown-item"  routerLink="perfil" routerLinkActive="active" routerLink="perfil">
                                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  Profile
+                                  {{ 'Profiles' | translate}}
                               </a>
                               <a class="dropdown-item" routerLink="configuracion" routerLinkActive="active" routerLink="configuracion">
                                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  Configuraci&oacute;n
+                                  {{ 'Setting' | translate}}
                               </a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal" (click)="cerrarSession()" style="cursor: pointer;">
                                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  Logout
+                                  {{ 'Logout' | translate}}
                               </a>
                           </div>
                       </li>
