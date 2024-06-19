@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core'
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,10 @@ export class AppComponent {
 
   constructor(
     private translate: TranslateService,
+    private _cookies: CookieService
   ){
-    this.translate.setDefaultLang('es');
+    this._cookies.set('languague', 'es')
+    this.translate.use('es');
   }
 
 }

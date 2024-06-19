@@ -5,12 +5,11 @@ import { IndexComponent } from './layout/index/index.component'
 import { AdminComponent  } from './layout/admin/admin.component'
 import { UserComponent } from './layout/user/user.component'
 
-
-import { NotfoundComponent as IndexNotFound } from './pages/notfound/index/notfound/notfound.component'
 import { adminGuard } from './guards/roles/admin/admin.guard'
-import { NotfoundComponent as AdminNotFound } from './pages/notfound/admin/notfound/notfound.component'
 import { userGuard } from './guards/roles/user/user.guard';
-import { NotfoundComponent as UserNotFound } from './pages/notfound/user/notfound/notfound.component'
+import { IndexnotFoundComponent } from './globales/notfound/index/index.component'
+import { AdminnotFoundComponent } from './globales/notfound/admin/admin.component'
+import { UsernotFoundComponent } from './globales/notfound/user/user.component'
 
 const routes: Routes = [
   {
@@ -28,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        component: IndexNotFound,
+        component: IndexnotFoundComponent,
       },
     ]
   },
@@ -42,7 +41,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        component: AdminNotFound,
+        component: AdminnotFoundComponent,
         canActivate: [
           adminGuard
         ]
@@ -59,7 +58,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        component: UserNotFound,
+        component: UsernotFoundComponent,
         canActivate: [
           userGuard
         ]

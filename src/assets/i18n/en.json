@@ -11,8 +11,10 @@
   "Login_Msj": "Login",
   "WordSpanish": "Spanish",
   "WordEnglish": "English",
+  "NotFound_Msj": "¡Page not found!",
 
   "Modules": "Modules",
+  "Menu": "Menu",
   "Users": "Users",
   "Profiles": "Profiles",
   "Profile": "Profile",

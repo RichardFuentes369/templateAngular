@@ -29,9 +29,9 @@ import { AppComponent } from './app.component';
 
 import { GlobalesModule } from './globales/globales.module';
 import { IndexPagesModule } from './pages/index/index.module';
-import { NotfoundComponent } from './pages/notfound/admin/notfound/notfound.component';
 import { ConfiguracionComponent } from './pages/principal/admin/configuracion/configuracion.component';
 import { PerfilComponent } from './pages/principal/admin/perfil/perfil.component';
+import { MenuComponent } from './pages/principal/admin/menu/menu.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -45,9 +45,9 @@ export function createTranslateLoader(http: HttpClient) {
     IndexComponent,
     AdminComponent,
     UserComponent,
-    NotfoundComponent,
     ConfiguracionComponent,
     PerfilComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

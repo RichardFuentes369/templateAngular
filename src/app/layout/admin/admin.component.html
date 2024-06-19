@@ -3,9 +3,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" [ngClass]="
-            minimizarSliderbar == false ? 'toggled': ''
-          " id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" [ngClass]="minimizarSliderbar == false ? 'toggled': ''" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="index">
@@ -25,6 +23,14 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="menu" routerLinkActive="active">
+          <i class="fa fa-bars"></i>
+          <span>
+            {{ 'Menu' | translate}}
+          </span>
+        </a>
+      </li>
+      <!-- <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           <i class="fa fa-user"></i>
           <span>
@@ -51,32 +57,7 @@
             </a>
           </div>
         </div>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <i class="fa fa-newspaper"></i>
-          <span>
-            {{ 'Publications' | translate}}
-          </span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6
-              class="collapse-header"
-              data-toggle="collapse"
-              data-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-              style="cursor: pointer;"
-            >
-             {{ 'Categories' | translate}}
-            </h6>
-            <a class="collapse-item" routerLink="publicaciones" routerLinkActive="active">
-              {{ 'Publications' | translate}}
-            </a>
-          </div>
-        </div>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -261,6 +242,7 @@
             <div class="my-auto">
               <app-globales-idioma (cambioIdiomaEmitt)="idiomaCambiar($event)"></app-globales-idioma>
             </div>
+
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown"
@@ -296,7 +278,9 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">
+              {{nombreModulo}}
+            </h1>
             <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
               <i class="fas fa-download fa-sm text-white-50"></i>
               Generate Report
@@ -304,7 +288,7 @@
           </div>
 
           <!-- Content Row -->
-          <div class="row">
+          <div>
             <router-outlet></router-outlet>
           </div>
 

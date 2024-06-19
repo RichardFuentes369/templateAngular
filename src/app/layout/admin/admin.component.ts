@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
 
   constructor(
     private router: Router,
@@ -17,6 +17,21 @@ export class AdminComponent {
   ) {}
 
   minimizarSliderbar: boolean = false;
+  nombreModulo: string = '';
+
+  ngOnInit(): void {
+    this.initialize();
+  }
+
+  initialize(): void {
+    let nombreModulo = window.location.pathname.split('/')[2]
+    this.nombreModulo = this.upperFirst(nombreModulo)
+  }
+
+  upperFirst(texto: string) {
+    if (!texto) return texto; // Verifica si la cadena está vacía o es nula
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+  }
 
   idiomaCambiar(valor: string){
     this.translate.use(valor)

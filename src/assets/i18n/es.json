@@ -11,8 +11,10 @@
   "Login_Msj": "Ingresar",
   "WordSpanish": "Español",
   "WordEnglish": "Ingles",
+  "NotFound_Msj": "¡Página no encontrada!",
 
   "Modules": "Modulos",
+  "Menu": "Menú",
   "Users": "Usuarios",
   "Profiles": "Perfiles",
   "Profile": "Perfil",
