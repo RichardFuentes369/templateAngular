@@ -33,7 +33,6 @@ import { ConfiguracionComponent } from './pages/principal/admin/configuracion/co
 import { PerfilComponent } from './pages/principal/admin/perfil/perfil.component';
 import { MenuComponent } from './pages/principal/admin/menu/menu.component';
 
-
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -57,7 +56,7 @@ export function createTranslateLoader(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
-      }
+      },
     }),
     FormsModule,
     AppRoutingModule,

@@ -1,27 +1,40 @@
 {
-  "Start": "Start",
-  "Publications": "Publications",
-  "Login": "Login",
-  "Welcome": "Welcome",
-  "Email_Msj": "Email",
-  "Password_Msj": "Password",
-  "Remember_Msj": "Remember",
-  "ForgotPassword_Msj": "Forget password!",
-  "CreateAccount_Msj": "Create an Account!",
-  "Login_Msj": "Login",
-  "WordSpanish": "Spanish",
-  "WordEnglish": "English",
-  "NotFound_Msj": "¡Page not found!",
+  "Global": {
+    "Login": {
+      "Welcome": "Welcome",
+      "Email_Msj": "Email",
+      "Password_Msj": "Password",
+      "Remember_Msj": "Remember",
+      "Login_Msj": "Login",
+      "ForgotPassword_Msj": "Forget password!",
+      "CreateAccount_Msj": "Create an Account!"
+    },
+    "Idioma": {
+      "WordSpanish": "Spanish",
+      "WordEnglish": "English"
+    },
+    "NotFound": {
+      "NotFound_Msj": "¡Page not found!"
+    }
+  },
 
-  "Modules": "Modules",
-  "Menu": "Menu",
-  "Users": "Users",
-  "Profiles": "Profiles",
-  "Profile": "Profile",
-  "Setting": "Setting",
-  "Logout": "Logout",
-  "Admin": "Admin",
-  "End": "End",
-  "Categories": "Categories"
-
+  "Layout": {
+    "admin": {
+      "Profile": "Profile",
+      "Setting": "Settings",
+      "Logout": "Logout",
+      "Modules": "Modules",
+      "Menu": "Menu"
+    },
+    "user": {
+      "Profile": "Profile",
+      "Setting": "Settings",
+      "Logout": "Logout"
+    },
+    "index": {
+      "Start": "Start",
+      "Publications": "Publications",
+      "Login": "Login"
+    }
+  }
 }

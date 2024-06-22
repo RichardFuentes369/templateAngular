@@ -18,7 +18,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        {{ 'Modules' | translate}}
+        {{ 'Layout.admin.Modules' | translate}}
       </div>
 
       <!-- Nav Item - Dashboard -->
@@ -26,7 +26,7 @@
         <a class="nav-link" routerLink="menu" routerLinkActive="active">
           <i class="fa fa-bars"></i>
           <span>
-            {{ 'Menu' | translate}}
+            {{ 'Layout.admin.Menu' | translate}}
           </span>
         </a>
       </li>
@@ -34,7 +34,7 @@
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           <i class="fa fa-user"></i>
           <span>
-            {{ 'Users' | translate}}
+            {{ 'Layout.admin.Users' | translate}}
           </span>
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -47,13 +47,13 @@
               aria-controls="collapseOne"
               style="cursor: pointer;"
             >
-              {{ 'Profiles' | translate}}
+              {{ 'Layout.admin.Profiles' | translate}}
             </h6>
             <a class="collapse-item active" routerLink="administradores" routerLinkActive="active">
-              {{ 'Admin' | translate}}
+              {{ 'Layout.admin.Admin' | translate}}
             </a>
             <a class="collapse-item" routerLink="finales" routerLinkActive="active">
-              {{ 'End' | translate}}
+              {{ 'Layout.admin.End' | translate}}
             </a>
           </div>
         </div>
@@ -254,16 +254,16 @@
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item"  routerLink="perfil" routerLinkActive="active" routerLink="perfil">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  {{ 'Profile' | translate}}
+                  {{ 'Layout.admin.Profile' | translate}}
                 </a>
                 <a class="dropdown-item" routerLink="configuracion" routerLinkActive="active" routerLink="configuracion">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  {{ 'Setting' | translate}}
+                  {{ 'Layout.admin.Setting' | translate}}
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal" (click)="cerrarSession()" style="cursor: pointer;">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  {{ 'Logout' | translate}}
+                  {{ 'Layout.admin.Logout' | translate}}
                 </a>
               </div>
             </li>
