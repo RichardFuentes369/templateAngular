@@ -187,16 +187,16 @@
                               aria-labelledby="userDropdown">
                               <a class="dropdown-item"  routerLink="perfil" routerLinkActive="active" routerLink="perfil">
                                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  {{ 'Layout.user.Profile' | translate}}
+                                  {{ 'layout-user.Profile' | translate}}
                               </a>
                               <a class="dropdown-item" routerLink="configuracion" routerLinkActive="active" routerLink="configuracion">
                                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  {{ 'Layout.user.Setting' | translate}}
+                                  {{ 'layout-user.Setting' | translate}}
                               </a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal" (click)="cerrarSession()" style="cursor: pointer;">
                                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  {{ 'Layout.user.Logout' | translate}}
+                                  {{ 'layout-user.Logout' | translate}}
                               </a>
                           </div>
                       </li>

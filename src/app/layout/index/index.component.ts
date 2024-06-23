@@ -46,7 +46,6 @@ export class IndexComponent {
 
   mostrarMenuLateral(){
     this.minimizarSliderbar = !this.minimizarSliderbar
-    console.log(this.minimizarSliderbar)
   }
 
   idiomaCambiar(valor: string){

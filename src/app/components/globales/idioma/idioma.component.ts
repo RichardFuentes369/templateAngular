@@ -18,7 +18,6 @@ export class IdiomaComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log(this._cookies.get('languague'))
   }
 
   @Output()

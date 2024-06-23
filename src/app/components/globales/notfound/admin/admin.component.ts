@@ -16,7 +16,6 @@ export class AdminnotFoundComponent {
 
   calculateMinHeight(): number {
     let data = window.innerHeight - (window.innerHeight/5)
-    console.log(data)
     return data;
   }
 

@@ -7,9 +7,9 @@ import { UserComponent } from './layout/user/user.component'
 
 import { adminGuard } from './guards/roles/admin/admin.guard'
 import { userGuard } from './guards/roles/user/user.guard';
-import { IndexnotFoundComponent } from './globales/notfound/index/index.component'
-import { AdminnotFoundComponent } from './globales/notfound/admin/admin.component'
-import { UsernotFoundComponent } from './globales/notfound/user/user.component'
+import { IndexnotFoundComponent } from './components/globales/notfound/index/index.component'
+import { AdminnotFoundComponent } from './components/globales/notfound/admin/admin.component'
+import { UsernotFoundComponent } from './components/globales/notfound/user/user.component'
 
 const routes: Routes = [
   {
