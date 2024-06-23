@@ -1,40 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-/*
-* Http Client
-*/
+// Paquete para peticiones http
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-/*
-* Traslation
-*/
+
+// Paquete para traducción
 import {
   TranslateModule,
   TranslateLoader,
-  TranslateService
 } from '@ngx-translate/core';
 import {
   ModuleTranslateLoader,
   IModuleTranslationOptions
 } from '@larscom/ngx-translate-module-loader';
-/*
-* Formularios
-*/
+
+// Paquete para formularios
 import { FormsModule } from '@angular/forms';
-/*
-* Rutas
-*/
+
+// Configuración de rutas
 import { AppRoutingModule } from './app-routing.module';
-/*
-* Templates
-*/
+
+// Plantillas
 import { IndexComponent } from './layout/index/index.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { UserComponent } from './layout/user/user.component';
 
 import { AppComponent } from './app.component';
 
+// Modulos globales
 import { GlobalesModule } from './components/globales/globales.module';
+
 import { IndexPagesModule } from './pages/index/index.module';
 import { ConfiguracionComponent } from './pages/principal/admin/configuracion/configuracion.component';
 import { PerfilComponent } from './pages/principal/admin/perfil/perfil.component';
