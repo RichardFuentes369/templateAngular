@@ -46,7 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
       { baseTranslateUrl, moduleName: 'layout/admin', namespace: 'layout-admin' },
       { baseTranslateUrl, moduleName: 'layout/index', namespace: 'layout-index' },
       { baseTranslateUrl, moduleName: 'layout/user', namespace: 'layout-user' },
-      { baseTranslateUrl, moduleName: 'pages/principal/admin/menu', namespace: 'pages-principal-admin-menu' },
+      { baseTranslateUrl, moduleName: 'modulos/principal', namespace: 'pages-principal'},
     ]
   };
   return new ModuleTranslateLoader(http, options);

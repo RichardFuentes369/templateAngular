@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd  } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core'
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,11 @@ export class AppComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
+    private _cookies: CookieService,
     private router: Router
   ){
+    this._cookies.delete('languague')
+    this._cookies.set('languague', 'es')
     this.translate.use('es');
   }
 
