@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { TextoPipe } from '../../../../pipes/acortador/texto.pipe'
+import { Component } from '@angular/core';
 
+import { PipesModule } from '../../../../pipes/pipes.module'
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-publicaciones',
   standalone: true,
-  imports: [
-    CommonModule,
-    TextoPipe
-  ],
+  imports: [CommonModule, PipesModule, HttpClientModule, TranslateModule],
   templateUrl: './publicaciones.component.html',
   styleUrl: './publicaciones.component.scss'
 })

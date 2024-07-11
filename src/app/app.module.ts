@@ -33,7 +33,8 @@ import { GlobalesModule } from './components/globales/globales.module';
 import { IndexPagesModule } from './pages/index/index.module';
 import { ConfiguracionComponent } from './pages/principal/admin/configuracion/configuracion.component';
 import { PerfilComponent } from './pages/principal/admin/perfil/perfil.component';
-import { MenuComponent } from './pages/principal/admin/menu/menu.component';
+import { AdministradoresComponent } from './pages/usuarios/admin/administradores/administradores.component';
+import { FinalesComponent } from './pages/usuarios/admin/finales/finales.component';
 
 export function createTranslateLoader(http: HttpClient) {
   const baseTranslateUrl = './assets/i18n';
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
       { baseTranslateUrl, moduleName: 'layout/index', namespace: 'layout-index' },
       { baseTranslateUrl, moduleName: 'layout/user', namespace: 'layout-user' },
       { baseTranslateUrl, moduleName: 'modulos/principal', namespace: 'pages-principal'},
+      { baseTranslateUrl, moduleName: 'modulos/publicaciones', namespace: 'pages-publicaciones'},
     ]
   };
   return new ModuleTranslateLoader(http, options);
@@ -61,7 +63,8 @@ export function createTranslateLoader(http: HttpClient) {
     UserComponent,
     ConfiguracionComponent,
     PerfilComponent,
-    MenuComponent,
+    AdministradoresComponent,
+    FinalesComponent,
   ],
   imports: [
     BrowserModule,
