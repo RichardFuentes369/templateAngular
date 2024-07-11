@@ -20,12 +20,6 @@ export class AdminComponent implements OnInit {
   nombreModulo: string = '';
 
   ngOnInit(): void {
-    this.initialize();
-  }
-
-  initialize(): void {
-    let nombreModulo = window.location.pathname.split('/')[2]
-    this.nombreModulo = this.upperFirst(nombreModulo)
   }
 
   upperFirst(texto: string) {

@@ -2,7 +2,10 @@
     <div class="">
       @for (item of publicaciones; track item; let  i = $index) {
         <div class="col-xl-12 col-lg-12 col-sm-12">
-          {{item.name_tag}}
+          <span class="bg-dark text-white">
+            {{item.name_tag}}
+          </span>
+          <hr>
         </div>
         <div class="parent">
           @if (i == 0){
@@ -35,7 +38,7 @@
                         </div>
                       </div>
                     </div>
-                    <button class="bg-dark prex-carouser" (click)="cambiarNoticia(i,0)">
+                    <button class="bg-dark prev-carouser" (click)="cambiarNoticia(i,0)">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </button>
