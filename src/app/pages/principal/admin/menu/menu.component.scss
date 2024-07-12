@@ -8,6 +8,15 @@
   padding: 0.2rem;
 }
 
+.card {
+  height: 100%;
+}
+
+.card:hover {
+  background-color: #3498db;
+  transition: transform 0.1s ease-in;
+  transform: scale(0.9,0.9);
+}
 
 @media only screen and (max-width: 2560px) and (orientation: landscape) {
   .item {
