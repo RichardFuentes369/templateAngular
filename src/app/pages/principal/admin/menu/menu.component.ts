@@ -21,72 +21,20 @@ export class MenuComponent implements OnInit{
     {
       'name': "Publicaciones",
       'icon': "ico-pub",
-      'title': "Publicaciones"
+      'title': "Publicaciones",
+      'url': ""
     },
     {
       'name': "Usuarios",
       'icon': "ico-user",
-      'title': "Usuarios"
+      'title': "Usuarios",
+      'url': ""
     },
     {
       'name': "Globales",
       'icon': "ico-glb",
-      'title': "Globales"
-    },
-    {
-      'name': "Publicaciones",
-      'icon': "ico-pub",
-      'title': "Publicaciones"
-    },
-    {
-      'name': "Usuarios",
-      'icon': "ico-user",
-      'title': "Usuarios"
-    },
-    {
-      'name': "Globales",
-      'icon': "ico-glb",
-      'title': "Globales"
-    },
-    {
-      'name': "Publicaciones",
-      'icon': "ico-pub",
-      'title': "Publicaciones"
-    },
-    {
-      'name': "Usuarios",
-      'icon': "ico-user",
-      'title': "Usuarios"
-    },
-    {
-      'name': "Globales",
-      'icon': "ico-glb",
-      'title': "Globales"
-    },
-    {
-      'name': "Asistene para la cronologia de la publicacion 3",
-      'icon': "ico-pub",
-      'title': "Publicaciones"
-    },
-    {
-      'name': "Globales",
-      'icon': "ico-glb",
-      'title': "Globales"
-    },
-    {
-      'name': "Publicaciones",
-      'icon': "ico-pub",
-      'title': "Publicaciones"
-    },
-    {
-      'name': "Usuarios",
-      'icon': "ico-user",
-      'title': "Usuarios"
-    },
-    {
-      'name': "Globales",
-      'icon': "ico-glb",
-      'title': "Globales"
+      'title': "Globales",
+      'url': ""
     },
   ]
 

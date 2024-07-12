@@ -12,22 +12,36 @@
   height: 100%;
 }
 
-.card:hover {
-  background-color: #3498db;
-  transition: transform 0.1s ease-in;
-  transform: scale(0.9,0.9);
-}
-
 @media only screen and (max-width: 2560px) and (orientation: landscape) {
   .item {
     width: 20%!important;
     padding: 0.2rem;
+  }
+
+  .card {
+    transform: scale(0.9,0.9);
+  }
+
+  .card:hover {
+    background-color: #3498db;
+    transition: transform 0.1s ease-in;
+    transform: scale(1,1);
   }
 }
 @media only screen and (max-width: 2560px) and (orientation: portrait) {
   .item {
     width: 20%!important;
     padding: 0.2rem;
+  }
+
+  .card {
+    transform: scale(0.9,0.9);
+  }
+
+  .card:hover {
+    background-color: #3498db;
+    transition: transform 0.1s ease-in;
+    transform: scale(1,1);
   }
 }
 
@@ -36,11 +50,31 @@
     width: 20%!important;
     padding: 0.2rem;
   }
+
+  .card {
+    transform: scale(0.9,0.9);
+  }
+
+  .card:hover {
+    background-color: #3498db;
+    transition: transform 0.1s ease-in;
+    transform: scale(1,1);
+  }
 }
 @media only screen and (max-width: 1440px) and (orientation: portrait) {
   .item {
     width: 20%!important;
     padding: 0.2rem;
+  }
+
+  .card {
+    transform: scale(0.9,0.9);
+  }
+
+  .card:hover {
+    background-color: #3498db;
+    transition: transform 0.1s ease-in;
+    transform: scale(1,1);
   }
 }
 
@@ -49,11 +83,31 @@
     width: 20%!important;
     padding: 0.2rem;
   }
+
+  .card {
+    transform: scale(0.9,0.9);
+  }
+
+  .card:hover {
+    background-color: #3498db;
+    transition: transform 0.1s ease-in;
+    transform: scale(1,1);
+  }
 }
 @media only screen and (max-width: 1024px) and (orientation: portrait) {
   .item {
     width: 20%!important;
     padding: 0.2rem;
+  }
+
+  .card {
+    transform: scale(0.9,0.9);
+  }
+
+  .card:hover {
+    background-color: #3498db;
+    transition: transform 0.1s ease-in;
+    transform: scale(1,1);
   }
 }
 
@@ -70,7 +124,6 @@
     padding: 0.2rem;
   }
 }
-
 @media only screen and (max-width: 425px) and (orientation: landscape) {
   .item {
     width: 100%!important;
