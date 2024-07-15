@@ -8,6 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import Swal from 'sweetalert2'
 import { MenuService } from './service/menu.service';
 
+interface MenuItem {
+  name: string;
+  icon: string;
+  title: string;
+  url: string;
+}
+
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -22,15 +29,7 @@ export class MenuComponent implements OnInit{
     private menuService :MenuService
   ) { }
 
-
-  menu = [
-    {
-      'name': "Usuarios",
-      'icon': "ico-user",
-      'title': "Usuarios",
-      'url': ""
-    },
-  ]
+  menu: MenuItem[] = []
 
   async ngOnInit() {
 
@@ -38,7 +37,14 @@ export class MenuComponent implements OnInit{
     const response = await this.menuService.menuPermisos(userId.data.id)
 
     for (const itemMenu of response.data) {
-      console.log(itemMenu)
+      let obj: MenuItem = {
+        name: itemMenu.modulo.nombre,
+        icon: itemMenu.modulo.icono,
+        title: itemMenu.modulo.nombre,
+        url: itemMenu.modulo.url
+      };
+
+      this.menu.push(obj);
     }
 
   }
