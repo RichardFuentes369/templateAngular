@@ -10,14 +10,16 @@ export class AuthService {
 
   constructor(
     private router: Router,
-  ) { }
+  ) {}
 
+  getToken(){
+    return localStorage.getItem('token')
+  }
 
   async validarToken(rol: string){
     let urlCopleta = environment.apiUrl+rol+'/profile'
-    let token = localStorage.getItem('token')
     let headers = {
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer ${this.getToken()}`
     }
 
     try {
@@ -46,13 +48,12 @@ export class AuthService {
   }
 
   async isAuth(rol: string){
-    let token = localStorage.getItem('token')
 
-    if(token == null){
+    if(this.getToken() == null){
       return false;
     }
 
-    if(!token){
+    if(!this.getToken()){
       return false
     }
 
@@ -60,7 +61,7 @@ export class AuthService {
       return true;
     }
 
-    let refreshTokenResponse = await this.refreshToken(rol, token)
+    let refreshTokenResponse = await this.refreshToken(rol, this.getToken())
 
     if(refreshTokenResponse){
       localStorage.setItem('token', refreshTokenResponse);

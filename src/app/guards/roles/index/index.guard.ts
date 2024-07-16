@@ -6,7 +6,9 @@ export const indexGuard: CanActivateFn = async(route, state) => {
   const authService = inject(AuthService)
   const router = inject(Router)
 
-  if(localStorage.getItem('token') == null){
+  const token = localStorage.getItem('token')
+
+  if(token == null){
     return true
   }else if(await authService.isAuth('authadmin')){
     const url = router.navigate(['/admin/perfil']);
