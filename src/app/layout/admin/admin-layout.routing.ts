@@ -7,9 +7,6 @@ import { PerfilComponent } from '../../pages/principal/admin/perfil/perfil.compo
 import { ConfiguracionComponent } from '../../pages/principal/admin/configuracion/configuracion.component'
 import { MenuComponent } from '../../pages/principal/admin/menu/menu.component'
 
-import { IndexComponent } from '../../pages/usuarios/admin/index/index.component';
-import { PrincipalComponent } from '../../pages/usuarios/admin/principal/principal.component';
-import { FinalesComponent } from '../../pages/usuarios/admin/finales/finales.component';
 
 export const AdminLayoutRoutes: Routes = [
 
@@ -38,10 +35,9 @@ export const AdminLayoutRoutes: Routes = [
     ]
   },
 
+  // Modulos
 
-  /*
-  * Modulos
-  */
+  // >> Menu
   {
     path: 'menu',
     title: 'Menu',
@@ -51,31 +47,4 @@ export const AdminLayoutRoutes: Routes = [
     ],
   },
 
-  /*
-  * Usuarios
-  */
-  {
-    path: 'menu/index-usuarios',
-    title: 'Usuarios',
-    component: IndexComponent,
-    canActivate: [
-      adminGuard
-    ],
-  },
-  {
-    path: 'menu/index-usuarios/principal',
-    title: 'Administradores',
-    component: PrincipalComponent,
-    canActivate: [
-      adminGuard
-    ],
-  },
-  {
-    path: 'menu/index-usuarios/finales',
-    title: 'Usuarios',
-    component: FinalesComponent,
-    canActivate: [
-      adminGuard
-    ],
-  },
 ];

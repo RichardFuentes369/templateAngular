@@ -40,6 +40,10 @@ const routes: Routes = [
         loadChildren: () => import('./layout/admin/admin.module').then(x=>x.AdminModule)
       },
       {
+        path: 'menu',
+        loadChildren: () => import('./pages/principal/principal.module').then(x=>x.PrincipalModule)
+      },
+      {
         path: '**',
         component: AdminnotFoundComponent,
         canActivate: [

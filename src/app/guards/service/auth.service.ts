@@ -28,7 +28,6 @@ export class AuthService {
     } catch(error) {
       return false
     }
-
   }
 
   async refreshToken(rol:string, token: any){
@@ -44,7 +43,6 @@ export class AuthService {
       localStorage.removeItem('token');
       return false
     }
-
   }
 
   async isAuth(rol: string){
