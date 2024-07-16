@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../../../environments/environment';
+import { environment } from './../../../../../../../environments/environment';
 
 import axios from 'axios';
-import { AuthService } from '../../../../../guards/service/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,6 @@ import { AuthService } from '../../../../../guards/service/auth.service';
 export class MenuService {
 
   constructor(
-    private authService: AuthService
   ){}
 
   async getUser(rol: string){

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router'
 import { Component, OnInit, Pipe } from '@angular/core';
-import { PipesModule } from '../../../../pipes/pipes.module';
+import { PipesModule } from './../../../../../pipes/pipes.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 

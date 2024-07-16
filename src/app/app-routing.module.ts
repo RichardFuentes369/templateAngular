@@ -41,7 +41,7 @@ const routes: Routes = [
       },
       {
         path: 'menu',
-        loadChildren: () => import('./pages/principal/principal.module').then(x=>x.PrincipalModule)
+        loadChildren: () => import('./module/basico/principal/principal.module').then(x=>x.PrincipalModule)
       },
       {
         path: '**',
