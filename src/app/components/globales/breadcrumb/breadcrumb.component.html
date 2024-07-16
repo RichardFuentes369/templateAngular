@@ -1,0 +1,18 @@
+<div class="">
+
+  @if(rutaOrdenada.length>0){
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb p-0 bg-light">
+        @for (item of rutaOrdenada; track item; let ds = $last) {
+          @if(ds == true){
+            <li class="breadcrumb-item inactive" aria-current="page" (click)="goTo(item)" style="cursor: pointer">{{item}}</li>
+          }
+          @else {
+            <li class="breadcrumb-item active" aria-current="page" (click)="goTo(item)" style="cursor: pointer">{{item}}</li>
+          }
+        }
+      </ol>
+    </nav>
+  }
+
+</div>

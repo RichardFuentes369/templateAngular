@@ -33,8 +33,6 @@ import { GlobalesModule } from './components/globales/globales.module';
 import { IndexPagesModule } from './pages/index/index.module';
 import { ConfiguracionComponent } from './pages/principal/admin/configuracion/configuracion.component';
 import { PerfilComponent } from './pages/principal/admin/perfil/perfil.component';
-import { AdministradoresComponent } from './pages/usuarios/admin/administradores/administradores.component';
-import { FinalesComponent } from './pages/usuarios/admin/finales/finales.component';
 
 export function createTranslateLoader(http: HttpClient) {
   const baseTranslateUrl = './assets/i18n';
@@ -63,8 +61,6 @@ export function createTranslateLoader(http: HttpClient) {
     UserComponent,
     ConfiguracionComponent,
     PerfilComponent,
-    AdministradoresComponent,
-    FinalesComponent,
   ],
   imports: [
     BrowserModule,

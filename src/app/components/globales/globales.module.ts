@@ -17,6 +17,7 @@ import {
   TranslateService
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/global/', '.json');
@@ -27,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
     IdiomaComponent,
     IndexnotFoundComponent,
     AdminnotFoundComponent,
-    UsernotFoundComponent
+    UsernotFoundComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [
     LoginComponent,
     IdiomaComponent,
+    BreadcrumbComponent
   ],
   providers: [
     LoginServiceService

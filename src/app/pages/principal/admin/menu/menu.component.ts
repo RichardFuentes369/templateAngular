@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Router } from 'express';
+import { Router } from '@angular/router'
 import { Component, OnInit, Pipe } from '@angular/core';
 import { PipesModule } from '../../../../pipes/pipes.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -25,7 +25,7 @@ interface MenuItem {
 export class MenuComponent implements OnInit{
 
   constructor(
-    // private router: Router,
+    private router: Router,
     private menuService :MenuService
   ) { }
 
@@ -47,6 +47,10 @@ export class MenuComponent implements OnInit{
       this.menu.push(obj);
     }
 
+  }
+
+  goTo(url: string){
+    this.router.navigate([window.location.pathname+url]);
   }
 
 

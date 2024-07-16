@@ -14,6 +14,7 @@ export const IndexLayoutRoutes: Routes = [
   },
   {
     path: 'inicio',
+    title: 'Inicio',
     component: InicioComponent,
     canActivate: [
       indexGuard
@@ -21,6 +22,7 @@ export const IndexLayoutRoutes: Routes = [
   },
   {
     path: 'publicaciones',
+    title: 'Publicaciones',
     component: PublicacionesComponent,
     canActivate: [
       indexGuard
@@ -28,6 +30,7 @@ export const IndexLayoutRoutes: Routes = [
   },
   {
     path: 'ingreso/user',
+    title: 'Ingreso',
     component: IngresoComponent,
     canActivate: [
       indexGuard
@@ -35,6 +38,7 @@ export const IndexLayoutRoutes: Routes = [
   },
   {
     path: 'ingreso/admin',
+    title: 'Ingreso Administrador',
     component: IngresoComponent,
     canActivate: [
       indexGuard

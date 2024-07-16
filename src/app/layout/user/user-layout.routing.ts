@@ -14,6 +14,7 @@ export const UserLayoutRoutes: Routes = [
   },
   {
     path: 'perfil',
+    title: 'Perfil',
     component: PerfilComponent,
     canActivate: [
       userGuard
@@ -21,6 +22,7 @@ export const UserLayoutRoutes: Routes = [
   },
   {
     path: 'configuracion',
+    title: 'Configuracion',
     component: ConfiguracionComponent,
     canActivate: [
       userGuard
