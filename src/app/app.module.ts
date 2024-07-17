@@ -39,14 +39,25 @@ export function createTranslateLoader(http: HttpClient) {
   const options: IModuleTranslationOptions = {
     modules: [
       { baseTranslateUrl },
+      // inicio globales
+      { baseTranslateUrl, moduleName: 'components/globales/breadcrumb', namespace: 'global-breadcrumb' },
       { baseTranslateUrl, moduleName: 'components/globales/idioma', namespace: 'global-idioma' },
       { baseTranslateUrl, moduleName: 'components/globales/login', namespace: 'global-login' },
       { baseTranslateUrl, moduleName: 'components/globales/notfound', namespace: 'global-notfound' },
+      // breadcrumb
+      // fin globales
+
+      // inicio layout
       { baseTranslateUrl, moduleName: 'layout/admin', namespace: 'layout-admin' },
       { baseTranslateUrl, moduleName: 'layout/index', namespace: 'layout-index' },
       { baseTranslateUrl, moduleName: 'layout/user', namespace: 'layout-user' },
-      { baseTranslateUrl, moduleName: 'modulos/principal', namespace: 'pages-principal'},
-      { baseTranslateUrl, moduleName: 'modulos/publicaciones', namespace: 'pages-publicaciones'},
+      // fin layout
+
+      // inicio modulos
+      { baseTranslateUrl, moduleName: 'module/basico', namespace: 'pages-basico'},
+      { baseTranslateUrl, moduleName: 'module/publicaciones', namespace: 'pages-publicaciones'},
+      { baseTranslateUrl, moduleName: 'module/usuarios', namespace: 'pages-usuarios'},
+      // fin modulos
     ]
   };
   return new ModuleTranslateLoader(http, options);

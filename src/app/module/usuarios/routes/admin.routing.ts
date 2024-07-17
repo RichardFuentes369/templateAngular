@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { adminGuard } from '../../../../guards/roles/admin/admin.guard';
+import { adminGuard } from '../../../guards/roles/admin/admin.guard';
 
 // componentes
-import { IndexComponent } from '../../../../module/usuarios/admin/index/index.component';
-import { PrincipalComponent } from '../../../../module/usuarios/admin/principal/principal.component';
-import { FinalesComponent } from '../../../../module/usuarios/admin/finales/finales.component';
+import { IndexComponent } from '../admin/index/index.component';
+import { PrincipalComponent } from '../admin/principal/principal.component';
+import { FinalesComponent } from '../admin/finales/finales.component';
 
 export const AdminMenuRoutes: Routes = [
   {
