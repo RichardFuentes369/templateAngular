@@ -2,6 +2,8 @@ import { Component,  Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
 import Swal from 'sweetalert2'
+
+import { Config } from 'datatables.net';
 import { TablecrudService } from './service/tablecrud.service';
 
 @Component({
@@ -38,8 +40,25 @@ export class TablecrudComponent implements OnInit {
   previousPage: boolean = true
   nextPage: boolean = true
 
+
+  dtOptions: Config = {};
+
   ngOnInit() {
     this.listarData(this.page, this.limit)
+
+    this.dtOptions = {
+      ajax: 'data/data.json',
+      columns: [{
+        title: 'ID',
+        data: 'id'
+      }, {
+        title: 'First name',
+        data: 'firstName'
+      }, {
+        title: 'Last name',
+        data: 'lastName'
+      }]
+    };
   }
 
   previous(){

@@ -10,6 +10,8 @@ import {
   TranslateService
 } from '@ngx-translate/core';
 
+import { DataTablesModule } from "angular-datatables";
+
 import { LoginComponent } from './login/login.component'
 import { LoginServiceService } from './login/service/login-service.service';
 import { IdiomaComponent } from './idioma/idioma.component';
@@ -37,6 +39,7 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     TranslateModule,
     FormsModule,
+    DataTablesModule,
 
     TranslateModule.forChild({
       loader: {
