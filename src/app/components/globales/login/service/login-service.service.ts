@@ -19,7 +19,6 @@ export class LoginServiceService {
         "pass": data.pass
       },
     })
-
   }
 
 }

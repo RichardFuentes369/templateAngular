@@ -3,21 +3,22 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 
-import { LoginComponent } from './login/login.component'
-import { LoginServiceService } from './login/service/login-service.service';
-import { IdiomaComponent } from './idioma/idioma.component';
-import { IndexnotFoundComponent } from './notfound/index/index.component';
-import { AdminnotFoundComponent } from './notfound/admin/admin.component';
-import { UsernotFoundComponent } from './notfound/user/user.component';
-
 import {
   LangChangeEvent,
   TranslateLoader,
   TranslateModule,
   TranslateService
 } from '@ngx-translate/core';
+
+import { LoginComponent } from './login/login.component'
+import { LoginServiceService } from './login/service/login-service.service';
+import { IdiomaComponent } from './idioma/idioma.component';
+import { IndexnotFoundComponent } from './notfound/index/index.component';
+import { AdminnotFoundComponent } from './notfound/admin/admin.component';
+import { UsernotFoundComponent } from './notfound/user/user.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { TablecrudComponent } from './tablecrud/tablecrud.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/global/', '.json');
@@ -30,6 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
     AdminnotFoundComponent,
     UsernotFoundComponent,
     BreadcrumbComponent,
+    TablecrudComponent,
   ],
   imports: [
     CommonModule,
@@ -48,9 +50,10 @@ export function createTranslateLoader(http: HttpClient) {
 
   ],
   exports: [
-    LoginComponent,
     IdiomaComponent,
-    BreadcrumbComponent
+    LoginComponent,
+    BreadcrumbComponent,
+    TablecrudComponent
   ],
   providers: [
     LoginServiceService

@@ -5,7 +5,9 @@ import { CommonModule } from '@angular/common';
   declarations: [
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
+  exports: [
+  ]
 })
 export class UsuariosModule { }
