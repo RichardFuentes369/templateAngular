@@ -1,5 +1,31 @@
 <div class="">
-  <h1>Este es el crud de los usuarios</h1>
-  <button class="btn btn-primary" (click)="goTo('principal')">Principales</button>
-  <button class="btn btn-primary" (click)="goTo('finales')">Finales</button>
+  <h1>{{ 'pages-usuarios.ModuleTitle' | translate}}</h1>
+
+  <div class="parent">
+    <div class="item" (click)="goTo('principal')" style="cursor: pointer;">
+      <div class="card">
+        <div class="card-body text-center p-0 pb-3 pt-3">
+          <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
+        </div>
+        <div class="card-footer text-center bg-white">
+          <span>
+            {{ 'pages-usuarios.LabelButtonUserAdmin' | translate}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="item" (click)="goTo('finales')" style="cursor: pointer;">
+      <div class="card">
+        <div class="card-body text-center p-0 pb-3 pt-3">
+          <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
+        </div>
+        <div class="card-footer text-center bg-white">
+          <span>
+            {{ 'pages-usuarios.LabelButtonUsersEnd' | translate}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
