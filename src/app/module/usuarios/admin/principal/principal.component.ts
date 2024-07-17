@@ -23,7 +23,7 @@ export class PrincipalComponent {
   showbuttonEditar = true
   showbuttonEliminar = true
   showcampoFiltro = true
-  endPoint = 'user'
+  endPoint = 'admin'
   // fin datos que envio al componente
 
 }

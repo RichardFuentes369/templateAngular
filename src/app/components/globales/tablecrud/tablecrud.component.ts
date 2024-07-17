@@ -61,6 +61,7 @@ export class TablecrudComponent implements OnInit {
       console.log(response.data[0].order)
       console.log(response.data[0].pagination)
       console.log(response.data[0].result)
+
     }).catch(err => {
       Swal.fire({
         title: err.response.data.message,

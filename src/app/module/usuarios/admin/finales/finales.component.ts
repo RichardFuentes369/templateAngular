@@ -15,4 +15,15 @@ import { GlobalesModule } from '../../../../components/globales/globales.module'
 })
 export class FinalesComponent {
 
+  // inicio datos que envio al componente
+  showbuttonActivar = true
+  showbuttonVer = true
+  showbuttonAsignar = true
+  showbuttonCrear = true
+  showbuttonEditar = true
+  showbuttonEliminar = true
+  showcampoFiltro = true
+  endPoint = 'user'
+  // fin datos que envio al componente
+
 }
