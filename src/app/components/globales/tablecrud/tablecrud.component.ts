@@ -34,6 +34,8 @@ export class TablecrudComponent implements OnInit {
   @Input()
   columnas: any;
 
+  idSeleccionado: string = '';
+
   constructor(
     private tableCrudService: TablecrudService,
     private http: HttpClient
@@ -70,6 +72,8 @@ export class TablecrudComponent implements OnInit {
             return texto.charAt(0).toUpperCase() + texto.slice(1);
           }
 
+
+          this.idSeleccionado = ''
           const data: any = [];
 
           for (const item of post[0].result) {
@@ -108,6 +112,42 @@ export class TablecrudComponent implements OnInit {
         "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
       },
       columns: this.columnas,
+      rowCallback: (row: Node, data: any | Object, index: number) => {
+        const self = this;
+        $('td', row).on('click', () => {
+          this.idSeleccionado = ''
+          $('tr').css({'background-color':'','color':'black'});
+
+          this.idSeleccionado = data.id
+          $('tr').eq(index+2).css({'background-color':'red','color':'white'});
+        });
+        return row;
+      }
     };
+  }
+
+  limpiarSeleccion(){
+    this.idSeleccionado = ''
+    $('tr').css({'background-color':'','color':'black'});
+  }
+
+  ver(){
+    console.log(this.idSeleccionado)
+    console.log('aqui estoy viendo')
+  }
+
+  crear(){
+    console.log(this.idSeleccionado)
+    console.log('aqui estoy creando')
+  }
+
+  editar(){
+    console.log(this.idSeleccionado)
+    console.log('aqui estoy editando')
+  }
+
+  eliminar(){
+    console.log(this.idSeleccionado)
+    console.log('aqui estoy elimnando')
   }
 }
