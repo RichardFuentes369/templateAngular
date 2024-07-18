@@ -24,6 +24,24 @@ export class FinalesComponent {
   showbuttonEliminar = true
   showcampoFiltro = true
   endPoint = 'user'
+  columnas = [
+    {
+      title: 'ID',
+      data: 'id',
+    },
+    {
+      title: 'First name',
+      data: 'email',
+    },
+    {
+      title: 'First name',
+      data: 'firstName',
+    },
+    {
+      title: 'First name',
+      data: 'lastName',
+    }
+  ]
   // fin datos que envio al componente
 
 }

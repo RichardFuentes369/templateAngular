@@ -6,25 +6,9 @@
 
   <br><br><br>
 
-  <table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <table datatable [dtOptions]="dtOptions" [columnas] = columnas class="row-border hover">
   </table>
 
-
   <br><br><br>
-
-  <button
-    (click)="previous()"
-    class="btn btn-primary"
-    [disabled]="previousPage"
-  >
-    atras
-  </button>
-  <button
-    (click)="next()"
-    class="btn btn-primary"
-    [disabled]="nextPage"
-  >
-    siguiente
-  </button>
 
 </div>

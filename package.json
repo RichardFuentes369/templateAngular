@@ -25,6 +25,8 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "axios": "^1.6.8",
+    "datatables.net-buttons": "^3.0.2",
+    "datatables.net-buttons-dt": "^3.0.2",
     "express": "^4.18.2",
     "ngx-cookie-service": "^18.0.0",
     "rxjs": "~7.8.0",

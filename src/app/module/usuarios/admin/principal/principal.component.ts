@@ -24,6 +24,24 @@ export class PrincipalComponent {
   showbuttonEliminar = true
   showcampoFiltro = true
   endPoint = 'admin'
+  columnas = [
+    {
+      title: 'ID',
+      data: 'id',
+    },
+    {
+      title: 'First name',
+      data: 'email',
+    },
+    {
+      title: 'First name',
+      data: 'firstName',
+    },
+    {
+      title: 'First name',
+      data: 'lastName',
+    }
+  ]
   // fin datos que envio al componente
 
 }
