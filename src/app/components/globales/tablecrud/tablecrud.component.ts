@@ -39,11 +39,6 @@ export class TablecrudComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-  page: number = 1;
-  limit: number = 5;
-  previousPage: boolean = true;
-  nextPage: boolean = true;
-
   dtOptions: Config = {};
 
   ngOnInit() {
@@ -115,46 +110,4 @@ export class TablecrudComponent implements OnInit {
       columns: this.columnas,
     };
   }
-
-  async listarData(nroPage: number, limitPerPage: number) {
-    await this.tableCrudService
-      .getData(this.endPoint, nroPage, limitPerPage)
-      .then((response) => {
-        this.previousPage =
-          response.data[0].pagination.previou === null ? true : false;
-        this.nextPage =
-          response.data[0].pagination.next === null ? true : false;
-
-        console.log(response.data[0].order);
-        console.log(response.data[0].pagination);
-        console.log(response.data[0].result);
-      })
-      .catch((err) => {
-        Swal.fire({
-          title: err.response.data.message,
-          text: err.response.data.error,
-          icon: 'error',
-          confirmButtonText: 'Cool',
-        });
-      });
-  }
 }
-
-// columns: [
-//   {
-//     title: 'ID',
-//     data: 'id',
-//   },
-//   {
-//     title: 'First name',
-//     data: 'email',
-//   },
-//   {
-//     title: 'First name',
-//     data: 'firstName',
-//   },
-//   {
-//     title: 'First name',
-//     data: 'lastName',
-//   },
-// ],
