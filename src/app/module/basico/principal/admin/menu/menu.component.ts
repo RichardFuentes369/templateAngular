@@ -24,12 +24,17 @@ export class MenuComponent implements OnInit{
     private permisosService :PermisosService
   ) { }
 
-  menu: [] = []
+  menu: any[] = []
 
   async ngOnInit() {
     const userId = await this.userService.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,0,1)
+    const response = await this.permisosService.permisos(userId.data.id,0,1,0)
     this.menu = response.data
+  }
+
+  tienePermiso(nombre: string): boolean {
+    console.log(this.menu)
+    return this.menu.some((permiso) => permiso.nombre === nombre);
   }
 
   goTo(url: string){

@@ -4,15 +4,30 @@
 
   <div class="parent">
 
-    @for (item of menu; track item; let  i = $index) {
-      <div class="item" (click)="goTo(item['modulo']['url'])" style="cursor: pointer;">
+    @if(tienePermiso('usuarios')){
+      <div class="item" (click)="goTo('/index-usuarios')" style="cursor: pointer;">
         <div class="card">
           <div class="card-body text-center p-0 pb-3 pt-3">
             <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
           </div>
           <div class="card-footer text-center bg-white">
             <span>
-              {{item['modulo']['nombre'] | nombre:15}}
+              Usuarios
+            </span>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if(tienePermiso('publicaciones')){
+      <div class="item" (click)="goTo('/index-publicaciones')" style="cursor: pointer;">
+        <div class="card">
+          <div class="card-body text-center p-0 pb-3 pt-3">
+            <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
+          </div>
+          <div class="card-footer text-center bg-white">
+            <span>
+              Publicaciones
             </span>
           </div>
         </div>

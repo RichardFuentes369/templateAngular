@@ -36,7 +36,7 @@ export class IndexComponent implements OnInit{
 
   async ngOnInit() {
     const userId = await this.userServide.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,1,2)
+    const response = await this.permisosService.permisos(userId.data.id,1,2,0)
     for (const iterator of response.data) {
       this.menu.push(iterator)
     }

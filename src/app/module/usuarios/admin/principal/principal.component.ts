@@ -29,7 +29,7 @@ export class PrincipalComponent implements OnInit{
 
   async ngOnInit() {
     const userId = await this.userServide.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,1,3)
+    const response = await this.permisosService.permisos(userId.data.id,1,3,2)
     for (const iterator of response.data) {
       this.permisos.push(iterator)
     }
@@ -56,7 +56,7 @@ export class PrincipalComponent implements OnInit{
       data: 'lastName',
     }
   ]
-  buttons = this.permisos
+  permisosAcciones = this.permisos
   // fin datos que envio al componente
 
 }

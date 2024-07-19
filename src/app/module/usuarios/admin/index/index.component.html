@@ -2,7 +2,7 @@
   <h1>{{ 'pages-usuarios.ModuleTitle' | translate}}</h1>
 
   <div class="parent">
-    @if(tienePermiso('usuarios_administradores')){
+    @if(tienePermiso('administradores')){
       <div class="item" (click)="goTo('principal')" style="cursor: pointer;">
         <div class="card">
           <div class="card-body text-center p-0 pb-3 pt-3">
@@ -16,7 +16,7 @@
         </div>
       </div>
     }
-    @if(tienePermiso('usuarios_finales')){
+    @if(tienePermiso('finales')){
       <div class="item" (click)="goTo('finales')" style="cursor: pointer;">
         <div class="card">
           <div class="card-body text-center p-0 pb-3 pt-3">

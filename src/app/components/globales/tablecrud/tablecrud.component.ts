@@ -22,7 +22,7 @@ export class TablecrudComponent implements OnInit {
   @Input()
   columnas: any;
   @Input()
-  buttons: any[] = [];
+  permisosAcciones: any[] = [];
 
   idSeleccionado: string = '';
 
@@ -38,8 +38,7 @@ export class TablecrudComponent implements OnInit {
   }
 
   tienePermiso(nombre: string): boolean {
-    console.log(this.buttons.some((permiso) => permiso.accion === nombre))
-    return this.buttons.some((permiso) => permiso.accion === nombre);
+    return this.permisosAcciones.some((permiso) => permiso.nombre === nombre);
   }
 
   listar() {
