@@ -16,13 +16,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TablecrudComponent implements OnInit {
   @Input()
-  buttons: any[] = [];
-  @Input()
   campoFiltro: boolean = false;
   @Input()
   endPoint: string = '';
   @Input()
   columnas: any;
+  @Input()
+  buttons: any[] = [];
 
   idSeleccionado: string = '';
 
@@ -35,6 +35,11 @@ export class TablecrudComponent implements OnInit {
 
   ngOnInit() {
     this.listar();
+  }
+
+  tienePermiso(nombre: string): boolean {
+    console.log(this.buttons.some((permiso) => permiso.accion === nombre))
+    return this.buttons.some((permiso) => permiso.accion === nombre);
   }
 
   listar() {

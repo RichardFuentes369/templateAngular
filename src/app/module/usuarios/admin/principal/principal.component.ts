@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { PipesModule } from '../../../../pipes/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { GlobalesModule } from '../../../../components/globales/globales.module'
+
+import { Router } from '@angular/router';
+import { UserService } from '../../../../services/globales/user/user.service';
+import { PermisosService } from '../../../../services/globales/permisos/permisos.service';
 
 @Component({
   selector: 'app-principal',
@@ -13,15 +17,25 @@ import { GlobalesModule } from '../../../../components/globales/globales.module'
   templateUrl: './principal.component.html',
   styleUrl: './principal.component.scss'
 })
-export class PrincipalComponent {
+export class PrincipalComponent implements OnInit{
+
+  constructor(
+    private router: Router,
+    private userServide :UserService,
+    private permisosService :PermisosService
+  ) { }
+
+  permisos: any[] = []
+
+  async ngOnInit() {
+    const userId = await this.userServide.getUser('authadmin')
+    const response = await this.permisosService.permisos(userId.data.id,1,3)
+    for (const iterator of response.data) {
+      this.permisos.push(iterator)
+    }
+  }
 
   // inicio datos que envio al componente
-  showbuttonActivar = true
-  showbuttonVer = true
-  showbuttonAsignar = true
-  showbuttonCrear = true
-  showbuttonEditar = true
-  showbuttonEliminar = true
   showcampoFiltro = true
   endPoint = 'admin'
   columnas = [
@@ -42,36 +56,7 @@ export class PrincipalComponent {
       data: 'lastName',
     }
   ]
-  buttons = [
-    {
-      'label': 'Activar/Desactivar',
-      'permiso': 'usuarios_administradores_activar_desactivar'
-    },
-    {
-      'label': 'Ver',
-      'permiso': 'usuarios_administradores_ver'
-    },
-    {
-      'label': 'Crear',
-      'permiso': 'usuarios_administradores_crear'
-    },
-    {
-      'label': 'Editar',
-      'permiso': 'usuarios_administradores_editar'
-    },
-    {
-      'label': 'Eliminar',
-      'permiso': 'usuarios_administradores_eliminar'
-    },
-    {
-      'label': 'Asignar',
-      'permiso': 'usuarios_administradores_asignar'
-    },
-  ]
+  buttons = this.permisos
   // fin datos que envio al componente
-
-  constructor(){
-
-  }
 
 }

@@ -3,11 +3,36 @@
   <br><br><br>
 
   <div class="d-flex justify-content-end">
-    @for (item of buttons; track item) {
-      @if(item.permiso){
-        <button class="btn btn-primary btn-sm mx-1">{{item.label}}</button>
+      @if(tienePermiso('ver')){
+        <button class="btn btn-primary btn-sm mx-1">
+          Ver
+        </button>
       }
-    }
+      @if(tienePermiso('activar_desactivar')){
+        <button class="btn btn-primary btn-sm mx-1">
+          Activar/Desactivar
+        </button>
+      }
+      @if(tienePermiso('crear')){
+        <button class="btn btn-primary btn-sm mx-1">
+          Crear
+        </button>
+      }
+      @if(tienePermiso('editar')){
+        <button class="btn btn-primary btn-sm mx-1">
+          Editar
+        </button>
+      }
+      @if(tienePermiso('eliminar')){
+        <button class="btn btn-primary btn-sm mx-1">
+          Eliminar
+        </button>
+      }
+      @if(tienePermiso('asignar')){
+        <button class="btn btn-primary btn-sm mx-1">
+          Asignar
+        </button>
+      }
     <button class="btn btn-primary btn-sm mx-1" (click)="limpiarSeleccion()" [disabled]="!idSeleccionado">Limpiar</button>
   </div>
 
