@@ -2,30 +2,35 @@
   <h1>{{ 'pages-usuarios.ModuleTitle' | translate}}</h1>
 
   <div class="parent">
-    <div class="item" (click)="goTo('principal')" style="cursor: pointer;">
-      <div class="card">
-        <div class="card-body text-center p-0 pb-3 pt-3">
-          <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
-        </div>
-        <div class="card-footer text-center bg-white">
-          <span>
-            {{ 'pages-usuarios.LabelButtonUserAdmin' | translate}}
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="item" (click)="goTo('finales')" style="cursor: pointer;">
-      <div class="card">
-        <div class="card-body text-center p-0 pb-3 pt-3">
-          <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
-        </div>
-        <div class="card-footer text-center bg-white">
-          <span>
-            {{ 'pages-usuarios.LabelButtonUsersEnd' | translate}}
-          </span>
+    @if(tienePermiso('usuarios_administradores')){
+      <div class="item" (click)="goTo('principal')" style="cursor: pointer;">
+        <div class="card">
+          <div class="card-body text-center p-0 pb-3 pt-3">
+            <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
+          </div>
+          <div class="card-footer text-center bg-white">
+            <span>
+              {{ 'pages-usuarios.LabelButtonUserAdmin' | translate}}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    }
+    @if(tienePermiso('usuarios_finales')){
+      <div class="item" (click)="goTo('finales')" style="cursor: pointer;">
+        <div class="card">
+          <div class="card-body text-center p-0 pb-3 pt-3">
+            <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="80px">
+          </div>
+          <div class="card-footer text-center bg-white">
+            <span>
+              {{ 'pages-usuarios.LabelButtonUsersEnd' | translate}}
+            </span>
+          </div>
+        </div>
+      </div>
+    }
   </div>
 
 </div>
+

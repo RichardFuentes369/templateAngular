@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { environment } from './../../../../../../../environments/environment';
+import { environment } from './../../../../environments/environment';
 
 import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MenuService {
+export class UserService {
 
-  constructor(
-  ){}
+  constructor() { }
 
   async getUser(rol: string){
 
@@ -22,5 +21,4 @@ export class MenuService {
 
     return data
   }
-
 }

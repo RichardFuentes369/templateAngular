@@ -6,14 +6,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import Swal from 'sweetalert2'
-import { MenuService } from './service/menu.service';
-
-interface MenuItem {
-  name: string;
-  icon: string;
-  title: string;
-  url: string;
-}
+import { UserService } from '../../../../../services/globales/user/user.service';
+import { PermisosService } from '../../../../../services/globales/permisos/permisos.service';
 
 @Component({
   selector: 'app-menu',
@@ -26,27 +20,16 @@ export class MenuComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private menuService :MenuService
+    private userService: UserService,
+    private permisosService :PermisosService
   ) { }
 
-  menu: MenuItem[] = []
+  menu: [] = []
 
   async ngOnInit() {
-
-    const userId = await this.menuService.getUser('authadmin')
-    const response = await this.menuService.menuPermisos(userId.data.id)
-
-    for (const itemMenu of response.data) {
-      let obj: MenuItem = {
-        name: itemMenu.modulo.nombre,
-        icon: itemMenu.modulo.icono,
-        title: itemMenu.modulo.nombre,
-        url: itemMenu.modulo.url
-      };
-
-      this.menu.push(obj);
-    }
-
+    const userId = await this.userService.getUser('authadmin')
+    const response = await this.permisosService.permisos(userId.data.id,0,1)
+    this.menu = response.data
   }
 
   goTo(url: string){
