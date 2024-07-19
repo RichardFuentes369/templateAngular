@@ -3,33 +3,33 @@
   <br><br><br>
 
   <div class="d-flex justify-content-end">
+    @if(tienePermiso('crear')){
+      <button class="btn btn-primary btn-sm mx-1" [disabled]="idSeleccionado">
+        Crear
+      </button>
+    }
     @if(tienePermiso('ver')){
-      <button class="btn btn-primary btn-sm mx-1">
+      <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
         Ver
       </button>
     }
     @if(tienePermiso('activar_desactivar')){
-      <button class="btn btn-primary btn-sm mx-1">
+      <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
         Activar/Desactivar
       </button>
     }
-    @if(tienePermiso('crear')){
-      <button class="btn btn-primary btn-sm mx-1">
-        Crear
-      </button>
-    }
     @if(tienePermiso('editar')){
-      <button class="btn btn-primary btn-sm mx-1">
+      <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
         Editar
       </button>
     }
     @if(tienePermiso('eliminar')){
-      <button class="btn btn-primary btn-sm mx-1">
+      <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
         Eliminar
       </button>
     }
     @if(tienePermiso('asignar_permisos')){
-      <button class="btn btn-primary btn-sm mx-1">
+      <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
         Asignar
       </button>
     }
