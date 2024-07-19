@@ -42,6 +42,36 @@ export class PrincipalComponent {
       data: 'lastName',
     }
   ]
+  buttons = [
+    {
+      'label': 'Activar/Desactivar',
+      'permiso': 'usuarios_administradores_activar_desactivar'
+    },
+    {
+      'label': 'Ver',
+      'permiso': 'usuarios_administradores_ver'
+    },
+    {
+      'label': 'Crear',
+      'permiso': 'usuarios_administradores_crear'
+    },
+    {
+      'label': 'Editar',
+      'permiso': 'usuarios_administradores_editar'
+    },
+    {
+      'label': 'Eliminar',
+      'permiso': 'usuarios_administradores_eliminar'
+    },
+    {
+      'label': 'Asignar',
+      'permiso': 'usuarios_administradores_asignar'
+    },
+  ]
   // fin datos que envio al componente
+
+  constructor(){
+
+  }
 
 }

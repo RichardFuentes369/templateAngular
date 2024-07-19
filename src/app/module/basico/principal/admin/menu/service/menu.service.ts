@@ -24,10 +24,10 @@ export class MenuService {
   }
 
   async menuPermisos(id: number){
-    let complemento = 'permisos/mis-permisos/'
+    let complemento = `permisos/mis-permisos/${id}/por-modulo/0/por-tipo/1`
     let urlCopleta = environment.apiUrl+complemento+id
     const data = axios.get(urlCopleta)
-    return data
+    return data 
   }
 
 }

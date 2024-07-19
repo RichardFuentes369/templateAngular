@@ -16,17 +16,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TablecrudComponent implements OnInit {
   @Input()
-  buttonActivar: boolean = false;
-  @Input()
-  buttonVer: boolean = false;
-  @Input()
-  buttonAsignar: boolean = false;
-  @Input()
-  buttonCrear: boolean = false;
-  @Input()
-  buttonEditar: boolean = false;
-  @Input()
-  buttonEliminar: boolean = false;
+  buttons: any[] = [];
   @Input()
   campoFiltro: boolean = false;
   @Input()
@@ -131,23 +121,34 @@ export class TablecrudComponent implements OnInit {
     $('tr').css({'background-color':'','color':'black'});
   }
 
-  ver(){
-    console.log(this.idSeleccionado)
-    console.log('aqui estoy viendo')
-  }
+  // ver(){
+  //   console.log(this.idSeleccionado)
+  //   console.log('aqui estoy viendo')
+  // }
 
-  crear(){
-    console.log(this.idSeleccionado)
-    console.log('aqui estoy creando')
-  }
+  // activar(){
+  //   console.log(this.idSeleccionado)
+  //   console.log('aqui estoy activar')
+  // }
 
-  editar(){
-    console.log(this.idSeleccionado)
-    console.log('aqui estoy editando')
-  }
+  // asignar(){
+  //   console.log(this.idSeleccionado)
+  //   console.log('aqui estoy asignar')
+  // }
 
-  eliminar(){
-    console.log(this.idSeleccionado)
-    console.log('aqui estoy elimnando')
-  }
+  // crear(){
+  //   this.idSeleccionado = ''
+  //   $('tr').css({'background-color':'','color':'black'});
+  //   console.log('aqui estoy creando')
+  // }
+
+  // editar(){
+  //   console.log(this.idSeleccionado)
+  //   console.log('aqui estoy editando')
+  // }
+
+  // eliminar(){
+  //   console.log(this.idSeleccionado)
+  //   console.log('aqui estoy elimnando')
+  // }
 }

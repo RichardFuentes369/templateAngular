@@ -42,6 +42,32 @@ export class FinalesComponent {
       data: 'lastName',
     }
   ]
+  buttons = [
+    {
+      'label': 'Activar/Desactivar',
+      'permiso': 'usuarios_finales_activar_desactivar'
+    },
+    {
+      'label': 'Ver',
+      'permiso': 'usuarios_finales_ver'
+    },
+    {
+      'label': 'Crear',
+      'permiso': 'usuarios_finales_crear'
+    },
+    {
+      'label': 'Editar',
+      'permiso': 'usuarios_finales_editar'
+    },
+    {
+      'label': 'Eliminar',
+      'permiso': 'usuarios_finales_eliminar'
+    },
+  ]
   // fin datos que envio al componente
+
+  constructor(){
+
+  }
 
 }

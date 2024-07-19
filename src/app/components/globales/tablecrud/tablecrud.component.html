@@ -1,16 +1,14 @@
 <div class="">
 
-  @if(buttonCrear == true){
-    <button>Crear</button>
-  }
-
   <br><br><br>
 
-  <div class="row">
-    <button class="btn btn-primary btn-sm" (click)="limpiarSeleccion()" [disabled]="!idSeleccionado">Limpiar</button>
-    <button class="btn btn-primary btn-sm" (click)="crear()" [disabled]="!idSeleccionado">Crear</button>
-    <button class="btn btn-primary btn-sm" (click)="editar()" [disabled]="!idSeleccionado">Editar</button>
-    <button class="btn btn-primary btn-sm" (click)="eliminar()" [disabled]="!idSeleccionado">Eliminar</button>
+  <div class="d-flex justify-content-end">
+    @for (item of buttons; track item) {
+      @if(item.permiso){
+        <button class="btn btn-primary btn-sm mx-1">{{item.label}}</button>
+      }
+    }
+    <button class="btn btn-primary btn-sm mx-1" (click)="limpiarSeleccion()" [disabled]="!idSeleccionado">Limpiar</button>
   </div>
 
   <table datatable [dtOptions]="dtOptions" class="row-border hover">
