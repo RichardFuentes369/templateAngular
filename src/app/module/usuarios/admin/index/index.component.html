@@ -2,6 +2,7 @@
   <h1>{{ 'pages-usuarios.ModuleTitle' | translate}}</h1>
 
   <div class="parent">
+    <!-- <app-globales-buscador></app-globales-buscador> -->
     @if(tienePermiso('administradores')){
       <div class="item" (click)="goTo('principal')" style="cursor: pointer;">
         <div class="card">
