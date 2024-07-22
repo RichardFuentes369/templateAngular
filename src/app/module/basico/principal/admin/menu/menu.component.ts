@@ -12,7 +12,7 @@ import { PermisosService } from '../../../../../services/globales/permisos/permi
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, PipesModule, HttpClientModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })

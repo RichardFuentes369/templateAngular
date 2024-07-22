@@ -20,7 +20,7 @@ interface PermisoInterface {
 @Component({
   selector: 'app-menu-usuarios-index',
   standalone: true,
-  imports: [CommonModule, PipesModule, HttpClientModule, TranslateModule],
+  imports: [CommonModule, PipesModule, TranslateModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss'
 })

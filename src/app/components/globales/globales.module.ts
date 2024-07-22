@@ -21,6 +21,7 @@ import { UsernotFoundComponent } from './notfound/user/user.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { TablecrudComponent } from './tablecrud/tablecrud.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/global/', '.json');
@@ -34,6 +35,7 @@ export function createTranslateLoader(http: HttpClient) {
     UsernotFoundComponent,
     BreadcrumbComponent,
     TablecrudComponent,
+    BuscadorComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +58,8 @@ export function createTranslateLoader(http: HttpClient) {
     IdiomaComponent,
     LoginComponent,
     BreadcrumbComponent,
-    TablecrudComponent
+    TablecrudComponent,
+    BuscadorComponent
   ],
   providers: [
     LoginServiceService

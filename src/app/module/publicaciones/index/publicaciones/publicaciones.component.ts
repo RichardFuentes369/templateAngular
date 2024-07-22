@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-publicaciones',
   standalone: true,
-  imports: [CommonModule, PipesModule, HttpClientModule, TranslateModule],
+  imports: [ CommonModule, PipesModule, TranslateModule],
   templateUrl: './publicaciones.component.html',
   styleUrl: './publicaciones.component.scss'
 })
