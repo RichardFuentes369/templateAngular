@@ -13,7 +13,7 @@ import { PermisosService } from '../../../../services/globales/permisos/permisos
 @Component({
   selector: 'app-principal',
   standalone: true,
-  imports: [CommonModule, PipesModule, HttpClientModule, TranslateModule, GlobalesModule],
+  imports: [CommonModule, PipesModule, TranslateModule, GlobalesModule],
   templateUrl: './principal.component.html',
   styleUrl: './principal.component.scss'
 })

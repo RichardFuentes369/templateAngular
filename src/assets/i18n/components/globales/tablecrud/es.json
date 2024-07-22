@@ -1,0 +1,11 @@
+{
+  "Options": {
+    "See":"Ver",
+    "Create":"Crear",
+    "Switch":"Activar/Desactivar",
+    "Edit":"Editar",
+    "Delete":"Eliminar",
+    "Assign":"Asignar",
+    "Clean":"Limpiar"
+  }
+}

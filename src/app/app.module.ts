@@ -43,8 +43,9 @@ export function createTranslateLoader(http: HttpClient) {
       { baseTranslateUrl, moduleName: 'components/globales/breadcrumb', namespace: 'global-breadcrumb' },
       { baseTranslateUrl, moduleName: 'components/globales/idioma', namespace: 'global-idioma' },
       { baseTranslateUrl, moduleName: 'components/globales/login', namespace: 'global-login' },
+      { baseTranslateUrl, moduleName: 'components/globales/buscador', namespace: 'global-buscador' },
+      { baseTranslateUrl, moduleName: 'components/globales/tablecrud', namespace: 'global-tablecrud' },
       { baseTranslateUrl, moduleName: 'components/globales/notfound', namespace: 'global-notfound' },
-      // breadcrumb
       // fin globales
 
       // inicio layout

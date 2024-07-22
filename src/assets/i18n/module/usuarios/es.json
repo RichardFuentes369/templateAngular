@@ -1,7 +1,13 @@
 {
-  "ModuleTitle": "Usuarios",
-  "LabelButtonUserAdmin": "Administradores",
-  "LabelButtonUsersEnd": "Finales",
-  "LabelTitleUserAdmin": "Usuarios administradores",
-  "LabelTitleUserEnd": "Usuarios finales"
+  "Title": {
+    "pageUsersTitle":"Usuarios"
+  },
+  "Index": {
+    "buttonAdmins":"Usuarios administradores",
+    "buttonFinals":"Usuarios finales"
+  },
+  "Tipo": {
+    "AdminWord": "Administradores",
+    "FinalWord": "Finales"
+  }
 }

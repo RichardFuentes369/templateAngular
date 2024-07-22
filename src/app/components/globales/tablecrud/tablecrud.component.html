@@ -5,35 +5,37 @@
   <div class="d-flex justify-content-end">
     @if(tienePermiso('crear')){
       <button class="btn btn-primary btn-sm mx-1" [disabled]="idSeleccionado">
-        Crear
+        {{ 'global-tablecrud.Options.Create' | translate}}
       </button>
     }
     @if(tienePermiso('ver')){
       <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
-        Ver
+        {{ 'global-tablecrud.Options.See' | translate}}
       </button>
     }
     @if(tienePermiso('activar_desactivar')){
       <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
-        Activar/Desactivar
+        {{ 'global-tablecrud.Options.Switch' | translate}}
       </button>
     }
     @if(tienePermiso('editar')){
       <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
-        Editar
+        {{ 'global-tablecrud.Options.Edit' | translate}}
       </button>
     }
     @if(tienePermiso('eliminar')){
       <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
-        Eliminar
+        {{ 'global-tablecrud.Options.Delete' | translate}}
       </button>
     }
     @if(tienePermiso('asignar_permisos')){
       <button class="btn btn-primary btn-sm mx-1" [disabled]="!idSeleccionado">
-        Asignar
+        {{ 'global-tablecrud.Options.Assign' | translate}}
       </button>
     }
-    <button class="btn btn-primary btn-sm mx-1" (click)="limpiarSeleccion()" [disabled]="!idSeleccionado">Limpiar</button>
+    <button class="btn btn-primary btn-sm mx-1" (click)="limpiarSeleccion()" [disabled]="!idSeleccionado">
+      {{ 'global-tablecrud.Options.Clean' | translate}}
+    </button>
   </div>
 
   <table datatable [dtOptions]="dtOptions" class="row-border hover">

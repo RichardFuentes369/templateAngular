@@ -1,5 +1,12 @@
 {
-  "WordMenu": "Menu",
-  "WordProfile": "Profile",
-  "WordConfiguracion": "Settings"
+  "Settings": {
+    "WordMenu": "Menu",
+    "WordProfile": "Profile",
+    "WordConfiguracion": "Settings"
+  },
+  "Menu": {
+    "WordMenu": "Menu",
+    "WordUsers": "Users",
+    "WordPublications": "Publications"
+  }
 }

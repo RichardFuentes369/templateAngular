@@ -13,7 +13,7 @@ import { PermisosService } from '../../../../services/globales/permisos/permisos
 @Component({
   selector: 'app-menu-usuarios-finales',
   standalone: true,
-  imports: [CommonModule, PipesModule, HttpClientModule, TranslateModule, GlobalesModule],
+  imports: [CommonModule, PipesModule, TranslateModule, GlobalesModule],
   templateUrl: './finales.component.html',
   styleUrl: './finales.component.scss'
 })

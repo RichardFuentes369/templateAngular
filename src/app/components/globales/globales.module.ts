@@ -42,17 +42,6 @@ export function createTranslateLoader(http: HttpClient) {
     TranslateModule,
     FormsModule,
     DataTablesModule,
-
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      },
-      isolate: true, // <-- PLAY WITH IT
-      extend: true // <-- PLAY WITH IT
-    })
-
   ],
   exports: [
     IdiomaComponent,
