@@ -41,7 +41,7 @@ const routes: Routes = [
       },
       {
         path: 'menu',
-        loadChildren: () => import('./layout/admin/admin-layout.routing').then(x=>x.AdminLayoutRoutes)
+        loadChildren: () => import('../../src/app/module/usuarios/routes/admin.routing').then(x=>x.AdminMenuRoutes)
       },
       {
         path: '**',

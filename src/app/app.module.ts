@@ -71,14 +71,9 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       },
     }),
-    // RouterModule.forChild(AdminLayoutRoutes),
-    // RouterModule.forChild(IndexLayoutRoutes),
-    // RouterModule.forChild(UserLayoutRoutes),
-    // RouterModule.forChild(AdminMenuRoutes),
     RouterModule,
     FormsModule,
     AppRoutingModule,
-    // Pages
   ],
   providers: [
     provideClientHydration()
