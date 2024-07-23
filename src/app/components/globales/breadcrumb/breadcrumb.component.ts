@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-globales-breadcrumb',
+  standalone: true,
+  imports: [],
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.scss'
 })

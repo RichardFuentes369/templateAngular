@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-index',
+  standalone: true,
+  imports: [TranslateModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss'
 })

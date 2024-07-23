@@ -4,6 +4,8 @@ import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-globales-idioma',
+  standalone: true,
+  imports: [],
   templateUrl: './idioma.component.html',
   styleUrl: './idioma.component.scss'
 })

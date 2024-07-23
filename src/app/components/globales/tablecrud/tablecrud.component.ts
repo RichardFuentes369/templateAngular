@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-globales-tablecrud',
+  standalone: true,
+  imports: [],
   templateUrl: './tablecrud.component.html',
   styleUrl: './tablecrud.component.scss',
 })
