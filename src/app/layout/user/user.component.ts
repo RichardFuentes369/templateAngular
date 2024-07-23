@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
+import { Router, RouterModule } from '@angular/router'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 import Swal from 'sweetalert2'
+import { IdiomaComponent } from '../../components/globales/idioma/idioma.component';
 @Component({
   selector: 'app-user',
+  standalone: true,
+  imports: [
+    IdiomaComponent,
+    TranslateModule,
+    RouterModule
+  ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })

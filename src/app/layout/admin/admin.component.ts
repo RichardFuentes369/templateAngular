@@ -1,11 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
+import { Router, RouterModule } from '@angular/router'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 import Swal from 'sweetalert2'
+import { BreadcrumbComponent } from '../../components/globales/breadcrumb/breadcrumb.component';
+import { IdiomaComponent } from '../../components/globales/idioma/idioma.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin',
+  standalone: true,
+  imports: [
+    BreadcrumbComponent,
+    IdiomaComponent,
+    CommonModule,
+    TranslateModule,
+    RouterModule
+  ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })

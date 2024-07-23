@@ -6,15 +6,17 @@ import { Component, OnInit, Pipe } from '@angular/core';
 import Swal from 'sweetalert2'
 import { UserService } from '../../../../../services/globales/user/user.service';
 import { PermisosService } from '../../../../../services/globales/permisos/permisos.service';
-import { TranslateModule } from '@ngx-translate/core';
+
 import { BuscadorComponent } from '../../../../../components/globales/buscador/buscador.component';
-import { LoadingComponent } from '../../../../../components/globales/loading/loading.component';
-import { GlobalesModule } from '../../../../../components/globales/globales.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [TranslateModule, BuscadorComponent, GlobalesModule],
+  imports: [
+    BuscadorComponent,
+    TranslateModule,
+  ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })

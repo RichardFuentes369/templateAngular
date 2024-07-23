@@ -4,16 +4,19 @@ import { Component, OnInit } from '@angular/core';
 import { PipesModule } from '../../../../pipes/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-import { GlobalesModule } from '../../../../components/globales/globales.module'
 
 import { Router } from '@angular/router';
 import { UserService } from '../../../../services/globales/user/user.service';
 import { PermisosService } from '../../../../services/globales/permisos/permisos.service';
+import { TablecrudComponent } from '../../../../components/globales/tablecrud/tablecrud.component';
 
 @Component({
   selector: 'app-menu-usuarios-finales',
   standalone: true,
-  imports: [CommonModule, PipesModule, TranslateModule, GlobalesModule],
+  imports: [
+    TranslateModule,
+    TablecrudComponent
+  ],
   templateUrl: './finales.component.html',
   styleUrl: './finales.component.scss'
 })

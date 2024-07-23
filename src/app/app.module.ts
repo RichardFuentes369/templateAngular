@@ -21,18 +21,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 // Plantillas
-import { IndexComponent } from './layout/index/index.component';
-import { AdminComponent } from './layout/admin/admin.component';
-import { UserComponent } from './layout/user/user.component';
 
 import { AppComponent } from './app.component';
 
-// Modulos globales
-import { GlobalesModule } from './components/globales/globales.module';
-
-import { IndexPagesModule } from './module/basico/index/index.module';
-import { ConfiguracionComponent } from './module/basico/principal/admin/configuracion/configuracion.component';
-import { PerfilComponent } from './module/basico/principal/admin/perfil/perfil.component';
+import { RouterModule } from '@angular/router';
 
 export function createTranslateLoader(http: HttpClient) {
   const baseTranslateUrl = './assets/i18n';
@@ -68,12 +60,6 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-
-    IndexComponent,
-    AdminComponent,
-    UserComponent,
-    ConfiguracionComponent,
-    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,12 +71,14 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       },
     }),
+    // RouterModule.forChild(AdminLayoutRoutes),
+    // RouterModule.forChild(IndexLayoutRoutes),
+    // RouterModule.forChild(UserLayoutRoutes),
+    // RouterModule.forChild(AdminMenuRoutes),
+    RouterModule,
     FormsModule,
     AppRoutingModule,
-    GlobalesModule,
-
     // Pages
-    IndexPagesModule,
   ],
   providers: [
     provideClientHydration()

@@ -23,7 +23,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layout/index/index.module').then(x=>x.IndexModule)
+        loadChildren: () => import('./layout/index/index-layout.routing').then(x=>x.IndexLayoutRoutes)
       },
       {
         path: '**',
@@ -37,11 +37,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layout/admin/admin.module').then(x=>x.AdminModule)
+        loadChildren: () => import('./layout/admin/admin-layout.routing').then(x=>x.AdminLayoutRoutes)
       },
       {
         path: 'menu',
-        loadChildren: () => import('./module/basico/principal/principal.module').then(x=>x.PrincipalModule)
+        loadChildren: () => import('./layout/admin/admin-layout.routing').then(x=>x.AdminLayoutRoutes)
       },
       {
         path: '**',
@@ -58,7 +58,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./layout/user/user.module').then(x=>x.UserModule)
+        loadChildren: () => import('./layout/user/user-layout.routing').then(x=>x.UserLayoutRoutes)
       },
       {
         path: '**',
