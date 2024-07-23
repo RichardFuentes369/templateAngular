@@ -5,7 +5,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core'
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss'
 })

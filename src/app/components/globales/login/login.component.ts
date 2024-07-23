@@ -4,10 +4,18 @@ import { Router } from '@angular/router'
 import Swal from 'sweetalert2'
 import { LoginServiceService } from './service/login-service.service'
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-globales-login',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TranslateModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

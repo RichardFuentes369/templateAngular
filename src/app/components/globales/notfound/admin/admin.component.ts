@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
+
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })

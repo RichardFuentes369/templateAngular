@@ -9,10 +9,16 @@ import { TablecrudService } from './service/tablecrud.service';
 
 import { HttpClient } from '@angular/common/http';
 
+import { DataTablesModule } from 'angular-datatables';
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-globales-tablecrud',
   standalone: true,
-  imports: [],
+  imports: [
+    DataTablesModule,
+    TranslateModule
+  ],
   templateUrl: './tablecrud.component.html',
   styleUrl: './tablecrud.component.scss',
 })

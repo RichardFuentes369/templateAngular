@@ -4,7 +4,9 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-global-loading',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './loading.component.html',
   styleUrl: './loading.component.scss'
 })

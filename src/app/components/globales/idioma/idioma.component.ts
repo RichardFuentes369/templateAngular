@@ -1,11 +1,17 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core'
+
+import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-globales-idioma',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule,
+    TranslateModule,
+  ],
   templateUrl: './idioma.component.html',
   styleUrl: './idioma.component.scss'
 })

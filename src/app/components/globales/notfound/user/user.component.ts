@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
+
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
