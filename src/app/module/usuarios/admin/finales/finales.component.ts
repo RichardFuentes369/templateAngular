@@ -62,4 +62,20 @@ export class FinalesComponent implements OnInit{
   permisosAcciones = this.permisos
   // fin datos que envio al componente
 
+  verData (_id: string){
+    console.log("verData "+_id)
+  }
+  crearData (_id: string){
+    console.log("crearData "+_id)
+  }
+  editarData (_id: string){
+    console.log("editarData "+_id)
+  }
+  eliminarData (_id: string){
+    console.log("eliminarData "+_id)
+  }
+  activarData (_id: string){
+    console.log("activarData "+_id)
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
@@ -133,34 +133,45 @@ export class TablecrudComponent implements OnInit {
     $('tr').css({'background-color':'','color':'black'});
   }
 
-  // ver(){
-  //   console.log(this.idSeleccionado)
-  //   console.log('aqui estoy viendo')
-  // }
+  @Output()
+  verItem = new EventEmitter<string>()
+  seeItem (){
+    this.verItem.emit(this.idSeleccionado)
+  }
 
-  // activar(){
-  //   console.log(this.idSeleccionado)
-  //   console.log('aqui estoy activar')
-  // }
+  @Output()
+  crearNuevoItem = new EventEmitter<string>()
+  nuevoItem (){
+    this.crearNuevoItem.emit(this.idSeleccionado)
+  }
 
-  // asignar(){
-  //   console.log(this.idSeleccionado)
-  //   console.log('aqui estoy asignar')
-  // }
+  @Output()
+  editarItem = new EventEmitter<string>()
+  editItem (){
+    this.editarItem.emit(this.idSeleccionado)
+  }
 
-  // crear(){
-  //   this.idSeleccionado = ''
-  //   $('tr').css({'background-color':'','color':'black'});
-  //   console.log('aqui estoy creando')
-  // }
+  @Output()
+  eliminarItem = new EventEmitter<string>()
+  deleteItem (){
+    this.eliminarItem.emit(this.idSeleccionado)
+  }
 
-  // editar(){
-  //   console.log(this.idSeleccionado)
-  //   console.log('aqui estoy editando')
-  // }
+  @Output()
+  activarItem = new EventEmitter<string>()
+  activedItem (){
+    this.activarItem.emit(this.idSeleccionado)
+  }
 
-  // eliminar(){
-  //   console.log(this.idSeleccionado)
-  //   console.log('aqui estoy elimnando')
-  // }
+  @Output()
+  asignar = new EventEmitter<string>()
+  assignItem (){
+    this.asignar.emit(this.idSeleccionado)
+  }
+
+  selectionClear (){
+    this.idSeleccionado = ''
+    $('tr').css({'background-color':'','color':'black'});
+  }
+
 }
