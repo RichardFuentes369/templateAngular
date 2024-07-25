@@ -39,7 +39,6 @@ export class MenuComponent implements OnInit{
   }
 
   tienePermiso(nombre: string): boolean {
-    console.log(this.menu)
     return this.menu.some((permiso) => permiso.nombre === nombre);
   }
 
