@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
+import { openCloseModal } from '../../../../functions/System'
 import { TranslateModule } from '@ngx-translate/core';
 
 import { Router } from '@angular/router';
@@ -23,7 +24,7 @@ export class PrincipalComponent implements OnInit{
   constructor(
     private router: Router,
     private userServide :UserService,
-    private permisosService :PermisosService
+    private permisosService :PermisosService,
   ) { }
 
   permisos: any[] = []
@@ -60,22 +61,31 @@ export class PrincipalComponent implements OnInit{
   permisosAcciones = this.permisos
   // fin datos que envio al componente
 
+  abrirCerrar (){
+    openCloseModal('exampleModal')
+  }
   verData (_id: string){
     console.log("verData "+_id)
+    openCloseModal('exampleModal')
   }
   crearData (_id: string){
+    openCloseModal('exampleModal')
     console.log("crearData "+_id)
   }
   editarData (_id: string){
+    openCloseModal('exampleModal')
     console.log("editarData "+_id)
   }
   eliminarData (_id: string){
+    openCloseModal('exampleModal')
     console.log("eliminarData "+_id)
   }
   activarData (_id: string){
+    openCloseModal('exampleModal')
     console.log("activarData "+_id)
   }
   asignarData (_id: string){
+    openCloseModal('exampleModal')
     console.log("asignarData "+_id)
   }
 

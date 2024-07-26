@@ -141,7 +141,7 @@ export class TablecrudComponent implements OnInit {
 
   @Output()
   crearNuevoItem = new EventEmitter<string>()
-  nuevoItem (){
+  newItem (){
     this.crearNuevoItem.emit(this.idSeleccionado)
   }
 
