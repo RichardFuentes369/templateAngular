@@ -17,8 +17,8 @@
                 <div id="carouselExampleControlsNoTouching" class="carousel slide" data-touch="false" data-interval="false">
                   <div>
                     <div class="carousel-item active">
-                      <div class="p-0 col-xl-12 col-lg-12 col-sm-12 mb-2">
-                        <div class=" o-hidden border-0 shadow-lg">
+                      <div class="p-2 col-xl-12 col-lg-12 col-sm-12 mb-2">
+                        <div class="p-3 o-hidden border-0 shadow-lg">
                           <div class="card-header mt-3">
                             {{item2.titulo}}
                           </div>
@@ -56,7 +56,7 @@
         @if (i > 0){
           @for (item2 of item.news; track item2; let  i = $index) {
           <div class="item">
-            <div class=" o-hidden border-0 shadow-lg contenidoCard">
+            <div class=" o-hidden border-0 shadow-lg contenidoCard p-3">
               <div class="card-header">
                 {{item2.titulo | nombre:50}}
               </div>
