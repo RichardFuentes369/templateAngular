@@ -21,17 +21,17 @@ export const UsuariosAdministradoresRoutes: Routes = [
   },
   {
     path: 'ver-administrador',
-    title: 'Crear administrador',
+    title: 'Ver administrador',
     component: VerPrincipalComponent,
   },
   {
     path: 'editar-administrador',
-    title: 'Crear administrador',
+    title: 'Editar administrador',
     component: EditarPrincipalComponent,
   },
   {
     path: 'asignar-administrador',
-    title: 'Crear administrador',
+    title: 'Asignar administrador',
     component: EditarPrincipalComponent,
   },
 ];
