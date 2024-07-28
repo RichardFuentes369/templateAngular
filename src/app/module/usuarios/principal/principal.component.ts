@@ -90,10 +90,10 @@ export class PrincipalComponent implements OnInit{
   someInput!: TablecrudComponent
   eliminarData (_id: string){
     console.log("eliminarData "+_id)
-    this.translate.get('pages-usuarios.Swal.TitleDelete').subscribe((translatedTitle: string) => {
+    this.translate.get('pages-usuarios.Swal.TitleAreYouSure').subscribe((translatedTitle: string) => {
       Swal.fire({
         title: translatedTitle,
-        text: this.translate.instant('pages-usuarios.Swal.TitleDeleteText'),
+        text: this.translate.instant('pages-usuarios.Swal.TitleWarnigRevert'),
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: this.translate.instant('pages-usuarios.Swal.TitleDelete'),
@@ -104,7 +104,7 @@ export class PrincipalComponent implements OnInit{
               this.principalService.deleteUser(_id)
               this.someInput.reload()
               Swal.fire({
-                title: this.translate.instant('pages-usuarios.Swal.TitleDeleted'),
+                title: this.translate.instant('pages-usuarios.Swal.TitleDelete'),
                 text: this.translate.instant('pages-usuarios.Swal.TitleRegisterDeleted'),
                 icon: "success"
               });
@@ -116,6 +116,31 @@ export class PrincipalComponent implements OnInit{
 
   activarData (_id: string){
     console.log("activarData "+_id)
+    this.translate.get('pages-usuarios.Swal.TitleAreYouSure').subscribe((translatedTitle: string) => {
+      Swal.fire({
+        title: this.translate.instant('pages-usuarios.Swal.TitleAreYouSure'),
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: this.translate.instant('pages-usuarios.Swal.TitleActived'),
+        cancelButtonText: this.translate.instant('pages-usuarios.Swal.TitleCancel'),
+        denyButtonText: this.translate.instant('pages-usuarios.Swal.TitleInactived')
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: this.translate.instant('pages-usuarios.Swal.TitleActived'),
+            text: this.translate.instant('pages-usuarios.Swal.TitleRegisterActived'),
+            icon: "success"
+          });
+        } else if (result.isDenied) {
+          Swal.fire({
+            title: this.translate.instant('pages-usuarios.Swal.TitleInactived'),
+            text: this.translate.instant('pages-usuarios.Swal.TitleRegisterInactived'),
+            icon: "success"
+          });
+        }
+      });
+    });
   }
 
 }

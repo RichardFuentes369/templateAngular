@@ -42,10 +42,14 @@
     "createUser": "Crear usuario"
   },
   "Swal": {
-    "TitleDelete": "Estas seguro?",
-    "TitleDeleteText": "No podra revertir esto!",
+    "TitleAreYouSure": "Estas seguro?",
+    "TitleWarnigRevert": "No podras reviertir este cambio!",
     "TitleCancel": "Cancelar",
-    "TitleDeleted": "Eliminado!",
-    "TitleRegisterDeleted": "Tu registro fue eliminado."
+    "TitleDelete": "Eliminar!",
+    "TitleRegisterDeleted": "Registro eliminado",
+    "TitleRegisterInactived": "Registro desactivado",
+    "TitleRegisterActived": "Registro activado",
+    "TitleActived": "Activar",
+    "TitleInactived": "Inactivar"
   }
 }
