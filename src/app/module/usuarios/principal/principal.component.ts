@@ -85,7 +85,6 @@ export class PrincipalComponent implements OnInit{
     this.router.navigate(['/admin/menu/index-usuarios/principal/asignar-administrador/'], { queryParams: { id: _id } });
   }
 
-  // {{ 'pages-usuarios.Swal.AdminWord' | translate}}
   @ViewChild(TablecrudComponent)
   someInput!: TablecrudComponent
   eliminarData (_id: string){
@@ -98,11 +97,11 @@ export class PrincipalComponent implements OnInit{
         showCancelButton: true,
         confirmButtonText: this.translate.instant('pages-usuarios.Swal.TitleDelete'),
         cancelButtonText: this.translate.instant('pages-usuarios.Swal.TitleCancel')
-      }).then((result) => {
+      }).then(async (result) => {
         if (result.isConfirmed) {
             if (result.isConfirmed) {
-              this.principalService.deleteUser(_id)
-              this.someInput.reload()
+              await this.principalService.deleteUser(_id)
+              await this.someInput.reload()
               Swal.fire({
                 title: this.translate.instant('pages-usuarios.Swal.TitleDelete'),
                 text: this.translate.instant('pages-usuarios.Swal.TitleRegisterDeleted'),

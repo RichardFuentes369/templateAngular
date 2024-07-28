@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ import { TablecrudService } from './service/tablecrud.service';
 
 import { HttpClient } from '@angular/common/http';
 
-import { DataTablesModule } from 'angular-datatables';
+import { DataTableDirective, DataTablesModule } from 'angular-datatables';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -39,6 +39,7 @@ export class TablecrudComponent implements OnInit {
     private http: HttpClient
   ) {}
 
+  @ViewChild(DataTableDirective, { static: false }) datatableElement!: DataTableDirective;
   dtOptions: Config = {};
 
   ngOnInit() {
@@ -134,8 +135,10 @@ export class TablecrudComponent implements OnInit {
   }
 
   reload(){
-    console.log('aqui estoy hp')
-    this.listar()
+    this.datatableElement.dtInstance.then((dtInstance: any) => {
+      console.log(dtInstance)
+      dtInstance.ajax.reload();
+    });
   }
 
   @Output()
