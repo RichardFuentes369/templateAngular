@@ -7,6 +7,7 @@ import { LoginServiceService } from './service/login-service.service'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { LoadingComponent } from '../loading/loading.component';
 
 @Component({
   selector: 'app-globales-login',
@@ -15,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     TranslateModule,
+    LoadingComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -26,7 +28,8 @@ export class LoginComponent implements OnInit {
     private loginService :LoginServiceService
   ) { }
 
-  isLoginAdmin = false
+  isPending = false;
+  isLoginAdmin = true
   urlPeticion = ''
 
   model = {
@@ -48,6 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   async ingresar(){
+    this.isPending = true;
     let rol = this.urlPeticion.split('/').find(e => e == 'admin') ? 0 : 1
     let data = {
       'email': this.model.email,
@@ -55,14 +59,19 @@ export class LoginComponent implements OnInit {
       'rol': rol
     }
 
-    await this.loginService.login(data).then(response=>{
+    await this.loginService.login(data)
+    .then(response=>{
       localStorage.setItem('token', response.data.access_token)
       if(rol == 0){
+        this.isPending = false;
         this.router.navigate(['/admin']);
       }else{
+        this.isPending = false;
         this.router.navigate(['/user']);
       }
     }).catch(err =>{
+
+      this.isPending = false;
       Swal.fire({
         title: err.response.data.message,
         text: err.response.data.error,

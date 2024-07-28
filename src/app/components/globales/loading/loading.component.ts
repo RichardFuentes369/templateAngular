@@ -12,7 +12,4 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class LoadingComponent {
 
-  @Input()
-  tiempo: number = 0;
-
 }

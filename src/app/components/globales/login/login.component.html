@@ -35,23 +35,29 @@
                 </label>
             </div>
         </div>
-        <a class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === true" (click)="ingresar()">
-          {{ 'global-login.Login_Msj' | translate}}
-        </a>
-        <a class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === false" (click)="ingresar()">
-          {{ 'global-login.Login_Msj' | translate}}
-        </a>
+
+        @if(isPending){
+          <app-global-loading></app-global-loading>
+        }
+        @else {
+          <a class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === true" (click)="ingresar()">
+            {{ 'global-login.Login_Msj' | translate}}
+          </a>
+          <a class="btn btn-primary btn-user btn-block" *ngIf="this.isLoginAdmin === false" (click)="ingresar()">
+            {{ 'global-login.Login_Msj' | translate}}
+          </a>
+        }
     </form>
     <hr>
     <div class="text-center" *ngIf="this.isLoginAdmin === false">
         <a class="small">
           {{ 'global-login.ForgotPassword_Msj' | translate}}
         </a>
-      </div>
-      <div class="text-center" *ngIf="this.isLoginAdmin === false">
+    </div>
+    <div class="text-center" *ngIf="this.isLoginAdmin === false">
         <a class="small">
           {{ 'global-login.CreateAccount_Msj' | translate}}
         </a>
     </div>
-</div>
+  </div>
 </div>
