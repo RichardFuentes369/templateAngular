@@ -15,5 +15,38 @@
   "Tipo": {
     "AdminWord": "Admins",
     "FinalWord": "Finals"
+  },
+  "Label": {
+    "firstName": "Names",
+    "lastName": "LastNames",
+    "email": "Email",
+    "password": "Password",
+    "statusUser": "Status"
+  },
+  "Placeholder": {
+    "firstName": "Juan Andres",
+    "lastName": "Lozano Fonseca",
+    "email": "email@example.es",
+    "password": "********",
+    "select": "Select please",
+    "isActive": "Active",
+    "isInactive": "Inactive"
+  },
+  "Error": {
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": "",
+    "isActive": ""
+  },
+  "Buttons": {
+    "createUser": "Create user"
+  },
+  "Swal": {
+    "TitleDelete": "Are you sure?",
+    "TitleDeleteText": "You won't be able to revert this!",
+    "TitleCancel": "Cancel",
+    "TitleDeleted": "Deleted!",
+    "TitleRegisterDeleted": "You register eliminated"
   }
 }

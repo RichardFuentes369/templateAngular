@@ -133,6 +133,11 @@ export class TablecrudComponent implements OnInit {
     $('tr').css({'background-color':'','color':'black'});
   }
 
+  reload(){
+    console.log('aqui estoy hp')
+    this.listar()
+  }
+
   @Output()
   verItem = new EventEmitter<string>()
   seeItem (){

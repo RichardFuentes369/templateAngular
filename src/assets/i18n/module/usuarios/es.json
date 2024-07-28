@@ -15,5 +15,37 @@
   "Tipo": {
     "AdminWord": "Administradores",
     "FinalWord": "Finales"
+  },
+  "Label": {
+    "firstName": "Nombres",
+    "lastName": "Apellidos",
+    "email": "Correo",
+    "password": "Contraseña",
+    "statusUser": "Estado"
+  },
+  "Placeholder": {
+    "firstName": "Juan Andres",
+    "lastName": "Lozano Fonseca",
+    "email": "email@example.es",
+    "password": "********",
+    "isActive": "Activo",
+    "isInactive": "Inactivo"
+  },
+  "Error": {
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": "",
+    "isActive": ""
+  },
+  "Buttons": {
+    "createUser": "Crear usuario"
+  },
+  "Swal": {
+    "TitleDelete": "Estas seguro?",
+    "TitleDeleteText": "No podra revertir esto!",
+    "TitleCancel": "Cancelar",
+    "TitleDeleted": "Eliminado!",
+    "TitleRegisterDeleted": "Tu registro fue eliminado."
   }
 }

@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 import { openCloseModal } from '../../../functions/System'
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
+import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
-import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
 import { LoadingComponent } from '../../../components/globales/loading/loading.component';
+import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
+import { PrincipalService } from './service/principal.service';
 
 @Component({
   selector: 'app-principal',
@@ -27,6 +29,8 @@ export class PrincipalComponent implements OnInit{
     private router: Router,
     private userService :AuthService,
     private permisosService :PermisosService,
+    private principalService :PrincipalService,
+    private translate: TranslateService
   ) { }
 
   permisos: any[] = []
@@ -80,9 +84,36 @@ export class PrincipalComponent implements OnInit{
     console.log("asignarData "+_id)
     this.router.navigate(['/admin/menu/index-usuarios/principal/asignar-administrador/'], { queryParams: { id: _id } });
   }
+
+  // {{ 'pages-usuarios.Swal.AdminWord' | translate}}
+  @ViewChild(TablecrudComponent)
+  someInput!: TablecrudComponent
   eliminarData (_id: string){
     console.log("eliminarData "+_id)
+    this.translate.get('pages-usuarios.Swal.TitleDelete').subscribe((translatedTitle: string) => {
+      Swal.fire({
+        title: translatedTitle,
+        text: this.translate.instant('pages-usuarios.Swal.TitleDeleteText'),
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: this.translate.instant('pages-usuarios.Swal.TitleDelete'),
+        cancelButtonText: this.translate.instant('pages-usuarios.Swal.TitleCancel')
+      }).then((result) => {
+        if (result.isConfirmed) {
+            if (result.isConfirmed) {
+              this.principalService.deleteUser(_id)
+              this.someInput.reload()
+              Swal.fire({
+                title: this.translate.instant('pages-usuarios.Swal.TitleDeleted'),
+                text: this.translate.instant('pages-usuarios.Swal.TitleRegisterDeleted'),
+                icon: "success"
+              });
+            }
+        }
+      });
+    });
   }
+
   activarData (_id: string){
     console.log("activarData "+_id)
   }
