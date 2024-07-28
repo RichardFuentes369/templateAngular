@@ -4,7 +4,7 @@ import { Component, OnInit, Pipe } from '@angular/core';
 
 
 import Swal from 'sweetalert2'
-import { UserService } from '../../../../../services/globales/user/user.service';
+import { AuthService } from '../../../../../guards/service/auth.service';
 import { PermisosService } from '../../../../../services/globales/permisos/permisos.service';
 
 import { BuscadorComponent } from '../../../../../components/globales/buscador/buscador.component';
@@ -24,18 +24,16 @@ export class MenuComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private userService: UserService,
+    private userService: AuthService,
     private permisosService :PermisosService
   ) { }
 
   menu: any[] = []
-  // tiempoCarga = 2500
 
   async ngOnInit() {
-    const userId = await this.userService.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,0,1,0)
+    const userData = await this.userService.getUser('authadmin')
+    const response = await this.permisosService.permisos(userData.data.id,0,1,0)
     this.menu = response.data
-    // this.tiempoCarga = 0
   }
 
   tienePermiso(nombre: string): boolean {

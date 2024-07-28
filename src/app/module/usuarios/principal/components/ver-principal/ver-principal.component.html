@@ -3,11 +3,14 @@
   <!-- <h1>{{ 'pages-usuarios.Tipo.AdminWord' | translate}}</h1> -->
   <div class="">Administrador</div>
 
-  <pre>{{user[0].id | json}}</pre>
-  <pre>{{user[0].firstName | json}}</pre>
-  <pre>{{user[0].lastName | json}}</pre>
-  <pre>{{user[0].email | json}}</pre>
-  <pre>{{user[0].password | json}}</pre>
-  <pre>{{user[0].isActive | json}}</pre>
+  @for (item of user; track item; let  i = $index) {
+    <span>{{item.id}}</span> <br>
+    <span>{{item.firstName}}</span> <br>
+    <span>{{item.lastName}}</span> <br>
+    <span>{{item.email}}</span> <br>
+    <span>{{item.password}}</span> <br>
+    <span>{{item.isActive}}</span>
+  }
+
 
 </div>

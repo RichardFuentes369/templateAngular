@@ -5,16 +5,18 @@ import { openCloseModal } from '../../../functions/System'
 import { TranslateModule } from '@ngx-translate/core';
 
 import { Router } from '@angular/router';
-import { UserService } from '../../../services/globales/user/user.service';
+import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
 import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
+import { LoadingComponent } from '../../../components/globales/loading/loading.component';
 
 @Component({
   selector: 'app-principal',
   standalone: true,
   imports: [
     TranslateModule,
-    TablecrudComponent
+    TablecrudComponent,
+    LoadingComponent
   ],
   templateUrl: './principal.component.html',
   styleUrl: './principal.component.scss'
@@ -23,18 +25,20 @@ export class PrincipalComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private userServide :UserService,
+    private userService :AuthService,
     private permisosService :PermisosService,
   ) { }
 
   permisos: any[] = []
 
   async ngOnInit() {
-    const userId = await this.userServide.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,1,3,2)
+    await this.userService.refreshToken('authadmin');
+    const {data} = await this.userService.getUser('authadmin');
+    const response = await this.permisosService.permisos(data.id, 1, 3, 2);
     for (const iterator of response.data) {
       this.permisos.push(iterator)
     }
+
   }
 
   // inicio datos que envio al componente
@@ -63,7 +67,7 @@ export class PrincipalComponent implements OnInit{
 
   verData (_id: string){
     console.log("verData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/principal/ver-administrador/'], { queryParams: { id: _id } });
+    this.router.navigate([`/admin/menu/index-usuarios/principal/ver-administrador/`], { queryParams: { id: _id } });
   }
   crearData (_id: string){
     console.log("crearData "+_id)
@@ -75,7 +79,7 @@ export class PrincipalComponent implements OnInit{
   }
   asignarData (_id: string){
     console.log("asignarData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/principal/asignar-administrador/']);
+    this.router.navigate(['/admin/menu/index-usuarios/principal/asignar-administrador/'], { queryParams: { id: _id } });
   }
   eliminarData (_id: string){
     console.log("eliminarData "+_id)

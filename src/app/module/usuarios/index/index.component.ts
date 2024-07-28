@@ -6,7 +6,7 @@ import { PipesModule } from '../../../pipes/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { UserService } from '../../../services/globales/user/user.service';
+import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
 
 interface PermisoInterface {
@@ -28,15 +28,15 @@ export class IndexComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private userServide :UserService,
+    private userService :AuthService,
     private permisosService :PermisosService
   ) { }
 
   menu: PermisoInterface[] = []
 
   async ngOnInit() {
-    const userId = await this.userServide.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,1,2,0)
+    const { data } = await this.userService.getUser('authadmin')
+    const response = await this.permisosService.permisos(data.id,1,2,0)
     for (const iterator of response.data) {
       this.menu.push(iterator)
     }

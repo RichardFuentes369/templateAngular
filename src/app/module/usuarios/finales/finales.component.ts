@@ -5,7 +5,7 @@ import { openCloseModal } from '../../../functions/System'
 import { TranslateModule } from '@ngx-translate/core';
 
 import { Router } from '@angular/router';
-import { UserService } from '../../../services/globales/user/user.service';
+import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
 import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
 
@@ -23,15 +23,15 @@ export class FinalesComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private userServide :UserService,
+    private userService :AuthService,
     private permisosService :PermisosService
   ) { }
 
   permisos: any[] = []
 
   async ngOnInit() {
-    const userId = await this.userServide.getUser('authadmin')
-    const response = await this.permisosService.permisos(userId.data.id,1,3,3)
+    const { data } = await this.userService.getUser('authadmin')
+    const response = await this.permisosService.permisos(data.id,1,3,3)
     for (const iterator of response.data) {
       this.permisos.push(iterator)
     }

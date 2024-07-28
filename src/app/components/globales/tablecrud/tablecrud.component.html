@@ -13,11 +13,6 @@
         {{ 'global-tablecrud.Options.See' | translate}}
       </button>
     }
-    @if(tienePermiso('activar_desactivar')){
-      <button class="btn btn-primary btn-sm mx-1" (click)="activedItem()" [disabled]="!idSeleccionado">
-        {{ 'global-tablecrud.Options.Switch' | translate}}
-      </button>
-    }
     @if(tienePermiso('editar')){
       <button class="btn btn-primary btn-sm mx-1" (click)="editItem()" [disabled]="!idSeleccionado">
         {{ 'global-tablecrud.Options.Edit' | translate}}
@@ -31,6 +26,11 @@
     @if(tienePermiso('asignar_permisos')){
       <button class="btn btn-primary btn-sm mx-1" (click)="assignItem()" [disabled]="!idSeleccionado">
         {{ 'global-tablecrud.Options.Assign' | translate}}
+      </button>
+    }
+    @if(tienePermiso('activar_desactivar')){
+      <button class="btn btn-primary btn-sm mx-1" (click)="activedItem()" [disabled]="!idSeleccionado">
+        {{ 'global-tablecrud.Options.Switch' | translate}}
       </button>
     }
     <button class="btn btn-primary btn-sm mx-1" (click)="selectionClear()" [disabled]="!idSeleccionado">
