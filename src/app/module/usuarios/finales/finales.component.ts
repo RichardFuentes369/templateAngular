@@ -30,8 +30,9 @@ export class FinalesComponent implements OnInit{
   permisos: any[] = []
 
   async ngOnInit() {
-    const { data } = await this.userService.getUser('authadmin')
-    const response = await this.permisosService.permisos(data.id,1,3,3)
+    await this.userService.refreshToken('authadmin');
+    const {data} = await this.userService.getUser('authadmin');
+    const response = await this.permisosService.permisos(data.id, 1, 3, 3);
     for (const iterator of response.data) {
       this.permisos.push(iterator)
     }
@@ -61,32 +62,23 @@ export class FinalesComponent implements OnInit{
   permisosAcciones = this.permisos
   // fin datos que envio al componente
 
-  abrirCerrar (){
-    openCloseModal('exampleModal')
-  }
   verData (_id: string){
     console.log("verData "+_id)
-    openCloseModal('exampleModal')
+    this.router.navigate([`/admin/menu/index-usuarios/finales/ver-finales/`], { queryParams: { id: _id } });
   }
   crearData (_id: string){
-    openCloseModal('exampleModal')
     console.log("crearData "+_id)
+    this.router.navigate(['/admin/menu/index-usuarios/finales/crear-finales/']);
   }
   editarData (_id: string){
-    openCloseModal('exampleModal')
     console.log("editarData "+_id)
+    this.router.navigate(['/admin/menu/index-usuarios/finales/editar-finales/'], { queryParams: { id: _id } });
   }
   eliminarData (_id: string){
-    openCloseModal('exampleModal')
     console.log("eliminarData "+_id)
   }
   activarData (_id: string){
-    openCloseModal('exampleModal')
     console.log("activarData "+_id)
-  }
-  asignarData (_id: string){
-    openCloseModal('exampleModal')
-    console.log("asignarData "+_id)
   }
 
 }

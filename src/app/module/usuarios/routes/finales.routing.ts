@@ -15,18 +15,18 @@ export const UsuariosFinalesRoutes: Routes = [
     component: FinalesComponent,
   },
   {
-    path: 'crear-usuario',
-    title: 'Crear usuario',
+    path: 'crear-finales',
+    title: 'Crear usuario final',
     component: CrearFinalesComponent,
   },
   {
-    path: 'crear-usuario',
-    title: 'Crear usuario',
-    component: EditarFinalesComponent,
+    path: 'ver-finales',
+    title: 'Ver usuario final',
+    component: VerFinalesComponent,
   },
   {
-    path: 'ver-usuario',
-    title: 'Crear usuario',
-    component: VerFinalesComponent,
+    path: 'editar-finales',
+    title: 'Editar usuario final',
+    component: EditarFinalesComponent,
   },
 ];

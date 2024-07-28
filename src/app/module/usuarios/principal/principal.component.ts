@@ -38,7 +38,6 @@ export class PrincipalComponent implements OnInit{
     for (const iterator of response.data) {
       this.permisos.push(iterator)
     }
-
   }
 
   // inicio datos que envio al componente

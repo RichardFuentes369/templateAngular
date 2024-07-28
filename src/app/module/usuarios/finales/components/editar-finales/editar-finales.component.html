@@ -1,1 +1,15 @@
-<p>editar-finales works!</p>
+<div class="">
+
+  <h1>{{ 'pages-usuarios.Title.EditFinalWord' | translate}}</h1>
+  <div class="">Administrador</div>
+
+  @for (item of user; track item; let  i = $index) {
+    <span>{{item.id}}</span> <br>
+    <span>{{item.firstName}}</span> <br>
+    <span>{{item.lastName}}</span> <br>
+    <span>{{item.email}}</span> <br>
+    <span>{{item.password}}</span> <br>
+    <span>{{item.isActive}}</span>
+  }
+
+</div>
