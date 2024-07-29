@@ -37,12 +37,12 @@ export class PrincipalComponent implements OnInit{
 
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
-    const {data} = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.getIdPermiso(data.id,'usuarios')
-    const submodulo = await this.permisosService.getIdPermiso(data.id,'administradores')
-    const response = await this.permisosService.permisos(data.id, modulo.data[0].moduloId, 3, submodulo.data[0].id);
-    for (const iterator of response.data) {
-      this.permisos.push(iterator)
+    const userData = await this.userService.getUser('authadmin');
+    const modulo = await this.permisosService.permisos(userData.data.id)
+    const response1 = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'usuarios').permisosSubmodulos
+    const response2 = response1.find((e: any) => e.nombre_permiso == 'administradores').permisosAcciones
+    for (const iterator of response2) {
+      this.permisos.push(iterator.nombre_permiso)
     }
   }
 

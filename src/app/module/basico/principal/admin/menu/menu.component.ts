@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     BuscadorComponent,
     TranslateModule,
+    CommonModule
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
@@ -32,12 +33,12 @@ export class MenuComponent implements OnInit{
 
   async ngOnInit() {
     const userData = await this.userService.getUser('authadmin')
-    const response = await this.permisosService.permisos(userData.data.id,0,1,0)
+    const response = await this.permisosService.permisos(userData.data.id)
     this.menu = response.data
   }
 
   tienePermiso(nombre: string): boolean {
-    return this.menu.some((permiso) => permiso.nombre === nombre);
+    return this.menu.some((permiso) => permiso.permiso_nombre_permiso === nombre);
   }
 
   goTo(url: string){

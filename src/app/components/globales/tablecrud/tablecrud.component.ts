@@ -47,7 +47,7 @@ export class TablecrudComponent implements OnInit {
   }
 
   tienePermiso(nombre: string): boolean {
-    return this.permisosAcciones.some((permiso) => permiso.nombre === nombre);
+    return this.permisosAcciones.some((permiso) => permiso === nombre);
   }
 
   listar() {

@@ -9,13 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
 
-interface PermisoInterface {
-  id: number;
-  moduloId: number;
-  nombre: string;
-  tipo: number;
-  userId: number;
-}
 
 @Component({
   selector: 'app-menu-usuarios-index',
@@ -32,20 +25,20 @@ export class IndexComponent implements OnInit{
     private permisosService :PermisosService
   ) { }
 
-  menu: PermisoInterface[] = []
+  menu: any[] = []
 
   async ngOnInit() {
-    const { data } = await this.userService.getUser('authadmin')
-    const modulo = await this.permisosService.getIdPermiso(data.id,'usuarios')
-    console.log(modulo)
-    const response = await this.permisosService.permisos(data.id,modulo.data[0].moduloId,2,0)
-    for (const iterator of response.data) {
+    const userData = await this.userService.getUser('authadmin')
+    const modulo = await this.permisosService.permisos(userData.data.id)
+    const response  = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'usuarios').permisosSubmodulos
+
+    for (const iterator of response) {
       this.menu.push(iterator)
     }
   }
 
   tienePermiso(nombre: string): boolean {
-    return this.menu.some((permiso: PermisoInterface) => permiso.nombre === nombre);
+    return this.menu.some((permiso) => permiso.nombre_permiso === nombre);
   }
 
   goTo(url: string){
