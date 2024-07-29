@@ -10,6 +10,13 @@ export class PermisosService {
 
   constructor() { }
 
+  async listaPermisos(){
+    let complemento = `modulos`
+    let urlCopleta = environment.apiUrl+complemento
+    const data = axios.get(urlCopleta)
+    return data
+  }
+
   async permisos(idUsuario: number){
     let complemento = `asignacion/mis-permisos/${idUsuario}`
     let urlCopleta = environment.apiUrl+complemento
@@ -23,4 +30,5 @@ export class PermisosService {
     const data = axios.get(urlCopleta)
     return data
   }
+
 }

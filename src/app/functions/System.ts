@@ -6,3 +6,4 @@ export function openCloseModal(name: string): void {
     ($(modal) as any).modal('toggle');
   }
 }
+

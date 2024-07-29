@@ -6,7 +6,8 @@
     "SeeAdminWord":"See admin",
     "CreateUserFinalWord":"Create user finals",
     "EditUserFinalWord":"Edit user final",
-    "SeeUserFinalWord":"See user final"
+    "SeeUserFinalWord":"See user final",
+    "PermissionsTitle": "Permissions"
   },
   "Index": {
     "buttonAdmins":"Admins users",

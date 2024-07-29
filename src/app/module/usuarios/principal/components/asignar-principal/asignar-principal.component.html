@@ -1,41 +1,38 @@
 <div class="">
 
-  <h1>Asgnacion</h1>
+  <h1>{{ 'pages-usuarios.Title.PermissionsTitle' | translate}}</h1>
 
-  modulo usuarios <br>
 
-  permiso1<br>
-  permiso2<br>
-  permiso3<br>
-  permiso4<br>
-  permiso5<br>
-  permiso6<br><br>
-
-  publicaciones<br>
-
-  permiso1<br>
-  permiso2<br>
-  permiso3<br>
-  permiso4<br>
-  permiso5<br>
-  permiso6<br><br>
-
-  galeria<br>
-
-  permiso1<br>
-  permiso2<br>
-  permiso3<br>
-  permiso4<br>
-  permiso5<br>
-  permiso6<br><br>
-
-  Correo<br>
-
-  permiso1<br>
-  permiso2<br>
-  permiso3<br>
-  permiso4<br>
-  permiso5<br>
-  permiso6<br>
+  <div class="parent">
+    @for (modulos of permisos; track $index) {
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" (click)="toggleCollapse(modulos.permiso_nombre_permiso, modulos.toogle)">
+              {{modulos.permiso_nombre_permiso}}
+            </button>
+          </h5>
+        </div>
+      </div>
+      <div *ngIf="modulos.toogle">
+        <div class="item">
+          @for (subModulos of modulos.permisosSubmodulos; track $index) {
+            <div class="card">
+              <div class="card-header">
+                {{subModulos.nombre_permiso}}
+              </div>
+              <div class="card-body">
+                @for (acciones of subModulos.permisosAcciones; track $index) {
+                  {{acciones.nombre_permiso}} <br>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      <br>
+    }
+  </div>
 
 </div>
+
