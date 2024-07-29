@@ -16,4 +16,11 @@ export class PermisosService {
     const data = axios.get(urlCopleta)
     return data
   }
+
+  async getIdPermiso(id: number, permiso: string){
+    let complemento = `permisos-modulos/mis-permisos/${permiso}/${id}`
+    let urlCopleta = environment.apiUrl+complemento
+    const data = axios.get(urlCopleta)
+    return data
+  }
 }

@@ -32,7 +32,9 @@ export class FinalesComponent implements OnInit{
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
     const {data} = await this.userService.getUser('authadmin');
-    const response = await this.permisosService.permisos(data.id, 1, 3, 3);
+    const modulo = await this.permisosService.getIdPermiso(data.id,'usuarios')
+    const submodulo = await this.permisosService.getIdPermiso(data.id,'finales')
+    const response = await this.permisosService.permisos(data.id, modulo.data[0].moduloId, 3, submodulo.data[0].id);
     for (const iterator of response.data) {
       this.permisos.push(iterator)
     }
