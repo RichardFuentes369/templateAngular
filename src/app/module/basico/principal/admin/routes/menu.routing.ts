@@ -5,7 +5,7 @@ import { adminGuard } from '../../../../../guards/roles/admin/admin.guard';
 // componentes
 import { IndexComponent as UsuariosIndex } from '../../../../usuarios/index/index.component';
 import { IndexComponent as PublicacionesIndex } from '../../../../publicaciones/index/index.component';
-import { PrincipalComponent } from '../../../../usuarios/principal/principal.component';
+import { ModulosComponent as ModulosIndex } from '../../../../modulos/modulos/modulos.component';
 
 export const MenuRoutes: Routes = [
   // Modulo Usuarios
@@ -40,5 +40,22 @@ export const MenuRoutes: Routes = [
     canActivate: [
       adminGuard
     ],
+  },
+
+  // Modulo Modulos
+  {
+    path: 'index-modulos',
+    title: 'Modulos',
+    component: ModulosIndex,
+    canActivate: [
+      adminGuard
+    ],
+  },
+  {
+    path: 'index-modulos',
+    canActivate: [
+      adminGuard
+    ],
+    loadChildren: () => import('../../../../modulos/routes/principal.routing').then(x=>x.ModulosRoutes)
   },
 ];
