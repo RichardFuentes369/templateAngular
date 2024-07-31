@@ -3,12 +3,20 @@ import { Routes } from '@angular/router';
 import { adminGuard } from '../../../guards/roles/admin/admin.guard';
 
 // componentes
-import { ModulosComponent } from '../modulos/modulos.component';
+import { ModulosComponent as ModulosIndex } from '../modulos/modulos.component';
 import { CrearModuloComponent } from '../modulos/components/crear-modulo/crear-modulo.component';
 import { EditarModuloComponent } from '../modulos/components/editar-modulo/editar-modulo.component';
 import { VerModuloComponent } from '../modulos/components/ver-modulo/ver-modulo.component';
 
+
 export const ModulosRoutes: Routes = [
+  {
+    path: '',
+    canActivate: [
+      adminGuard
+    ],
+    component: ModulosIndex,
+  },
   {
     path: 'crear-modulo',
     title: 'Crear nuevo modulo',
@@ -23,5 +31,10 @@ export const ModulosRoutes: Routes = [
     path: 'editar-modulo',
     title: 'Editar modulo',
     component: VerModuloComponent,
+  },
+  {
+    path: 'index-submodulos',
+    title: 'Submodulos',
+    loadChildren: () => import('./submodulos.routing').then(x=>x.SubModulosRoutes)
   },
 ];

@@ -5,7 +5,6 @@ import { adminGuard } from '../../../../../guards/roles/admin/admin.guard';
 // componentes
 import { IndexComponent as UsuariosIndex } from '../../../../usuarios/index/index.component';
 import { IndexComponent as PublicacionesIndex } from '../../../../publicaciones/index/index.component';
-import { ModulosComponent as ModulosIndex } from '../../../../modulos/modulos/modulos.component';
 
 export const MenuRoutes: Routes = [
   // Modulo Usuarios
@@ -46,16 +45,6 @@ export const MenuRoutes: Routes = [
   {
     path: 'index-modulos',
     title: 'Modulos',
-    component: ModulosIndex,
-    canActivate: [
-      adminGuard
-    ],
-  },
-  {
-    path: 'index-modulos',
-    canActivate: [
-      adminGuard
-    ],
-    loadChildren: () => import('../../../../modulos/routes/principal.routing').then(x=>x.ModulosRoutes)
+    loadChildren: () => import('../../../../modulos/routes/modulos.routing').then(x=>x.ModulosRoutes)
   },
 ];

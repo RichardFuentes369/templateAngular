@@ -52,7 +52,7 @@ export class ModulosComponent implements OnInit{
 
   verData (_id: string){
     console.log("verData "+_id)
-    this.router.navigate([`/admin/menu/index-modulos/ver-modulo/`], { queryParams: { id: _id } });
+    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`], { queryParams: { modulo: _id } });
   }
   crearData (_id: string){
     console.log("crearData "+_id)

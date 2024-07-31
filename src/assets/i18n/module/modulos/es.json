@@ -1,5 +1,7 @@
 {
   "Title": {
-    "Module": "Modulos"
+    "Module": "Modulos",
+    "Submodules": "Submodulos",
+    "Permissions": "Permisos"
   }
 }
