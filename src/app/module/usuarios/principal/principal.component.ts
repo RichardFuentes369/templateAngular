@@ -72,19 +72,19 @@ export class PrincipalComponent implements OnInit{
 
   verData (_id: string){
     console.log("verData "+_id)
-    this.router.navigate([`/admin/menu/index-usuarios/principal/ver-administrador/`], { queryParams: { id: _id } });
+    this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });
   }
   crearData (_id: string){
     console.log("crearData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/principal/crear-administrador/']);
+    this.router.navigate(['/admin/menu/index-usuarios/administradores/crear-administrador/']);
   }
   editarData (_id: string){
     console.log("editarData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/principal/editar-administrador/'], { queryParams: { id: _id } });
+    this.router.navigate(['/admin/menu/index-usuarios/administradores/editar-administrador/'], { queryParams: { id: _id } });
   }
   asignarData (_id: string){
     console.log("asignarData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/principal/asignar-administrador/'], { queryParams: { id: _id } });
+    this.router.navigate(['/admin/menu/index-usuarios/administradores/asignar-administrador/'], { queryParams: { id: _id } });
   }
 
   @ViewChild(TablecrudComponent)
