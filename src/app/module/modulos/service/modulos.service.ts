@@ -9,6 +9,13 @@ export class ModulosService {
 
   constructor() { }
 
+  async listaPermisos(){
+    let complemento = `modulos`
+    let urlCopleta = environment.apiUrl+complemento
+    const data = axios.get(urlCopleta)
+    return data
+  }
+
   async buscarPermiso(padreId:number, nombrePermiso: string){
     let complemento = `modulos/buscar-permiso/${padreId}/${nombrePermiso}`
     let urlCopleta = environment.apiUrl+complemento
