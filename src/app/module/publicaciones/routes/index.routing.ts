@@ -23,7 +23,7 @@ export const PublicacionesRoutes: Routes = [
   {
     path: 'tags',
     title: 'Tags',
-    data: { breadcrumb: 'Tags' },
+    data: { breadcrumb: 'Etiquetas' },
     loadChildren: () => import('./tags.routing').then(x=>x.TagsRoutes)
   },
   {
