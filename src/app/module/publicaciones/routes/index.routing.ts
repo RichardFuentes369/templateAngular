@@ -1,0 +1,35 @@
+import { Routes } from '@angular/router';
+
+import { adminGuard } from '../../../guards/roles/admin/admin.guard';
+
+// componentes
+import { IndexComponent } from '../../publicaciones/admin/index/index.component';
+
+export const PublicacionesRoutes: Routes = [
+  {
+    path: '',
+    data: { breadcrumb: 'Index' },
+    canActivate: [
+      adminGuard
+    ],
+    component: IndexComponent,
+  },
+  {
+    path: 'secciones',
+    title: 'Secciones',
+    data: { breadcrumb: 'Secciones' },
+    loadChildren: () => import('./secciones.routing').then(x=>x.SeccionesRoutes)
+  },
+  {
+    path: 'tags',
+    title: 'Tags',
+    data: { breadcrumb: 'Tags' },
+    loadChildren: () => import('./tags.routing').then(x=>x.TagsRoutes)
+  },
+  {
+    path: 'publicaciones',
+    title: 'Publicaciones',
+    data: { breadcrumb: 'Mis Publicaciones' },
+    loadChildren: () => import('./publicaciones.routing').then(x=>x.PublicacionesRoutes)
+  },
+];

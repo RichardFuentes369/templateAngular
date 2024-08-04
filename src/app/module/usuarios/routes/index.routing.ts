@@ -9,7 +9,7 @@ export const UsuariosRoutes: Routes = [
   {
     path: '',
     title: 'Principal',
-    data: { breadcrumb: 'Principal' },
+    data: { breadcrumb: 'Index' },
     component: IndexComponent,
   },
   {

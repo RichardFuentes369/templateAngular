@@ -1,3 +1,10 @@
 {
-  "WordPost": "Publicaciones"
+  "Title": {
+    "pagePublicationsTitle":"Publicaciones"
+  },
+  "Index": {
+    "buttonSection":"Sección",
+    "buttonTags":"Etiquetas",
+    "buttonMyPublications":"Mis Publicaciones"
+  }
 }

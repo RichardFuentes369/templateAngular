@@ -14,21 +14,19 @@ export const MenuRoutes: Routes = [
     loadChildren: () => import('../../../../usuarios/routes/index.routing').then(x=>x.UsuariosRoutes)
   },
 
-  // Modulo Publicaciones
-  {
-    path: 'index-publicaciones',
-    title: 'Publicaciones',
-    component: PublicacionesIndex,
-    canActivate: [
-      adminGuard
-    ],
-  },
-
   // Modulo Modulos
   {
     path: 'index-modulos',
     title: 'Modulos',
     data: { breadcrumb: 'Modulos' },
     loadChildren: () => import('../../../../modulos/routes/modulos.routing').then(x=>x.ModulosRoutes)
+  },
+
+  // Modulo Publicaciones
+  {
+    path: 'index-publicaciones',
+    title: 'Publicaciones',
+    data: { breadcrumb: 'Publicaciones' },
+    loadChildren: () => import('../../../../publicaciones/routes/index.routing').then(x=>x.PublicacionesRoutes)
   },
 ];
