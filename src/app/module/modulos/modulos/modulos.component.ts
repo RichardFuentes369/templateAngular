@@ -26,6 +26,8 @@ export class ModulosComponent implements OnInit{
   permisos: any[] = []
 
   async ngOnInit() {
+    localStorage.removeItem('modulo')
+    localStorage.removeItem('submodulo')
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id)
@@ -52,8 +54,8 @@ export class ModulosComponent implements OnInit{
   // fin datos que envio al componente
 
   verData (_id: string){
-    console.log("verData "+_id)
-    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`, _id]);
+    localStorage.setItem('modulo', _id)
+    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`]);
   }
   crearData (_id: string){
     console.log("crearData "+_id)

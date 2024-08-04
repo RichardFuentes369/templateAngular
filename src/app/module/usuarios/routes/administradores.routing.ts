@@ -12,27 +12,31 @@ import { AsignarPrincipalComponent } from '../principal/components/asignar-princ
 export const UsuariosAdministradoresRoutes: Routes = [
   {
     path: '',
-    data: { breadcrumb: 'index' },
+    data: { breadcrumb: 'Lista' },
     title: 'Administradores',
     component: PrincipalComponent,
   },
   {
     path: 'crear-administrador',
+    data: { breadcrumb: 'Crear' },
     title: 'Crear usuario administrador',
     component: CrearPrincipalComponent,
   },
   {
     path: 'ver-administrador',
+    data: { breadcrumb: 'Ver' },
     title: 'Ver usuario administrador',
     component: VerPrincipalComponent,
   },
   {
     path: 'editar-administrador',
+    data: { breadcrumb: 'Editar' },
     title: 'Editar usuario administrador',
     component: EditarPrincipalComponent,
   },
   {
     path: 'asignar-administrador',
+    data: { breadcrumb: 'Asignar' },
     title: 'Asignar usuario administrador',
     component: AsignarPrincipalComponent,
   },

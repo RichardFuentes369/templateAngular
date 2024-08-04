@@ -23,11 +23,14 @@ export class PermisosComponent implements OnInit{
   ) { }
 
   permisos: any[] = []
-  moduloPadre: number = 0
+  moduloPadre: any = 0
 
   async ngOnInit() {
+    this.moduloPadre = localStorage.getItem('submodulo')
 
-    this.moduloPadre = this.route.snapshot.params?.['idSubmodulo']
+    if(!this.moduloPadre){
+      this.router.navigate([`/admin/menu/index-modulos`]);
+    }
     // si modulo y submodulo no existe devuelvo
 
     await this.userService.refreshToken('authadmin');
@@ -41,7 +44,7 @@ export class PermisosComponent implements OnInit{
 
   // inicio datos que envio al componente
   showcampoFiltro = true
-  endPoint = `modulos/lista/${this.route.snapshot.params?.['idSubmodulo']}`
+  endPoint = `modulos/lista/${localStorage.getItem('submodulo')}`
   columnas = [
     {
       title: 'ID',

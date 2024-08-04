@@ -32,6 +32,13 @@ export class MenuComponent implements OnInit{
   menu: any[] = []
 
   async ngOnInit() {
+
+    for (const key in localStorage) {
+      if (key != 'token') {
+        delete localStorage[key];
+      }
+    }
+
     const userData = await this.userService.getUser('authadmin')
     const response = await this.permisosService.permisos(userData.data.id)
     this.menu = response.data

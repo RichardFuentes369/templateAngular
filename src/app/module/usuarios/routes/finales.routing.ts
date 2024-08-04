@@ -11,22 +11,25 @@ import { VerFinalesComponent } from '../finales/components/ver-finales/ver-final
 export const UsuariosFinalesRoutes: Routes = [
   {
     path: '',
-    data: { breadcrumb: 'index' },
+    data: { breadcrumb: 'Lista' },
     title: 'Usuarios',
     component: FinalesComponent,
   },
   {
     path: 'crear-finales',
+    data: { breadcrumb: 'Crear' },
     title: 'Crear usuario final',
     component: CrearFinalesComponent,
   },
   {
     path: 'ver-finales',
+    data: { breadcrumb: 'Ver' },
     title: 'Ver usuario final',
     component: VerFinalesComponent,
   },
   {
     path: 'editar-finales',
+    data: { breadcrumb: 'Editar' },
     title: 'Editar usuario final',
     component: EditarFinalesComponent,
   },

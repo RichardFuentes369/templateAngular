@@ -6,7 +6,7 @@ import { PermisosComponent } from '../permisos/permisos.component'
 
 export const PermisosRoutes: Routes = [
   {
-    path: ':idSubmodulo',
+    path: '',
     data: { breadcrumb: 'Index' },
     canActivate: [
       adminGuard
