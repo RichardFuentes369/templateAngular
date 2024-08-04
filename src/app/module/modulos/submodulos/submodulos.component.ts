@@ -34,7 +34,6 @@ export class SubmodulosComponent implements OnInit{
     if(!this.moduloPadre){
       this.router.navigate([`/admin/menu/index-modulos`]);
     }
-
     const idPermisoModulo = (await this.module.buscarPermiso(0,'modulo')).data.id
     if(this.moduloPadre == idPermisoModulo){
       this.isModule = true

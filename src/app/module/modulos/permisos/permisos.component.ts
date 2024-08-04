@@ -31,7 +31,6 @@ export class PermisosComponent implements OnInit{
     if(!this.moduloPadre){
       this.router.navigate([`/admin/menu/index-modulos`]);
     }
-    // si modulo y submodulo no existe devuelvo
 
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
