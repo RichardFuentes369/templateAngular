@@ -41,6 +41,7 @@ const routes: Routes = [
       },
       {
         path: 'menu',
+        data: { breadcrumb: 'Menu' },
         loadChildren: () => import('./module/basico/principal/admin/routes/menu.routing').then(x=>x.MenuRoutes)
       },
       {
@@ -54,6 +55,7 @@ const routes: Routes = [
   },
   {
     path: 'user',
+    data: { breadcrumb: 'Menu' },
     component: UserComponent,
     children: [
       {

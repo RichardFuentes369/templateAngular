@@ -10,6 +10,7 @@ export const MenuRoutes: Routes = [
   {
     path: 'index-usuarios',
     title: 'Principal',
+    data: { breadcrumb: 'Principal' },
     loadChildren: () => import('../../../../usuarios/routes/index.routing').then(x=>x.UsuariosRoutes)
   },
 
@@ -27,6 +28,7 @@ export const MenuRoutes: Routes = [
   {
     path: 'index-modulos',
     title: 'Modulos',
+    data: { breadcrumb: 'Modulos' },
     loadChildren: () => import('../../../../modulos/routes/modulos.routing').then(x=>x.ModulosRoutes)
   },
 ];

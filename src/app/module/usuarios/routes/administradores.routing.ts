@@ -12,6 +12,7 @@ import { AsignarPrincipalComponent } from '../principal/components/asignar-princ
 export const UsuariosAdministradoresRoutes: Routes = [
   {
     path: '',
+    data: { breadcrumb: 'index' },
     title: 'Administradores',
     component: PrincipalComponent,
   },

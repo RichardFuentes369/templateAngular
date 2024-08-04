@@ -1,18 +1,17 @@
 <div class="">
-
-  @if(rutaOrdenada.length>0){
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb p-0 bg-light">
-        @for (item of rutaOrdenada; track item; let ds = $last) {
-          @if(ds == true){
-            <li class="breadcrumb-item inactive" aria-current="page" (click)="goTo(item)" style="cursor: pointer">{{item}}</li>
-          }
-          @else {
-            <li class="breadcrumb-item active" aria-current="page" (click)="goTo(item)" style="cursor: pointer">{{item}}</li>
-          }
-        }
-      </ol>
-    </nav>
-  }
-
+  <pre>
+    {{breadcrumbs|json}}
+  </pre>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs; let last = last">
+        <ng-container *ngIf="!last">
+          <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+        </ng-container>
+        <ng-container *ngIf="last">
+          {{ breadcrumb.label }}
+        </ng-container>
+      </li>
+    </ol>
+  </nav>
 </div>

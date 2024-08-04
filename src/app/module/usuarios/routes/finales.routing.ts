@@ -11,6 +11,7 @@ import { VerFinalesComponent } from '../finales/components/ver-finales/ver-final
 export const UsuariosFinalesRoutes: Routes = [
   {
     path: '',
+    data: { breadcrumb: 'index' },
     title: 'Usuarios',
     component: FinalesComponent,
   },

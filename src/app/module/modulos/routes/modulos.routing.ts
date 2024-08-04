@@ -12,6 +12,7 @@ import { VerModuloComponent } from '../modulos/components/ver-modulo/ver-modulo.
 export const ModulosRoutes: Routes = [
   {
     path: '',
+    data: { breadcrumb: 'Index' },
     canActivate: [
       adminGuard
     ],
@@ -35,6 +36,7 @@ export const ModulosRoutes: Routes = [
   {
     path: 'index-submodulos',
     title: 'Submodulos',
+    data: { breadcrumb: 'Submodulos' },
     loadChildren: () => import('./submodulos.routing').then(x=>x.SubModulosRoutes)
   },
 ];

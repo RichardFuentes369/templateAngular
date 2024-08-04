@@ -9,16 +9,19 @@ export const UsuariosRoutes: Routes = [
   {
     path: '',
     title: 'Principal',
+    data: { breadcrumb: 'Principal' },
     component: IndexComponent,
   },
   {
     path: 'administradores',
     title: 'Submodulos',
+    data: { breadcrumb: 'Administradores' },
     loadChildren: () => import('./administradores.routing').then(x=>x.UsuariosAdministradoresRoutes)
   },
   {
     path: 'finales',
     title: 'Submodulos',
+    data: { breadcrumb: 'Finales' },
     loadChildren: () => import('./finales.routing').then(x=>x.UsuariosFinalesRoutes)
   },
 ];

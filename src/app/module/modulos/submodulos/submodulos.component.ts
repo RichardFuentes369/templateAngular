@@ -29,7 +29,10 @@ export class SubmodulosComponent implements OnInit{
   isModule: boolean = false
 
   async ngOnInit() {
-    this.moduloPadre = this.route.snapshot.queryParams?.['modulo']
+    console.log(this.route.snapshot.params)
+    this.moduloPadre = this.route.snapshot.params?.['idModulo']
+    // si modulo no existe devuelvo con un mensaje
+
     const idPermisoModulo = (await this.module.buscarPermiso(0,'modulo')).data.id
     if(this.moduloPadre == idPermisoModulo){
       this.isModule = true
@@ -45,7 +48,7 @@ export class SubmodulosComponent implements OnInit{
 
   // inicio datos que envio al componente
   showcampoFiltro = true
-  endPoint = `modulos/lista/${this.route.snapshot.queryParams?.['modulo']}`
+  endPoint = `modulos/lista/${this.route.snapshot.params?.['idModulo']}`
   columnas = [
     {
       title: 'ID',
@@ -61,7 +64,6 @@ export class SubmodulosComponent implements OnInit{
 
   verData (_id: string){
     console.log("verData "+_id)
-    let modulo = this.route.snapshot.queryParams?.['modulo']
-    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/index-permisos`], { queryParams: { modulo: modulo, submodulo: _id } });
+    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/${this.moduloPadre}/index-permisos/${_id}`]);
   }
 }

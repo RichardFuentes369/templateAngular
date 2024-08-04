@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
 import Swal from 'sweetalert2'
@@ -19,7 +19,8 @@ export class ModulosComponent implements OnInit{
     private router: Router,
     private userService :AuthService,
     private permisosService :PermisosService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private route: ActivatedRoute
   ) { }
 
   permisos: any[] = []
@@ -52,7 +53,7 @@ export class ModulosComponent implements OnInit{
 
   verData (_id: string){
     console.log("verData "+_id)
-    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`], { queryParams: { modulo: _id } });
+    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`, _id]);
   }
   crearData (_id: string){
     console.log("crearData "+_id)

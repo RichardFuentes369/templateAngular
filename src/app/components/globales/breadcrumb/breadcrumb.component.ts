@@ -1,64 +1,26 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { Subscription } from 'rxjs';
-
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute, RouterModule } from '@angular/router';
+import { BreadcrumbService } from './service/breadcrumb.service';
 
 @Component({
-  selector: 'app-globales-breadcrumb',
+  selector: 'app-globales-breadcrumbs',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   templateUrl: './breadcrumb.component.html',
-  styleUrl: './breadcrumb.component.scss'
+  styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent implements OnInit, OnDestroy {
+export class BreadcrumbsComponent implements OnInit {
+  breadcrumbs: any[] = [];
 
-  private routerSubscription: Subscription = new Subscription(); // Inicializar aquí
-
-  constructor(private router: Router) {}
-
-  rutaOrdenada :string[] = []
+  constructor(private breadcrumbService: BreadcrumbService) {}
 
   ngOnInit() {
-    this.routerSubscription = this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.onUrlChange();
-      }
+    this.breadcrumbService.breadcrumbs$.subscribe(breadcrumbs => {
+      this.breadcrumbs = breadcrumbs;
     });
-
-    let url = window.location.pathname
-    let nuevaUrl = url.split('/')
-    nuevaUrl.shift()
-    nuevaUrl.shift()
-    for (const item of nuevaUrl) {
-      this.rutaOrdenada.push(item)
-    }
-  }
-
-  onUrlChange() {
-    this.rutaOrdenada = []
-    let url = window.location.pathname
-    let nuevaUrl = url.split('/')
-    nuevaUrl.shift()
-    nuevaUrl.shift()
-    for (const item of nuevaUrl) {
-      this.rutaOrdenada.push(item)
-    }
-  }
-
-  ngOnDestroy() {
-    if (this.routerSubscription) {
-      this.routerSubscription.unsubscribe();
-    }
-  }
-
-  goTo(url: string){
-    let pathCompleto = window.location.pathname
-    let quedeHasta = url
-    let startIndex = pathCompleto.indexOf(quedeHasta);
-    if (startIndex !== -1) {
-        let newUrl = pathCompleto.substring(0, startIndex);
-        let urlReal = newUrl+quedeHasta
-        this.router.navigate([urlReal]);
-    }
   }
 }

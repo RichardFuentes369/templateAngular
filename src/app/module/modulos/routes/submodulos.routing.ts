@@ -7,15 +7,17 @@ import { SubmodulosComponent as SubmoduloIndex } from '../submodulos/submodulos.
 
 export const SubModulosRoutes: Routes = [
   {
-    path: '',
+    path: ':idModulo',
+    data: { breadcrumb: 'Index' },
     canActivate: [
       adminGuard
     ],
     component: SubmoduloIndex,
   },
   {
-    path: 'index-permisos',
+    path: ':idModulo/index-permisos',
     title: 'Permisos',
+    data: { breadcrumb: 'Permisos' },
     loadChildren: () => import('./permisos.routing').then(x=>x.PermisosRoutes)
   },
 ];
