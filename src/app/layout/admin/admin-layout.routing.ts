@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { adminGuard } from '../../guards/roles/admin/admin.guard'
+import { adminGuard } from '@guards/roles/admin/admin.guard'
 
 //componentes
-import { PerfilComponent } from '../../module/basico/principal/admin/perfil/perfil.component'
-import { ConfiguracionComponent } from '../../module/basico/principal/admin/configuracion/configuracion.component'
-import { MenuComponent } from '../../module/basico/principal/admin/menu/menu.component'
+import { PerfilComponent } from '@module/basico/principal/admin/perfil/perfil.component'
+import { ConfiguracionComponent } from '@module/basico/principal/admin/configuracion/configuracion.component'
+import { MenuComponent } from '@module/basico/principal/admin/menu/menu.component'
 
 
 export const AdminLayoutRoutes: Routes = [

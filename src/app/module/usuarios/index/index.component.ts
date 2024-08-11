@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { PipesModule } from '../../../pipes/pipes.module';
+import { PipesModule } from '@pipes/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthService } from '../../../guards/service/auth.service';
-import { PermisosService } from '../../../services/globales/permisos/permisos.service';
+import { AuthService } from '@guards/service/auth.service';
+import { PermisosService } from '@services/globales/permisos/permisos.service';
 
 
 @Component({

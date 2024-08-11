@@ -6,10 +6,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
-import { AuthService } from '../../../guards/service/auth.service';
-import { PermisosService } from '../../../services/globales/permisos/permisos.service';
-import { LoadingComponent } from '../../../components/globales/loading/loading.component';
-import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
+import { AuthService } from '@guards/service/auth.service';
+import { PermisosService } from '@services/globales/permisos/permisos.service';
+import { LoadingComponent } from '@components/globales/loading/loading.component';
+import { TablecrudComponent } from '@components/globales/tablecrud/tablecrud.component';
 import { PrincipalService } from './service/principal.service';
 
 @Component({

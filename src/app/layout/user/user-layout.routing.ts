@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { userGuard } from '../../guards/roles/user/user.guard';
+import { userGuard } from '@guards/roles/user/user.guard';
 
 //componentes
-import { PerfilComponent } from '../../module/basico/principal/user/perfil/perfil.component'
-import { ConfiguracionComponent } from '../../module/basico/principal/user/configuracion/configuracion.component'
+import { PerfilComponent } from '@module/basico/principal/user/perfil/perfil.component'
+import { ConfiguracionComponent } from '@module/basico/principal/user/configuracion/configuracion.component'
 
 export const UserLayoutRoutes: Routes = [
   {

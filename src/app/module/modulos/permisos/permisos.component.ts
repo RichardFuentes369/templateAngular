@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TablecrudComponent } from '../../../components/globales/tablecrud/tablecrud.component';
+import { TablecrudComponent } from '@components/globales/tablecrud/tablecrud.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../../../guards/service/auth.service';
-import { PermisosService } from '../../../services/globales/permisos/permisos.service';
+import { AuthService } from '@guards/service/auth.service';
+import { PermisosService } from '@services/globales/permisos/permisos.service';
 
 @Component({
   selector: 'app-permisos',

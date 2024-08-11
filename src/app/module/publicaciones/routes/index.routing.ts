@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { adminGuard } from '../../../guards/roles/admin/admin.guard';
+import { adminGuard } from '@guards/roles/admin/admin.guard';
 
 // componentes
-import { IndexComponent } from '../../publicaciones/admin/index/index.component';
+import { IndexComponent } from '../admin/index/index.component';
 
 export const PublicacionesRoutes: Routes = [
   {

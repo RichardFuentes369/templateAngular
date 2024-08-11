@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AuthService } from '../../../../../guards/service/auth.service';
-import { ModulosService } from '../../../../modulos/service/modulos.service';
+import { AuthService } from '@guards/service/auth.service';
+import { ModulosService } from '@module/modulos/service/modulos.service';
 import { PrincipalService } from '../../service/principal.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';

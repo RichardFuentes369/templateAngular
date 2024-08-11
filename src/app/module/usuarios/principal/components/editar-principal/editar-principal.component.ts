@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { AuthService } from '../../../../../guards/service/auth.service';
-import { PermisosService } from '../../../../../services/globales/permisos/permisos.service';
 import { PrincipalService } from '../../service/principal.service';
 import { CommonModule } from '@angular/common';
 

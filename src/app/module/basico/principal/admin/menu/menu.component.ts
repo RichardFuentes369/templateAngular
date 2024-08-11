@@ -4,10 +4,10 @@ import { Component, OnInit, Pipe } from '@angular/core';
 
 
 import Swal from 'sweetalert2'
-import { AuthService } from '../../../../../guards/service/auth.service';
-import { PermisosService } from '../../../../../services/globales/permisos/permisos.service';
+import { AuthService } from '@guards/service/auth.service';
+import { PermisosService } from '@services/globales/permisos/permisos.service';
 
-import { BuscadorComponent } from '../../../../../components/globales/buscador/buscador.component';
+import { BuscadorComponent } from '@components/globales/buscador/buscador.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

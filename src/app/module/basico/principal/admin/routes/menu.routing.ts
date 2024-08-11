@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { adminGuard } from '../../../../../guards/roles/admin/admin.guard';
+import { adminGuard } from '@guards/roles/admin/admin.guard';
 
 // componentes
-import { IndexComponent as PublicacionesIndex } from '../../../../publicaciones/index/index.component';
+import { IndexComponent as PublicacionesIndex } from '@module/publicaciones/index/index.component';
 
 export const MenuRoutes: Routes = [
   // Modulo Usuarios
@@ -11,7 +11,7 @@ export const MenuRoutes: Routes = [
     path: 'index-usuarios',
     title: 'Principal',
     data: { breadcrumb: 'Principal' },
-    loadChildren: () => import('../../../../usuarios/routes/index.routing').then(x=>x.UsuariosRoutes)
+    loadChildren: () => import('@module/usuarios/routes/index.routing').then(x=>x.UsuariosRoutes)
   },
 
   // Modulo Modulos
@@ -19,7 +19,7 @@ export const MenuRoutes: Routes = [
     path: 'index-modulos',
     title: 'Modulos',
     data: { breadcrumb: 'Modulos' },
-    loadChildren: () => import('../../../../modulos/routes/modulos.routing').then(x=>x.ModulosRoutes)
+    loadChildren: () => import('@module/modulos/routes/modulos.routing').then(x=>x.ModulosRoutes)
   },
 
   // Modulo Publicaciones
@@ -27,6 +27,6 @@ export const MenuRoutes: Routes = [
     path: 'index-publicaciones',
     title: 'Publicaciones',
     data: { breadcrumb: 'Publicaciones' },
-    loadChildren: () => import('../../../../publicaciones/routes/index.routing').then(x=>x.PublicacionesRoutes)
+    loadChildren: () => import('@module/publicaciones/routes/index.routing').then(x=>x.PublicacionesRoutes)
   },
 ];
