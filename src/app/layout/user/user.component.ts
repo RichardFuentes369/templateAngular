@@ -3,7 +3,7 @@ import { Router, RouterModule } from '@angular/router'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 import Swal from 'sweetalert2'
-import { IdiomaComponent } from '@components/globales/idioma/idioma.component';
+import { IdiomaComponent } from '@component/globales/idioma/idioma.component';
 @Component({
   selector: 'app-user',
   standalone: true,

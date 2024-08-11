@@ -5,9 +5,9 @@ import { openCloseModal } from '../../../functions/System'
 import { TranslateModule } from '@ngx-translate/core';
 
 import { Router } from '@angular/router';
-import { AuthService } from '@guards/service/auth.service';
-import { PermisosService } from '@services/globales/permisos/permisos.service';
-import { TablecrudComponent } from '@components/globales/tablecrud/tablecrud.component';
+import { AuthService } from '@guard/service/auth.service';
+import { PermisosService } from '@service/globales/permisos/permisos.service';
+import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.component';
 
 @Component({
   selector: 'app-menu-usuarios-finales',

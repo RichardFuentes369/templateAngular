@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { adminGuard } from '@guards/roles/admin/admin.guard';
+import { adminGuard } from '@guard/roles/admin/admin.guard';
 
 // componentes
 import { PublicacionComponent as IndexComponent } from '../admin/publicacion/publicacion.component';

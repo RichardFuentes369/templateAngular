@@ -1,6 +1,6 @@
 import { Component, Renderer2, HostListener, OnInit, ViewChild } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { IdiomaComponent } from '@components/globales/idioma/idioma.component';
+import { IdiomaComponent } from '@component/globales/idioma/idioma.component';
 import { RouterModule } from '@angular/router';
 
 @Component({

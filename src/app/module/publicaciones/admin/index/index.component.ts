@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { PipesModule } from '@pipes/pipes.module';
+import { PipesModule } from '@pipe/pipes.module';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from '@guards/service/auth.service';
-import { PermisosService } from '@services/globales/permisos/permisos.service';
+import { AuthService } from '@guard/service/auth.service';
+import { PermisosService } from '@service/globales/permisos/permisos.service';
 
 @Component({
   selector: 'app-index',

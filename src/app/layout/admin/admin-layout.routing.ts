@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { adminGuard } from '@guards/roles/admin/admin.guard'
+import { adminGuard } from '@guard/roles/admin/admin.guard'
 
 //componentes
 import { PerfilComponent } from '@module/basico/principal/admin/perfil/perfil.component'

@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { TablecrudComponent } from '@components/globales/tablecrud/tablecrud.component';
+import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '@guards/service/auth.service';
-import { PermisosService } from '@services/globales/permisos/permisos.service';
+import { AuthService } from '@guard/service/auth.service';
+import { PermisosService } from '@service/globales/permisos/permisos.service';
 import Swal from 'sweetalert2'
 
 @Component({
