@@ -6,6 +6,8 @@ import { PipesModule } from '@pipe/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { Permisos } from '@functions/System'
+
 import { AuthService } from '@guard/service/auth.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 
@@ -30,7 +32,7 @@ export class IndexComponent implements OnInit{
   async ngOnInit() {
     const userData = await this.userService.getUser('authadmin')
     const modulo = await this.permisosService.permisos(userData.data.id)
-    const response  = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'usuarios').permisosSubmodulos
+    const response  = Permisos(modulo, 'usuarios', '')
 
     for (const iterator of response) {
       this.menu.push(iterator)

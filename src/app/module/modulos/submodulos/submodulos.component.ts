@@ -6,6 +6,7 @@ import { AuthService } from '../../../guards/service/auth.service';
 import { PermisosService } from '../../../services/globales/permisos/permisos.service';
 import { ModulosService } from '../service/modulos.service';
 
+import { Permisos } from '@functions/System'
 @Component({
   selector: 'app-submodulos',
   standalone: true,
@@ -41,8 +42,7 @@ export class SubmodulosComponent implements OnInit{
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id)
-    const response1 = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'modulo').permisosSubmodulos
-    for (const iterator of response1) {
+    for (const iterator of Permisos(modulo, 'modulo','')) {
       this.permisos.push(iterator.nombre_permiso)
     }
   }

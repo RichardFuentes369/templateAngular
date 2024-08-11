@@ -12,6 +12,8 @@ import { LoadingComponent } from '@component/globales/loading/loading.component'
 import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.component';
 import { PrincipalService } from './service/principal.service';
 
+import { Permisos } from '@functions/System'
+
 @Component({
   selector: 'app-principal',
   standalone: true,
@@ -39,9 +41,7 @@ export class PrincipalComponent implements OnInit{
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id)
-    const response1 = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'usuarios').permisosSubmodulos
-    const response2 = response1.find((e: any) => e.nombre_permiso == 'administradores').permisosAcciones
-    for (const iterator of response2) {
+    for (const iterator of Permisos(modulo, 'usuarios','administradores')) {
       this.permisos.push(iterator.nombre_permiso)
     }
   }

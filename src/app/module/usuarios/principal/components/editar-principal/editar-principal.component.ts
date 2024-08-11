@@ -23,6 +23,7 @@ interface AdministradorInterface {
 export class EditarPrincipalComponent implements OnInit{
 
   constructor(
+    private router: Router,
     private route :ActivatedRoute,
     private userPrincipalService :PrincipalService
   ) { }
@@ -36,4 +37,7 @@ export class EditarPrincipalComponent implements OnInit{
     this.user.push(usuarioReal.data)
   }
 
+  goTo (url: string){
+    this.router.navigate([url]);
+  }
 }

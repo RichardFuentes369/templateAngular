@@ -9,6 +9,8 @@ import { AuthService } from '@guard/service/auth.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.component';
 
+import { Permisos } from '@functions/System'
+
 @Component({
   selector: 'app-menu-usuarios-finales',
   standalone: true,
@@ -33,9 +35,7 @@ export class FinalesComponent implements OnInit{
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id)
-    const response1 = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'usuarios').permisosSubmodulos
-    const response2 = response1.find((e: any) => e.nombre_permiso == 'finales').permisosAcciones
-    for (const iterator of response2) {
+    for (const iterator of Permisos(modulo, 'usuarios','finales')) {
       this.permisos.push(iterator.nombre_permiso)
     }
   }

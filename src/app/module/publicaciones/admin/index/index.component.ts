@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '@guard/service/auth.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 
+import { Permisos } from '@functions/System'
 @Component({
   selector: 'app-index',
   standalone: true,
@@ -26,8 +27,8 @@ export class IndexComponent implements OnInit{
   async ngOnInit() {
     const userData = await this.userService.getUser('authadmin')
     const modulo = await this.permisosService.permisos(userData.data.id)
-    const response  = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'publicaciones').permisosSubmodulos
-
+    const response  = Permisos(modulo, 'publicaciones','')
+console.log(response)
     for (const iterator of response) {
       this.menu.push(iterator)
     }

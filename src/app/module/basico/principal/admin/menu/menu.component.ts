@@ -2,8 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router'
 import { Component, OnInit, Pipe } from '@angular/core';
 
-
-import Swal from 'sweetalert2'
 import { AuthService } from '@guard/service/auth.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 

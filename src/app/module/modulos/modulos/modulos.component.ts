@@ -6,6 +6,8 @@ import { AuthService } from '@guard/service/auth.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 import Swal from 'sweetalert2'
 
+import { Permisos } from '@functions/System'
+
 @Component({
   selector: 'app-modulos',
   standalone: true,
@@ -31,8 +33,7 @@ export class ModulosComponent implements OnInit{
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id)
-    const response1 = modulo.data.find((e: any) => e.permiso_nombre_permiso == 'modulo').permisosSubmodulos
-    for (const iterator of response1) {
+    for (const iterator of Permisos(modulo, 'modulo','')) {
       this.permisos.push(iterator.nombre_permiso)
     }
   }
