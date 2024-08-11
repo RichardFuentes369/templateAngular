@@ -41,7 +41,9 @@
     "isActive": ""
   },
   "Buttons": {
-    "createUser": "Create user"
+    "createUser": "Create user",
+    "editUser": "Edit user",
+    "back": "Back"
   },
   "Swal": {
     "TitleAreYouSure": "Are you sure?",
