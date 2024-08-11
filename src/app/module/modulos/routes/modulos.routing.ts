@@ -21,21 +21,33 @@ export const ModulosRoutes: Routes = [
   {
     path: 'crear-modulo',
     title: 'Crear nuevo modulo',
+    canActivate: [
+      adminGuard
+    ],
     component: CrearModuloComponent,
   },
   {
     path: 'ver-modulo',
     title: 'Ver modulo',
+    canActivate: [
+      adminGuard
+    ],
     component: EditarModuloComponent,
   },
   {
     path: 'editar-modulo',
     title: 'Editar modulo',
+    canActivate: [
+      adminGuard
+    ],
     component: VerModuloComponent,
   },
   {
     path: 'index-submodulos',
     title: 'Submodulos',
+    canActivate: [
+      adminGuard
+    ],
     data: { breadcrumb: 'Submodulos' },
     loadChildren: () => import('./submodulos.routing').then(x=>x.SubModulosRoutes)
   },

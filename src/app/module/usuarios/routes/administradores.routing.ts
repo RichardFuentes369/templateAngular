@@ -14,30 +14,45 @@ export const UsuariosAdministradoresRoutes: Routes = [
     path: '',
     data: { breadcrumb: 'Lista' },
     title: 'Administradores',
+    canActivate: [
+      adminGuard
+    ],
     component: PrincipalComponent,
   },
   {
     path: 'crear-administrador',
     data: { breadcrumb: 'Crear' },
     title: 'Crear usuario administrador',
+    canActivate: [
+      adminGuard
+    ],
     component: CrearPrincipalComponent,
   },
   {
     path: 'ver-administrador',
     data: { breadcrumb: 'Ver' },
     title: 'Ver usuario administrador',
+    canActivate: [
+      adminGuard
+    ],
     component: VerPrincipalComponent,
   },
   {
     path: 'editar-administrador',
     data: { breadcrumb: 'Editar' },
     title: 'Editar usuario administrador',
+    canActivate: [
+      adminGuard
+    ],
     component: EditarPrincipalComponent,
   },
   {
     path: 'asignar-administrador',
     data: { breadcrumb: 'Asignar' },
     title: 'Asignar usuario administrador',
+    canActivate: [
+      adminGuard
+    ],
     component: AsignarPrincipalComponent,
   },
 ];

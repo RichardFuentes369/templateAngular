@@ -13,24 +13,36 @@ export const UsuariosFinalesRoutes: Routes = [
     path: '',
     data: { breadcrumb: 'Lista' },
     title: 'Usuarios',
+    canActivate: [
+      adminGuard
+    ],
     component: FinalesComponent,
   },
   {
     path: 'crear-finales',
     data: { breadcrumb: 'Crear' },
     title: 'Crear usuario final',
+    canActivate: [
+      adminGuard
+    ],
     component: CrearFinalesComponent,
   },
   {
     path: 'ver-finales',
     data: { breadcrumb: 'Ver' },
     title: 'Ver usuario final',
+    canActivate: [
+      adminGuard
+    ],
     component: VerFinalesComponent,
   },
   {
     path: 'editar-finales',
     data: { breadcrumb: 'Editar' },
     title: 'Editar usuario final',
+    canActivate: [
+      adminGuard
+    ],
     component: EditarFinalesComponent,
   },
 ];

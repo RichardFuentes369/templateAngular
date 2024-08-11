@@ -17,6 +17,9 @@ export const SubModulosRoutes: Routes = [
   {
     path: 'index-permisos',
     title: 'Permisos',
+    canActivate: [
+      adminGuard
+    ],
     data: { breadcrumb: 'Permisos' },
     loadChildren: () => import('./permisos.routing').then(x=>x.PermisosRoutes)
   },
