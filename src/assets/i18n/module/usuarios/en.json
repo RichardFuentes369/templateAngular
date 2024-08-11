@@ -1,7 +1,7 @@
 {
   "Title": {
     "pageUsersTitle":"Users",
-    "CreateAdminWord":"Create admins",
+    "CreateAdminWord":"Create admin",
     "EditAdminWord":"Edit admin",
     "SeeAdminWord":"See admin",
     "CreateUserFinalWord":"Create user finals",
@@ -42,7 +42,8 @@
   },
   "Buttons": {
     "createUser": "Create user",
-    "editUser": "Edit user",
+    "editUser": "go to edit",
+    "updateUser": "Update user",
     "back": "Back"
   },
   "Swal": {

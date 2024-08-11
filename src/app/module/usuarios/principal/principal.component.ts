@@ -55,7 +55,7 @@ export class PrincipalComponent implements OnInit{
       data: 'id',
     },
     {
-      title: 'First name',
+      title: 'Email',
       data: 'email',
     },
     {
@@ -63,8 +63,12 @@ export class PrincipalComponent implements OnInit{
       data: 'firstName',
     },
     {
-      title: 'First name',
+      title: 'Last name',
       data: 'lastName',
+    },
+    {
+      title: 'Status',
+      data: 'isActive',
     }
   ]
   permisosAcciones = this.permisos
@@ -125,15 +129,25 @@ export class PrincipalComponent implements OnInit{
         confirmButtonText: this.translate.instant('pages-usuarios.Swal.TitleActived'),
         cancelButtonText: this.translate.instant('pages-usuarios.Swal.TitleCancel'),
         denyButtonText: this.translate.instant('pages-usuarios.Swal.TitleInactived')
-      }).then((result) => {
+      }).then(async (result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
+          await this.principalService.updateUser(
+            {"isActive": true},
+            _id
+          )
+          await this.someInput.reload()
           Swal.fire({
             title: this.translate.instant('pages-usuarios.Swal.TitleActived'),
             text: this.translate.instant('pages-usuarios.Swal.TitleRegisterActived'),
             icon: "success"
           });
         } else if (result.isDenied) {
+          await this.principalService.updateUser(
+            {"isActive": false},
+            _id
+          )
+          await this.someInput.reload()
           Swal.fire({
             title: this.translate.instant('pages-usuarios.Swal.TitleInactived'),
             text: this.translate.instant('pages-usuarios.Swal.TitleRegisterInactived'),
@@ -141,7 +155,7 @@ export class PrincipalComponent implements OnInit{
           });
         }
       });
-    });
+    }); 
   }
 
 }

@@ -30,6 +30,18 @@ export class PrincipalService {
     })
   }
 
+  async updateUser(data: any, id: string){
+    let complemento = `admin/editar-administrador/${id}`
+    let urlCopleta = environment.apiUrl+complemento
+
+    return await axios.request({
+      method: 'patch',
+      url: urlCopleta,
+      data: data,
+    })
+  }
+
+
   async deleteUser(id: string){
     let complemento = 'admin/eliminar-admininistrador/'
     let urlCopleta = environment.apiUrl+complemento+id

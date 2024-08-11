@@ -41,7 +41,7 @@ export class CrearPrincipalComponent {
   async crearPrincipal(){
     await this.principalService.createUser(this.model)
     .then(response=>{
-      this.router.navigate([`/admin/menu/index-usuarios/principal/`]);
+      this.router.navigate([`/admin/menu/index-usuarios/administradores/`]);
     }).catch(err =>{
       Swal.fire({
         title: err.response.data.message,

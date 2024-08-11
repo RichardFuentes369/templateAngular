@@ -1,7 +1,7 @@
 {
   "Title": {
     "pageUsersTitle":"Usuarios",
-    "CreateAdminWord":"Crear administradores",
+    "CreateAdminWord":"Crear administrador",
     "EditAdminWord":"Editar administrador",
     "SeeAdminWord":"Ver administrador",
     "CreateUserFinalWord":"Crear usuario final",
@@ -41,7 +41,8 @@
   },
   "Buttons": {
     "createUser": "Crear usuario",
-    "editUser": "Editar usuario",
+    "editUser": "Ir a editar",
+    "updateUser": "Actualizar usuario",
     "back": "Volver"
   },
   "Swal": {
