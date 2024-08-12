@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PrincipalService } from '../../service/principal.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -28,7 +28,8 @@ export class EditarPrincipalComponent implements OnInit{
   constructor(
     private router: Router,
     private route :ActivatedRoute,
-    private userPrincipalService :PrincipalService
+    private userPrincipalService :PrincipalService,
+    private translate: TranslateService
   ) { }
 
   model = {
@@ -78,7 +79,11 @@ export class EditarPrincipalComponent implements OnInit{
       },
       this.model.id
     ).then((response) =>{
-      Swal.fire('Usuario actualizado con exito');
+      this.translate.get('pages-usuarios.Swal.TitleAreYouSure').subscribe((translatedTitle: string) => {
+        Swal.fire(
+          this.translate.instant('pages-usuarios.Swal.TitleRegisterUpdated')
+        );
+      })
     }).catch(async error => {
       this.ngOnInit()
       if(typeof(error.response.data.message) == 'string'){
