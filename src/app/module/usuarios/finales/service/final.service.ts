@@ -5,12 +5,13 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
-export class PrincipalService {
+export class FinalService {
 
   constructor() { }
 
   async getDataUser(id: string){
-    let complemento = 'admin/obtener-administrador/'
+
+    let complemento = 'user/obtener-usuario/'
     let urlCopleta = environment.apiUrl+complemento+id
 
     return await axios.request({
@@ -20,7 +21,7 @@ export class PrincipalService {
   }
 
   async createUser(data: any){
-    let complemento = 'admin/crear-admininistrador/'
+    let complemento = 'user/crear-usuario/'
     let urlCopleta = environment.apiUrl+complemento
 
     return await axios.request({
@@ -31,7 +32,7 @@ export class PrincipalService {
   }
 
   async updateUser(data: any, id: string){
-    let complemento = `admin/editar-administrador/${id}`
+    let complemento = `user/editar-usuario/${id}`
     let urlCopleta = environment.apiUrl+complemento
 
     return await axios.request({
@@ -42,7 +43,7 @@ export class PrincipalService {
   }
 
   async deleteUser(id: string){
-    let complemento = 'admin/eliminar-admininistrador/'
+    let complemento = 'user/eliminar-usuario/'
     let urlCopleta = environment.apiUrl+complemento+id
 
     return await axios.request({
@@ -52,6 +53,3 @@ export class PrincipalService {
   }
 
 }
-
-
-

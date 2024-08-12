@@ -1,10 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { FinalesService } from '../../service/finales.service';
+import { FinalService } from '../../service/final.service';
+import { CommonModule } from '@angular/common';
+import { PermisosService } from '@service/globales/permisos/permisos.service';
+import { AuthService } from '@guard/service/auth.service';
 
-interface AdministradorInterface {
+import { Permisos } from '@functions/System'
+
+interface FinalInterface {
   'id': number,
   'firstName': string,
   'lastName': string,
@@ -23,17 +27,42 @@ interface AdministradorInterface {
 export class VerFinalesComponent implements OnInit{
 
   constructor(
+    private router: Router,
     private route :ActivatedRoute,
-    private userFinalService :FinalesService
+    private userService :AuthService,
+    private permisosService :PermisosService,
+    private userFinalService :FinalService
   ) { }
 
-  user: AdministradorInterface[] = []
+  user: FinalInterface[] = []
+  permisos: any[] = []
 
   async ngOnInit() {
+    await this.userService.refreshToken('authadmin');
+    const userData = await this.userService.getUser('authadmin');
+    const modulo = await this.permisosService.permisos(userData.data.id)
+    for (const iterator of Permisos(modulo, 'usuarios','finales')) {
+      this.permisos.push(iterator.nombre_permiso)
+    }
+
     let usuarioReal = await this.userFinalService.getDataUser(
       this.route.snapshot.queryParams?.['id']
     )
     this.user.push(usuarioReal.data)
+  }
+
+  tienePermiso(nombre: string): boolean {
+    return this.permisos.some((permiso) => permiso === nombre);
+  }
+
+  goTo (url: string, _id: number){
+
+    if(_id != 0){
+      this.router.navigate([url], { queryParams: { id: _id } });
+    }else{
+      this.router.navigate([url]);
+    }
+
   }
 
 }
