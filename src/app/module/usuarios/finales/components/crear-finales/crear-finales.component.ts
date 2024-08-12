@@ -37,6 +37,16 @@ export class CrearFinalesComponent {
     isActive: 0
   }
 
+  goTo (url: string, _id: number){
+
+    if(_id != 0){
+      this.router.navigate([url], { queryParams: { id: _id } });
+    }else{
+      this.router.navigate([url]);
+    }
+
+  }
+
   async crearFinal(){
     await this.finalService.createUser(this.model)
     .then(response=>{

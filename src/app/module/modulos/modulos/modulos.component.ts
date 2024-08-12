@@ -62,10 +62,6 @@ export class ModulosComponent implements OnInit{
     console.log("crearData "+_id)
     this.router.navigate(['/admin/menu/index-modulos/crear-modulo/']);
   }
-  editarData (_id: string){
-    console.log("editarData "+_id)
-    this.router.navigate(['/admin/menu/index-modulos/editar-modulo/'], { queryParams: { id: _id } });
-  }
 
   @ViewChild(TablecrudComponent)
   someInput!: TablecrudComponent
