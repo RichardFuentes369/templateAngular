@@ -13,6 +13,7 @@ import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.comp
 import { PrincipalService } from './service/principal.service';
 
 import { Permisos } from '@functions/System'
+import { ModalComponent } from '@component/globales/modal/modal.component';
 
 @Component({
   selector: 'app-principal',
@@ -20,6 +21,7 @@ import { Permisos } from '@functions/System'
   imports: [
     TranslateModule,
     TablecrudComponent,
+    ModalComponent,
     LoadingComponent
   ],
   templateUrl: './principal.component.html',
@@ -75,8 +77,7 @@ export class PrincipalComponent implements OnInit{
   // fin datos que envio al componente
 
   verData (_id: string){
-    console.log("verData "+_id)
-    // this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });
+    this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });
   }
   crearData (_id: string){
     console.log("crearData "+_id)
