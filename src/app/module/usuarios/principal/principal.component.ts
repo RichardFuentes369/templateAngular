@@ -76,7 +76,7 @@ export class PrincipalComponent implements OnInit{
 
   verData (_id: string){
     console.log("verData "+_id)
-    this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });
+    // this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });
   }
   crearData (_id: string){
     console.log("crearData "+_id)
