@@ -22,10 +22,20 @@ export class ModalComponent implements OnInit{
     private translate: TranslateService
   ) { }
 
+  ocultar = true;
+
   async ngOnInit() {
 
   }
 
+  showModal = false;
+
   openModal() {
+    this.showModal = true;
   }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
 }

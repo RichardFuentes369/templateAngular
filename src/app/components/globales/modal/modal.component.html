@@ -1,38 +1,35 @@
-<div class="">
+<div>
+  <button (click)="openModal()">Abrir Modal</button>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+  <!-- Fondo oscuro -->
+  <div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
 
-<!-- Modal -->
-<!-- Instrucción para no dejarlo cerrar -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
-<!-- Puede cerrar dando clicl en otro lado -->
-<!-- <div class="modal fade" data-backdrop="static" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <!-- <div class="modal-dialog modal-xl">...</div> -->
-  <!-- <div class="modal-dialog modal-lg">...</div> -->
-  <!-- <div class="modal-dialog modal-sm">...</div> -->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Titulo del modal
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <!-- Modal deslizante -->
+  <div
+    class="modal-frontdrop"
+    [ngClass]="{ 'slide-up': showModal, 'slide-down': !showModal }"
+  >
+    <div class="card apertura">
+      <div class="">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" (click)="closeModal()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            .l.
+            Hola aqui estoy
+            Hola aqui estoy
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="closeModal()">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
-      </div>
+
     </div>
   </div>
-</div>
-
 </div>

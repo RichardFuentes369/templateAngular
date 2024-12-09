@@ -1,0 +1,88 @@
+/* Fondo oscuro detrás del modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Contenedor del modal */
+.modal-frontdrop {
+  position: fixed;
+  bottom: -100%; /* Fuera de la pantalla inicialmente */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 0.5s ease, opacity 1.5s ease; /* Transición suave de 3 segundos */
+  opacity: 0; /* Oculto por defecto */
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+}
+
+/* Contenido del modal */
+// mediaquerys
+.card {
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  top: -18 !important;
+}
+
+.modal-body{
+
+  overflow-y: auto;
+  height: 30rem !important;
+
+}
+
+/* Mostrar el modal deslizándolo hacia arriba */
+.modal-frontdrop.slide-up {
+  bottom: 20%; /* Posición visible del modal */
+  opacity: 1;
+}
+
+/* Ocultar el modal deslizándolo hacia abajo */
+.modal-frontdrop.slide-down {
+  bottom: -100%; /* Fuera de la pantalla */
+  opacity: 0;
+}
+
+
+/* Para dispositivos medianos, como tabletas */
+@media (max-width: 2560px) {
+  .apertura{
+    margin-right: -44rem !important;
+    margin-left: -44rem !important;
+  }
+}
+@media (max-width: 2300px) {
+  .apertura{
+    margin-right: -26rem !important;
+    margin-left: -26rem !important;
+  }
+}
+@media (max-width: 1700px) {
+  .apertura{
+    margin-right: -20rem !important;
+    margin-left: -20rem !important;
+  }
+}
+
+@media (max-width: 1439px) {
+  .apertura{
+    margin-right: -9rem !important;
+    margin-left: -9rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .apertura{
+    margin-right: -1rem !important;
+    margin-left: -1rem !important;
+  }
+}
