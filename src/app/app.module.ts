@@ -31,13 +31,14 @@ export function createTranslateLoader(http: HttpClient) {
   const options: IModuleTranslationOptions = {
     modules: [
       // inicio globales
-      { baseTranslateUrl, moduleName: 'components/globales/login', namespace: 'global-login' },
       { baseTranslateUrl, moduleName: 'components/globales/breadcrumb', namespace: 'global-breadcrumb' },
       { baseTranslateUrl, moduleName: 'components/globales/idioma', namespace: 'global-idioma' },
-      { baseTranslateUrl, moduleName: 'components/globales/search', namespace: 'global-search' },
-      { baseTranslateUrl, moduleName: 'components/globales/tablecrud', namespace: 'global-tablecrud' },
       { baseTranslateUrl, moduleName: 'components/globales/loading', namespace: 'global-loading' },
+      { baseTranslateUrl, moduleName: 'components/globales/login', namespace: 'global-login' },
+      { baseTranslateUrl, moduleName: 'components/globales/search', namespace: 'global-search' },
+      { baseTranslateUrl, moduleName: 'components/globales/modal', namespace: 'global-modal' },
       { baseTranslateUrl, moduleName: 'components/globales/notfound', namespace: 'global-notfound' },
+      { baseTranslateUrl, moduleName: 'components/globales/tablecrud', namespace: 'global-tablecrud' },
       // fin globales
 
       // inicio layout
