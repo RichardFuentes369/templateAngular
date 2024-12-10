@@ -13,7 +13,7 @@ import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.comp
 import { PrincipalService } from './service/principal.service';
 
 import { Permisos } from '@functions/System'
-import { ModalComponent } from '@component/globales/modal/modal.component';
+import { ModalBoostrapComponent } from '@component/globales/modal/boostrap/boostrap.component';
 
 @Component({
   selector: 'app-principal',
@@ -21,7 +21,7 @@ import { ModalComponent } from '@component/globales/modal/modal.component';
   imports: [
     TranslateModule,
     TablecrudComponent,
-    ModalComponent,
+    ModalBoostrapComponent,
     LoadingComponent
   ],
   templateUrl: './principal.component.html',
@@ -48,9 +48,7 @@ export class PrincipalComponent implements OnInit{
     }
   }
 
-  // inicio datos que envio al componente
-  showcampoFiltro = true
-  endPoint = 'admin'
+  // inicio datos que envio al componente tabla
   columnas = [
     {
       title: 'ID',
@@ -74,7 +72,7 @@ export class PrincipalComponent implements OnInit{
     }
   ]
   permisosAcciones = this.permisos
-  // fin datos que envio al componente
+  // fin datos que envio al componente tabla
 
   verData (_id: string){
     this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });

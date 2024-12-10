@@ -1,0 +1,48 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+  Modal
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog"
+    [ngClass]="
+      [
+        tamano !== '' ? 'modal-' + tamano : 'modal-sm',
+        scrollable ? 'modal-dialog-scrollable' : ''
+      ].join(' ')
+    "
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{title}}</h5>
+        @if(cancel){
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        }
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        @if(cancel){
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{buttonCancel}}</button>
+        }
+        @if(save){
+          <button type="button" class="btn btn-primary">{{buttonSave}}</button>
+        }
+        @if(edit){
+          <button type="button" class="btn btn-primary">{{buttonEdit}}</button>
+        }
+      </div>
+    </div>
+  </div>
+</div>

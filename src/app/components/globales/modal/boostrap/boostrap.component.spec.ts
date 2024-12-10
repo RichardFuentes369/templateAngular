@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploadfileComponent } from './uploadfile.component';
+import { ModalBoostrapComponent } from './boostrap.component';
 
-describe('UploadfileComponent', () => {
-  let component: UploadfileComponent;
-  let fixture: ComponentFixture<UploadfileComponent>;
+describe('ModalBoostrapComponent', () => {
+  let component: ModalBoostrapComponent;
+  let fixture: ComponentFixture<ModalBoostrapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UploadfileComponent]
+      declarations: [ModalBoostrapComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(UploadfileComponent);
+
+    fixture = TestBed.createComponent(ModalBoostrapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

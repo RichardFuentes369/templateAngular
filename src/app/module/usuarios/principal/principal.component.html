@@ -2,11 +2,10 @@
   <h1>{{ 'pages-usuarios.Tipo.AdminWord' | translate}}</h1>
 
   <app-globales-tablecrud
-    [campoFiltro] = showcampoFiltro
-    [endPoint] = endPoint
+    [campoFiltro] = "true"
+    [endPoint] = "'admin'"
     [columnas] = columnas
     [permisosAcciones] = permisos
-
 
     (verItem) = "verData($event)"
     (crearNuevoItem) = "crearData($event)"
@@ -17,7 +16,17 @@
   >
   </app-globales-tablecrud>
 
-  <app-globales-modal>
-  </app-globales-modal>
+  <app-globales-modal-boostrap
+    [tamano] = "'xl'"
+    [scrollable] = 'true'
+    [title]="'Crear nuevo administrador'"
+    [save] = "true"
+    [buttonSave] = "'Guardar'"
+    [edit] = "true"
+    [buttonEdit] = "'Editar'"
+    [cancel] = "true"
+    [buttonCancel] = "'Cancelar'"
+  >
+  </app-globales-modal-boostrap>
 
 </div>
