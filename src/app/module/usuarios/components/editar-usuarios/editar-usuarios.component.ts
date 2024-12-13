@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { PrincipalService } from '../../principal/service/principal.service';
+import { PrincipalService } from '@module/usuarios/principal/service/principal.service';
+import { FinalService } from '@module/usuarios/finales/service/final.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -29,6 +30,7 @@ export class EditarUsuariosComponent implements OnInit{
     private router: Router,
     private route :ActivatedRoute,
     private userPrincipalService :PrincipalService,
+    private userFinalService :FinalService,
     private translate: TranslateService
   ) { }
 
@@ -42,20 +44,30 @@ export class EditarUsuariosComponent implements OnInit{
   }
 
   user: AdministradorInterface[] = []
+  usuarioReal: any
 
   async ngOnInit() {
     this.user = []
-    let usuarioReal = await this.userPrincipalService.getDataUser(
-      this.route.snapshot.queryParams?.['id']
-    )
-    this.user.push(usuarioReal.data)
 
-    this.model.id = usuarioReal.data.id
-    this.model.firstName = usuarioReal.data.firstName
-    this.model.lastName = usuarioReal.data.lastName
-    this.model.email = usuarioReal.data.email
-    this.model.password = usuarioReal.data.password
-    this.model.isActive = usuarioReal.data.isActive
+    if(this.route.snapshot.queryParams?.['rol'] === 'admin'){
+      this.usuarioReal = await this.userFinalService.getDataUser(
+        this.route.snapshot.queryParams?.['id']
+        )
+      }
+
+    if(this.route.snapshot.queryParams?.['rol'] === 'user'){
+      this.usuarioReal = await this.userPrincipalService.getDataUser(
+        this.route.snapshot.queryParams?.['id']
+      )
+    }
+    this.user.push(this.usuarioReal.data)
+
+    this.model.id = this.usuarioReal.data.id
+    this.model.firstName = this.usuarioReal.data.firstName
+    this.model.lastName = this.usuarioReal.data.lastName
+    this.model.email = this.usuarioReal.data.email
+    this.model.password = this.usuarioReal.data.password
+    this.model.isActive = this.usuarioReal.data.isActive
   }
 
   goTo (url: string, _id: number){

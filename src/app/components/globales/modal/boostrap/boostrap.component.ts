@@ -28,7 +28,7 @@ export class ModalBoostrapComponent {
 
   openModal() {
     const boton = document.getElementById('miBoton') as HTMLButtonElement
-    const metodoClickeado = boton.getAttribute('metodo')
+    const metodoClickeado = boton.getAttribute('componente')
     if(metodoClickeado){
       let componente = this.listaDeComponentes.obtenerComponentePorNombre(metodoClickeado);
       const factory = this.resolver.resolveComponentFactory(componente.componente);

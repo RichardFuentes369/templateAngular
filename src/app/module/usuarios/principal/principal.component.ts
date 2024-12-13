@@ -99,7 +99,7 @@ export class PrincipalComponent implements OnInit{
 
     const idButton = document.getElementById('miBoton')
     if(idButton){
-      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.setAttribute('componente', this.componentePrecargado);
       idButton.click()
     }
   }
@@ -118,9 +118,9 @@ export class PrincipalComponent implements OnInit{
     const idButton = document.getElementById('miBoton')
     if(idButton){
       this.router.navigate([], {
-        queryParams: { id: _id },
+        queryParams: { rol: 'user', id: _id },
       });
-      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.setAttribute('componente', this.componentePrecargado);
       idButton.click()
     }
   }
@@ -139,9 +139,9 @@ export class PrincipalComponent implements OnInit{
     const idButton = document.getElementById('miBoton')
     if(idButton){
       this.router.navigate([], {
-        queryParams: { id: _id },
+        queryParams: { rol: 'user', id: _id },
       });
-      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.setAttribute('componente', this.componentePrecargado);
       idButton.click()
     }
   }
