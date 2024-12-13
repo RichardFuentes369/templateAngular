@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import Swal from 'sweetalert2'
-import { PrincipalService } from '../../service/principal.service';
+import { PrincipalService } from '../../principal/service/principal.service';
 import { Router } from '@angular/router';
 
 interface crearUsuario {
@@ -16,14 +16,14 @@ interface crearUsuario {
 }
 
 @Component({
-  selector: 'app-crear-principal',
+  selector: 'app-crear-usuarios',
   standalone: true,
   imports: [TranslateModule, CommonModule, FormsModule],
-  templateUrl: './crear-principal.component.html',
-  styleUrl: './crear-principal.component.scss'
+  templateUrl: './crear-usuarios.component.html',
+  styleUrl: './crear-usuarios.component.scss'
 })
 
-export class CrearPrincipalComponent {
+export class CrearUsuariosComponent {
 
   constructor(
     private router: Router,

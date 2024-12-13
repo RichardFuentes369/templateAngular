@@ -74,17 +74,78 @@ export class PrincipalComponent implements OnInit{
   permisosAcciones = this.permisos
   // fin datos que envio al componente tabla
 
-  verData (_id: string){
-    this.router.navigate([`/admin/menu/index-usuarios/administradores/ver-administrador/`], { queryParams: { id: _id } });
-  }
+  tamano = ""
+  scrollable = false
+  title = ""
+  save = true
+  buttonSave = "Guardar"
+  edit = true
+  buttonEdit = "Editar"
+  cancel = true
+  buttonCancel = "Cancelar"
+  componentePrecargado = ""
+
   crearData (_id: string){
-    console.log("crearData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/administradores/crear-administrador/']);
+    this.tamano = "xl"
+    this.scrollable = false
+    this.title = "Crear administrador"
+    this.save = true
+    this.buttonSave = "Guardar"
+    this.edit = false
+    this.buttonEdit = "Editar"
+    this.cancel = true
+    this.buttonCancel = "Cancelar"
+    this.componentePrecargado = "CrearUsuariosComponent"
+
+    const idButton = document.getElementById('miBoton')
+    if(idButton){
+      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.click()
+    }
+  }
+  verData (_id: string){
+    this.tamano = "xl"
+    this.scrollable = false
+    this.title = "Ver administrador"
+    this.save = false
+    this.buttonSave = "Guardar"
+    this.edit = false
+    this.buttonEdit = "Editar"
+    this.cancel = true
+    this.buttonCancel = "Cancelar"
+    this.componentePrecargado = "VerUsuariosComponent"
+
+    const idButton = document.getElementById('miBoton')
+    if(idButton){
+      this.router.navigate([], {
+        queryParams: { id: _id },
+      });
+      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.click()
+    }
   }
   editarData (_id: string){
-    console.log("editarData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/administradores/editar-administrador/'], { queryParams: { id: _id } });
+    this.tamano = "xl"
+    this.scrollable = false
+    this.title = "Editar administrador"
+    this.save = false
+    this.buttonSave = "Guardar"
+    this.edit = false
+    this.buttonEdit = "Editar"
+    this.cancel = true
+    this.buttonCancel = "Cancelar"
+    this.componentePrecargado = "EditarUsuariosComponent"
+
+    const idButton = document.getElementById('miBoton')
+    if(idButton){
+      this.router.navigate([], {
+        queryParams: { id: _id },
+      });
+      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.click()
+    }
   }
+
   asignarData (_id: string){
     console.log("asignarData "+_id)
     this.router.navigate(['/admin/menu/index-usuarios/administradores/asignar-administrador/'], { queryParams: { id: _id } });

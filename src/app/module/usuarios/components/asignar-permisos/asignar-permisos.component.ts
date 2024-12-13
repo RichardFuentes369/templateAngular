@@ -2,27 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '@guard/service/auth.service';
 import { ModulosService } from '@module/modulos/service/modulos.service';
-import { PrincipalService } from '../../service/principal.service';
+import { PermisosService } from '@service/globales/permisos/permisos.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-asignar-principal',
+  selector: 'app-asignar-permisos',
   standalone: true,
   imports: [
     CommonModule,
     TranslateModule,
   ],
-  templateUrl: './asignar-principal.component.html',
-  styleUrl: './asignar-principal.component.scss'
+  templateUrl: './asignar-permisos.component.html',
+  styleUrl: './asignar-permisos.component.scss'
 })
-export class AsignarPrincipalComponent implements OnInit{
+export class AsignarPermisosComponent implements OnInit{
 
   constructor(
     private router: Router,
     private userService :AuthService,
     private modulosService :ModulosService,
-    private principalService :PrincipalService,
+    private PermisosService :PermisosService,
     private translate: TranslateService
   ) { }
 

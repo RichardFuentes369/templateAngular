@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { openCloseModal } from '../../../functions/System'
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import Swal from 'sweetalert2'
@@ -13,6 +12,7 @@ import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.comp
 import { Permisos } from '@functions/System'
 import { LoadingComponent } from '@component/globales/loading/loading.component';
 import { FinalService } from './service/final.service';
+import { ModalBoostrapComponent } from '@component/globales/modal/boostrap/boostrap.component';
 
 @Component({
   selector: 'app-menu-usuarios-finales',
@@ -20,6 +20,7 @@ import { FinalService } from './service/final.service';
   imports: [
     TranslateModule,
     TablecrudComponent,
+    ModalBoostrapComponent,
     LoadingComponent
   ],
   templateUrl: './finales.component.html',
@@ -74,17 +75,76 @@ export class FinalesComponent implements OnInit{
   permisosAcciones = this.permisos
   // fin datos que envio al componente
 
-  verData (_id: string){
-    console.log("verData "+_id)
-    this.router.navigate([`/admin/menu/index-usuarios/finales/ver-finales/`], { queryParams: { id: _id } });
-  }
+  tamano = ""
+  scrollable = false
+  title = ""
+  save = true
+  buttonSave = "Guardar"
+  edit = true
+  buttonEdit = "Editar"
+  cancel = true
+  buttonCancel = "Cancelar"
+  componentePrecargado = ""
+
   crearData (_id: string){
-    console.log("crearData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/finales/crear-finales/']);
+    this.tamano = "xl"
+    this.scrollable = false
+    this.title = "Crear usuarios"
+    this.save = true
+    this.buttonSave = "Guardar"
+    this.edit = false
+    this.buttonEdit = "Editar"
+    this.cancel = true
+    this.buttonCancel = "Cancelar"
+    this.componentePrecargado = "CrearUsuariosComponent"
+
+    const idButton = document.getElementById('miBoton')
+    if(idButton){
+      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.click()
+    }
+  }
+  verData (_id: string){
+    this.tamano = "xl"
+    this.scrollable = false
+    this.title = "Ver usuarios"
+    this.save = false
+    this.buttonSave = "Guardar"
+    this.edit = false
+    this.buttonEdit = "Editar"
+    this.cancel = true
+    this.buttonCancel = "Cancelar"
+    this.componentePrecargado = "VerUsuariosComponent"
+
+    const idButton = document.getElementById('miBoton')
+    if(idButton){
+      this.router.navigate([], {
+        queryParams: { id: _id },
+      });
+      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.click()
+    }
   }
   editarData (_id: string){
-    console.log("editarData "+_id)
-    this.router.navigate(['/admin/menu/index-usuarios/finales/editar-finales/'], { queryParams: { id: _id } });
+    this.tamano = "xl"
+    this.scrollable = false
+    this.title = "Editar usuarios"
+    this.save = false
+    this.buttonSave = "Guardar"
+    this.edit = false
+    this.buttonEdit = "Editar"
+    this.cancel = true
+    this.buttonCancel = "Cancelar"
+    this.componentePrecargado = "EditarUsuariosComponent"
+
+    const idButton = document.getElementById('miBoton')
+    if(idButton){
+      this.router.navigate([], {
+        queryParams: { id: _id },
+      });
+      idButton.setAttribute('metodo', this.componentePrecargado);
+      idButton.click()
+    }
   }
 
   @ViewChild(TablecrudComponent)

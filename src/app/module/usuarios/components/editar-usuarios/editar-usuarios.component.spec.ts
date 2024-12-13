@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerFinalesComponent } from './ver-finales.component';
+import { EditarUsuariosComponent } from './editar-usuarios.component';
 
-describe('VerFinalesComponent', () => {
-  let component: VerFinalesComponent;
-  let fixture: ComponentFixture<VerFinalesComponent>;
+describe('EditarUsuariosComponent', () => {
+  let component: EditarUsuariosComponent;
+  let fixture: ComponentFixture<EditarUsuariosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VerFinalesComponent]
+      imports: [EditarUsuariosComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(VerFinalesComponent);
+
+    fixture = TestBed.createComponent(EditarUsuariosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

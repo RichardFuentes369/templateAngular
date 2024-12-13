@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { PrincipalService } from '../../service/principal.service';
 import { CommonModule } from '@angular/common';
+import { PrincipalService } from '../../principal/service/principal.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 import { AuthService } from '@guard/service/auth.service';
 
@@ -19,13 +19,13 @@ interface AdministradorInterface {
 }
 
 @Component({
-  selector: 'app-ver-principal',
+  selector: 'app-ver-usuarios',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './ver-principal.component.html',
-  styleUrl: './ver-principal.component.scss'
+  templateUrl: './ver-usuarios.component.html',
+  styleUrl: './ver-usuarios.component.scss'
 })
-export class VerPrincipalComponent implements OnInit{
+export class VerUsuariosComponent implements OnInit{
 
   constructor(
     private router: Router,

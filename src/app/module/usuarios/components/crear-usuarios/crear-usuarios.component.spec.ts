@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerPrincipalComponent } from './ver-principal.component';
+import { CrearPrincipalComponent } from './crear-usuarios.component';
 
-describe('VerPrincipalComponent', () => {
-  let component: VerPrincipalComponent;
-  let fixture: ComponentFixture<VerPrincipalComponent>;
+describe('CrearPrincipalComponent', () => {
+  let component: CrearPrincipalComponent;
+  let fixture: ComponentFixture<CrearPrincipalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VerPrincipalComponent]
+      declarations: [CrearPrincipalComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(VerPrincipalComponent);
+
+    fixture = TestBed.createComponent(CrearPrincipalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

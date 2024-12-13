@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { FinalService } from '../../service/final.service';
+import { PrincipalService } from '../../principal/service/principal.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import Swal from 'sweetalert2'
 
-interface FinalInterface {
+interface AdministradorInterface {
   'id': number,
   'firstName': string,
   'lastName': string,
@@ -17,18 +17,18 @@ interface FinalInterface {
 }
 
 @Component({
-  selector: 'app-editar-finales',
+  selector: 'app-editar-usuarios',
   standalone: true,
   imports: [CommonModule, TranslateModule, FormsModule],
-  templateUrl: './editar-finales.component.html',
-  styleUrl: './editar-finales.component.scss'
+  templateUrl: './editar-usuarios.component.html',
+  styleUrl: './editar-usuarios.component.scss'
 })
-export class EditarFinalesComponent implements OnInit{
+export class EditarUsuariosComponent implements OnInit{
 
   constructor(
     private router: Router,
     private route :ActivatedRoute,
-    private userFinalService :FinalService,
+    private userPrincipalService :PrincipalService,
     private translate: TranslateService
   ) { }
 
@@ -41,11 +41,11 @@ export class EditarFinalesComponent implements OnInit{
     isActive: 0
   }
 
-  user: FinalInterface[] = []
+  user: AdministradorInterface[] = []
 
   async ngOnInit() {
     this.user = []
-    let usuarioReal = await this.userFinalService.getDataUser(
+    let usuarioReal = await this.userPrincipalService.getDataUser(
       this.route.snapshot.queryParams?.['id']
     )
     this.user.push(usuarioReal.data)
@@ -69,7 +69,7 @@ export class EditarFinalesComponent implements OnInit{
   }
 
   actualizarData(){
-    this.userFinalService.updateUser(
+    this.userPrincipalService.updateUser(
       {
         "firstName": this.model.firstName,
         "lastName": this.model.lastName,
@@ -93,5 +93,4 @@ export class EditarFinalesComponent implements OnInit{
       }
     })
   }
-
 }

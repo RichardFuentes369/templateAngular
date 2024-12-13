@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrearFinalesComponent } from './crear-finales.component';
+import { AsignarPermisosComponent } from './asignar-permisos.component';
 
-describe('CrearFinalesComponent', () => {
-  let component: CrearFinalesComponent;
-  let fixture: ComponentFixture<CrearFinalesComponent>;
+describe('AsignarPermisosComponent', () => {
+  let component: AsignarPermisosComponent;
+  let fixture: ComponentFixture<AsignarPermisosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CrearFinalesComponent]
+      imports: [AsignarPermisosComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(CrearFinalesComponent);
+
+    fixture = TestBed.createComponent(AsignarPermisosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
