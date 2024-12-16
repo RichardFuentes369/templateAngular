@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnInit, Output, EventEmitter } from '@angular/core';
 import { LoadingComponent } from '@component/globales/loading/loading.component';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -26,16 +26,26 @@ export class ModalBoostrapComponent {
 
   listaDeComponentes = new ListaComponentes();
 
-  openModal() {
+  async openModal() {
     const boton = document.getElementById('miBoton') as HTMLButtonElement
     const metodoClickeado = boton.getAttribute('componente')
     if(metodoClickeado){
-      let componente = this.listaDeComponentes.obtenerComponentePorNombre(metodoClickeado);
-      const factory = this.resolver.resolveComponentFactory(componente.componente);
+      let componente = await this.listaDeComponentes.obtenerComponentePorNombre(metodoClickeado);
+      const factory = await this.resolver.resolveComponentFactory(componente.componente);
       this.contenedor.clear()
       this.contenedor.createComponent(factory);
     }else{
       console.log('componente no encontrado')
+    }
+  }
+
+  @Output()
+  actualizarTabla = new EventEmitter<string>()
+  async buttonSaveM(){
+    const boton = document.querySelector('.btnAction') as HTMLButtonElement
+    if(boton){
+      await boton.click()
+      await this.actualizarTabla.emit()
     }
   }
 
@@ -59,5 +69,6 @@ export class ModalBoostrapComponent {
   buttonEdit: string = '';
   @Input()
   componentePrecargado: string = '';
-
+  @Input()
+  cierreModal: string = "static";
 }

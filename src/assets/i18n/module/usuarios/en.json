@@ -49,9 +49,11 @@
   "Swal": {
     "TitleAreYouSure": "Are you sure?",
     "TitleWarnigRevert": "You won't be able to revert this!",
+    "TitleCreate": "Created",
     "TitleCancel": "Cancel",
     "TitleDelete": "Deleted!",
     "TitleRegisterUpdated": "You register updated",
+    "TitleRegisterCreate": "You register created",
     "TitleRegisterDeleted": "You register eliminated",
     "TitleRegisterInactived": "You register inactived",
     "TitleRegisterActived": "You register actived",

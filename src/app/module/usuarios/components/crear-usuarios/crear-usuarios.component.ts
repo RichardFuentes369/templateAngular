@@ -1,11 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import Swal from 'sweetalert2'
 import { PrincipalService } from '../../principal/service/principal.service';
 import { Router } from '@angular/router';
+import { ocultarModalOscura } from '@functions/System'
+import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.component';
 
 interface crearUsuario {
   "firstName": string,
@@ -27,7 +30,8 @@ export class CrearUsuariosComponent {
 
   constructor(
     private router: Router,
-    private principalService: PrincipalService
+    private principalService: PrincipalService,
+    private translate: TranslateService
   ){}
 
   model = {
@@ -51,8 +55,16 @@ export class CrearUsuariosComponent {
   async crearPrincipal(){
     await this.principalService.createUser(this.model)
     .then(response=>{
-      this.router.navigate([`/admin/menu/index-usuarios/administradores/`]);
+      ocultarModalOscura()
+      this.translate.get('pages-usuarios.Swal.TitleAreYouSure').subscribe((translatedTitle: string) => {
+        Swal.fire({
+          title: this.translate.instant('pages-usuarios.Swal.TitleCreate'),
+          text: this.translate.instant('pages-usuarios.Swal.TitleRegisterCreate'),
+          icon: "success"
+        });
+      });
     }).catch(err =>{
+      console.log(err)
       Swal.fire({
         title: err.response.data.message,
         text: err.response.data.error,
@@ -60,6 +72,7 @@ export class CrearUsuariosComponent {
         confirmButtonText: 'Cool'
       })
     })
+
   }
 
 }

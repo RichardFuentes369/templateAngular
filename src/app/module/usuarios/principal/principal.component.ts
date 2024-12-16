@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
-import { openCloseModal } from '../../../functions/System'
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import Swal from 'sweetalert2'
@@ -83,6 +82,7 @@ export class PrincipalComponent implements OnInit{
   buttonEdit = "Editar"
   cancel = true
   buttonCancel = "Cancelar"
+  cierreModal = "true"
   componentePrecargado = ""
 
   crearData (_id: string){
@@ -95,6 +95,7 @@ export class PrincipalComponent implements OnInit{
     this.buttonEdit = "Editar"
     this.cancel = true
     this.buttonCancel = "Cancelar"
+    this.cierreModal = "true"
     this.componentePrecargado = "CrearUsuariosComponent"
 
     const idButton = document.getElementById('miBoton')
@@ -113,6 +114,7 @@ export class PrincipalComponent implements OnInit{
     this.buttonEdit = "Editar"
     this.cancel = true
     this.buttonCancel = "Cancelar"
+    this.cierreModal = "true"
     this.componentePrecargado = "VerUsuariosComponent"
 
     const idButton = document.getElementById('miBoton')
@@ -177,6 +179,12 @@ export class PrincipalComponent implements OnInit{
         }
       });
     });
+  }
+
+  async refrescarTabla (){
+    setTimeout(async () => {
+      await this.someInput.reload()
+    }, 100);
   }
 
   activarData (_id: string){

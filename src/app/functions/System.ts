@@ -1,11 +1,29 @@
-// import $ from 'jquery';
-export function openCloseModal(name: string): void {
-  const modal = document.getElementById(name);
+/*
+* Metodo para quitar
+* la parte oscura del modal
+*/
+export function ocultarModalOscura(): void {
+  const modal = document.getElementById('staticBackdrop') as HTMLButtonElement
+  modal.style.display = 'none'
+
   if (modal) {
-    ($(modal) as any).modal('toggle');
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+
+    setTimeout(() => {
+      modal.classList.remove('show');
+      modal.setAttribute('style', 'display: none;');
+      document.body.classList.remove('modal-open');
+
+      modal.removeAttribute('aria-modal');
+      modal.removeAttribute('role');
+      modal.setAttribute('aria-hidden', 'true')
+
+      const backdrop = document.querySelector('.modal-backdrop');
+      backdrop?.parentNode?.removeChild(backdrop);
+    }, 100);
   }
 }
-
 
 /*
 * Metodo para filtrar a los permisos

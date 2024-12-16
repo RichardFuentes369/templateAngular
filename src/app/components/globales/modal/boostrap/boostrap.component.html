@@ -3,6 +3,8 @@
   Modal
 </button>
 
+{{cierreModal}}
+
 <!-- Modal -->
 <div
   class="modal fade"
@@ -11,6 +13,7 @@
   tabindex="-1"
   aria-labelledby="staticBackdropLabel"
   aria-hidden="true"
+  [attr.data-backdrop]="cierreModal"
 >
   <div class="modal-dialog"
     [ngClass]="
@@ -39,7 +42,7 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">{{buttonCancel}}</button>
         }
         @if(save){
-          <button type="button" class="btn btn-primary">{{buttonSave}}</button>
+          <button type="button" class="btn btn-primary" (click)="buttonSaveM()">{{buttonSave}}</button>
         }
         @if(edit){
           <button type="button" class="btn btn-primary">{{buttonEdit}}</button>

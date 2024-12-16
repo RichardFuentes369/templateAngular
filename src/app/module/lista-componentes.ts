@@ -19,7 +19,6 @@ export class ListaComponentes {
   ];
 
   obtenerComponentePorNombre(nombre: string) {
-    console.log(this.componentes.find(comp => comp.name === nombre))
     return this.componentes.find(comp => comp.name === nombre);
   }
 }
