@@ -3,25 +3,16 @@
 * la parte oscura del modal
 */
 export function ocultarModalOscura(): void {
-  const modal = document.getElementById('staticBackdrop') as HTMLButtonElement
-  modal.style.display = 'none'
+  const modal = document.getElementById('staticBackdrop') as HTMLDivElement | null;
 
-  if (modal) {
-    modal.classList.remove('show');
-    modal.style.display = 'none';
+  if (!modal) {
+    console.warn('Modal no encontrado.');
+    return;
+  }
 
-    setTimeout(() => {
-      modal.classList.remove('show');
-      modal.setAttribute('style', 'display: none;');
-      document.body.classList.remove('modal-open');
-
-      modal.removeAttribute('aria-modal');
-      modal.removeAttribute('role');
-      modal.setAttribute('aria-hidden', 'true')
-
-      const backdrop = document.querySelector('.modal-backdrop');
-      backdrop?.parentNode?.removeChild(backdrop);
-    }, 100);
+  const closeButton = document.querySelector('.closeModalButton') as HTMLElement | null;
+  if(closeButton){
+    closeButton.click()
   }
 }
 
