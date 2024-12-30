@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -84,9 +83,11 @@ export class FinalesComponent implements OnInit{
   buttonEdit = "Editar"
   cancel = true
   buttonCancel = "Cancelar"
+  cierreModal = "true"
   componentePrecargado = ""
 
   crearData (_id: string){
+    localStorage.setItem('profile', 'user')
     this.tamano = "xl"
     this.scrollable = false
     this.title = "Crear usuarios"
@@ -96,6 +97,7 @@ export class FinalesComponent implements OnInit{
     this.buttonEdit = "Editar"
     this.cancel = true
     this.buttonCancel = "Cancelar"
+    this.cierreModal = "true"
     this.componentePrecargado = "CrearUsuariosComponent"
 
     const idButton = document.getElementById('miBoton')
@@ -104,6 +106,7 @@ export class FinalesComponent implements OnInit{
       idButton.click()
     }
   }
+
   verData (_id: string){
     this.tamano = "xl"
     this.scrollable = false
@@ -114,6 +117,7 @@ export class FinalesComponent implements OnInit{
     this.buttonEdit = "Editar"
     this.cancel = true
     this.buttonCancel = "Cancelar"
+    this.cierreModal = "true"
     this.componentePrecargado = "VerUsuariosComponent"
 
     const idButton = document.getElementById('miBoton')
@@ -125,6 +129,7 @@ export class FinalesComponent implements OnInit{
       idButton.click()
     }
   }
+
   editarData (_id: string){
     this.tamano = "xl"
     this.scrollable = false
@@ -173,6 +178,12 @@ export class FinalesComponent implements OnInit{
         }
       });
     });
+  }
+
+  async refrescarTabla (){
+    setTimeout(async () => {
+      await this.someInput.reload()
+    }, 100);
   }
 
   activarData (_id: string){

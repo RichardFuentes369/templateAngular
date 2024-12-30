@@ -9,6 +9,7 @@ import { PrincipalService } from '../../principal/service/principal.service';
 import { Router } from '@angular/router';
 import { ocultarModalOscura } from '@functions/System'
 import { TablecrudComponent } from '@component/globales/tablecrud/tablecrud.component';
+import { FinalService } from '@module/usuarios/finales/service/final.service';
 
 interface crearUsuario {
   "firstName": string,
@@ -31,6 +32,7 @@ export class CrearUsuariosComponent {
   constructor(
     private router: Router,
     private principalService: PrincipalService,
+    private finalService: FinalService,
     private translate: TranslateService
   ){}
 
@@ -52,11 +54,22 @@ export class CrearUsuariosComponent {
 
   }
 
-  async crearPrincipal(){
-    await this.principalService.createUser(this.model)
+  async crearUsuario(){
+
+    let complemento = localStorage.getItem('profile')
+    let endPoint
+
+    if(complemento == 'admin'){
+      endPoint = this.principalService
+    }else{
+      endPoint = this.finalService
+    }
+
+    await endPoint.createUser(this.model)
     .then(response=>{
       ocultarModalOscura()
       this.translate.get('pages-usuarios.Swal.TitleAreYouSure').subscribe((translatedTitle: string) => {
+        localStorage.removeItem('profile')
         Swal.fire({
           title: this.translate.instant('pages-usuarios.Swal.TitleCreate'),
           text: this.translate.instant('pages-usuarios.Swal.TitleRegisterCreate'),

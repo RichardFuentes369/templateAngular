@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -86,6 +85,7 @@ export class PrincipalComponent implements OnInit{
   componentePrecargado = ""
 
   crearData (_id: string){
+    localStorage.setItem('profile', 'admin')
     this.tamano = "xl"
     this.scrollable = false
     this.title = "Crear administrador"
@@ -104,6 +104,7 @@ export class PrincipalComponent implements OnInit{
       idButton.click()
     }
   }
+
   verData (_id: string){
     this.tamano = "xl"
     this.scrollable = false
@@ -126,6 +127,7 @@ export class PrincipalComponent implements OnInit{
       idButton.click()
     }
   }
+
   editarData (_id: string){
     this.tamano = "xl"
     this.scrollable = false

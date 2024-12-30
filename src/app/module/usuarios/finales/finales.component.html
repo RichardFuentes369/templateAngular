@@ -16,7 +16,7 @@
   >
   </app-globales-tablecrud>
 
-    <app-globales-modal-boostrap
+  <app-globales-modal-boostrap
     [tamano]="tamano"
     [scrollable]="scrollable"
     [title]="title"
@@ -27,6 +27,8 @@
     [cancel]="cancel"
     [buttonCancel]="buttonCancel"
     [componentePrecargado]="componentePrecargado"
+    [cierreModal]="cierreModal"
+    (actualizarTabla)="refrescarTabla()"
   >
   </app-globales-modal-boostrap>
 
