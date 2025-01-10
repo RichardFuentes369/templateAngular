@@ -23,8 +23,9 @@
                 <div class="card-header">
                   {{subModulos.nombre_permiso}}
                 </div>
-                <div class="card-body">
+                <div class="card-body pl-5">
                   @for (acciones of subModulos.permisosAcciones; track $index) {
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     {{acciones.nombre_permiso}} <br>
                   }
                 </div>
@@ -50,8 +51,9 @@
                 <div class="card-header">
                   {{ 'pages-usuarios.Title.PermissionsTitle' | translate}}
                 </div>
-                <div class="card-body">
+                <div class="card-body pl-5">
                   @for (subModulos of modulos.permisosSubmodulos; track $index) {
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     {{subModulos.nombre_permiso}} <br>
                   }
                 </div>

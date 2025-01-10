@@ -50,18 +50,6 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 row p-0">
-        <div class="col-sm-12">
-          <button class="btn btn-sm btn-primary mx-2" (click)="goTo('admin/menu/index-usuarios/administradores', 0)">
-            {{ 'pages-usuarios.Buttons.back' | translate}}
-          </button>
-          @if(tienePermiso('editar')){
-          <button class="btn btn-sm btn-primary mx-2" (click)="goTo('admin/menu/index-usuarios/administradores/editar-administrador', item.id)">
-            {{ 'pages-usuarios.Buttons.editUser' | translate}}
-          </button>
-          }
-        </div>
-      </div>
     </div>
   }
 
