@@ -3,7 +3,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '@guard/service/auth.service';
 import { ModulosService } from '@module/modulos/service/modulos.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -20,6 +20,7 @@ export class AsignarPermisosComponent implements OnInit{
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private userService :AuthService,
     private modulosService :ModulosService,
     private PermisosService :PermisosService,
@@ -31,20 +32,15 @@ export class AsignarPermisosComponent implements OnInit{
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.modulosService.listaPermisos()
-
-    for (const iterator of modulo.data) {
-      iterator['toogle'] = false
-    }
-
+    const modulo = await this.modulosService.listaPermisos(this.route.snapshot.queryParams['id'])
     this.permisos = modulo.data
   }
 
 
   toggleCollapse(nombrePermiso: string, isToggle: boolean) {
 
-    const response  = this.permisos.find((e: any) => e.permiso_nombre_permiso == nombrePermiso)
-    response.toogle = !isToggle
+    const response  = this.permisos.find((e: any) => e.mpm_nombre_permiso == nombrePermiso)
+    response.mpm_toogle = !isToggle
 
   }
 

@@ -9,8 +9,8 @@ export class ModulosService {
 
   constructor() { }
 
-  async listaPermisos(){
-    let complemento = `modulos`
+  async listaPermisos(id: any){
+    let complemento = `modulos/listaUsuario/${id}`
     let urlCopleta = environment.apiUrl+complemento
     const data = axios.get(urlCopleta)
     return data

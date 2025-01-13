@@ -2,31 +2,61 @@
 
   <h1>{{ 'pages-usuarios.Title.PermissionsTitle' | translate}}</h1>
 
-
   <div class="parent">
     @for (modulos of permisos; track $index) {
-
-      @if(modulos.permiso_nombre_permiso != 'modulo'){
+      @if (modulos.mpm_nombre_permiso == 'modulo') {
         <div class="card">
           <div class="card-header">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" (click)="toggleCollapse(modulos.permiso_nombre_permiso, modulos.toogle)">
-                {{modulos.permiso_nombre_permiso}}
+              <button class="btn btn-link collapsed" (click)="toggleCollapse(modulos.mpm_nombre_permiso, modulos.mpm_toogle)">
+                {{modulos.mpm_nombre_permiso}}
               </button>
             </h5>
           </div>
         </div>
-        <div *ngIf="modulos.toogle">
+        <div *ngIf="modulos.mpm_toogle">
           <div class="item">
-            @for (subModulos of modulos.permisosSubmodulos; track $index) {
+            <div class="card">
+              <div class="card-body pl-5">
+                @for (subModulos of modulos.children; track $index) {
+                  @if(subModulos.asignado == "1"){
+                    <input class="form-check-input" type="checkbox" checked>
+                  }@else{
+                    <input class="form-check-input" type="checkbox">
+                  }
+                  {{subModulos.mpm_nombre_permiso}} <br>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      }
+      @else {
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" (click)="toggleCollapse(modulos.mpm_nombre_permiso, modulos.mpm_toogle)">
+                {{modulos.mpm_nombre_permiso}}
+              </button>
+            </h5>
+          </div>
+        </div>
+        <div *ngIf="modulos.mpm_toogle">
+          <div class="item">
+            @for (subModulos of modulos.children; track $index) {
               <div class="card">
                 <div class="card-header">
-                  {{subModulos.nombre_permiso}}
+                  {{subModulos.mpm_nombre_permiso}}
                 </div>
                 <div class="card-body pl-5">
-                  @for (acciones of subModulos.permisosAcciones; track $index) {
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    {{acciones.nombre_permiso}} <br>
+                  @for (acciones of subModulos.children; track $index) {
+                    @if(acciones.asignado == "1"){
+                      <input class="form-check-input" type="checkbox" checked>
+                    }@else{
+                      <input class="form-check-input" type="checkbox">
+                    }
+                    {{acciones.mpm_nombre_permiso}} <br>
                   }
                 </div>
               </div>
@@ -35,33 +65,6 @@
         </div>
         <br>
       }
-      @else{
-        <div class="card">
-          <div class="card-header">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" (click)="toggleCollapse(modulos.permiso_nombre_permiso, modulos.toogle)">
-                {{modulos.permiso_nombre_permiso}}
-              </button>
-            </h5>
-          </div>
-        </div>
-        <div *ngIf="modulos.toogle">
-          <div class="item">
-              <div class="card">
-                <div class="card-header">
-                  {{ 'pages-usuarios.Title.PermissionsTitle' | translate}}
-                </div>
-                <div class="card-body pl-5">
-                  @for (subModulos of modulos.permisosSubmodulos; track $index) {
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    {{subModulos.nombre_permiso}} <br>
-                  }
-                </div>
-              </div>
-          </div>
-        </div>
-      }
-
     }
   </div>
 
