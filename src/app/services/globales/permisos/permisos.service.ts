@@ -10,8 +10,13 @@ export class PermisosService {
 
   constructor() { }
 
-  async permisos(idUsuario: number){
-    let complemento = `asignacion/mis-permisos/${idUsuario}`
+  async permisos(idUsuario: number, modulo: string){
+    let complemento = ''
+    if(modulo != ''){
+      complemento += `asignacion/mis-permisos/${idUsuario}/${modulo}`
+    }else{
+      complemento = `asignacion/mis-permisos/${idUsuario}`
+    }
     let urlCopleta = environment.apiUrl+complemento
     const data = axios.get(urlCopleta)
     return data

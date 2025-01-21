@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit{
     }
 
     const userData = await this.userService.getUser('authadmin')
-    const response = await this.permisosService.permisos(userData.data.id)
+    const response = await this.permisosService.permisos(userData.data.id, '')
     this.menu = response.data
   }
 

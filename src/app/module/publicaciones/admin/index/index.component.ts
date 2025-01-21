@@ -26,7 +26,7 @@ export class IndexComponent implements OnInit{
 
   async ngOnInit() {
     const userData = await this.userService.getUser('authadmin')
-    const modulo = await this.permisosService.permisos(userData.data.id)
+    const modulo = await this.permisosService.permisos(userData.data.id, '')
     const response  = Permisos(modulo, 'publicaciones','')
 console.log(response)
     for (const iterator of response) {

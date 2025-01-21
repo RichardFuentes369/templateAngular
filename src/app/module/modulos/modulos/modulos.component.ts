@@ -32,7 +32,7 @@ export class ModulosComponent implements OnInit{
     localStorage.removeItem('submodulo')
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.permisos(userData.data.id)
+    const modulo = await this.permisosService.permisos(userData.data.id, '')
     for (const iterator of Permisos(modulo, 'modulo','')) {
       this.permisos.push(iterator.nombre_permiso)
     }

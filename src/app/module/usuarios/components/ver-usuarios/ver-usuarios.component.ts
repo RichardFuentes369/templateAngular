@@ -43,7 +43,7 @@ export class VerUsuariosComponent implements OnInit{
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.permisos(userData.data.id)
+    const modulo = await this.permisosService.permisos(userData.data.id, '')
     for (const iterator of Permisos(modulo, 'usuarios','administradores')) {
       this.permisos.push(iterator.nombre_permiso)
     }
