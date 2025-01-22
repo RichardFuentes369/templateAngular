@@ -32,15 +32,11 @@ export class IndexComponent implements OnInit{
   async ngOnInit() {
     const userData = await this.userService.getUser('authadmin')
     const modulo = await this.permisosService.permisos(userData.data.id,'usuarios')
-    const response  = Permisos(modulo, 'usuarios', '')
-
-    for (const iterator of response) {
-      this.menu.push(iterator)
-    }
+    this.menu = modulo.data
   }
 
   tienePermiso(nombre: string): boolean {
-    return this.menu.some((permiso) => permiso.nombre_permiso === nombre);
+    return this.menu.some((permiso) => permiso.permiso_nombre_permiso === nombre);
   }
 
   goTo(url: string){

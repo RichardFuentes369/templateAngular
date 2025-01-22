@@ -40,10 +40,8 @@ export class PrincipalComponent implements OnInit{
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.permisos(userData.data.id, 'administradores')
-    for (const iterator of Permisos(modulo, 'usuarios','administradores')) {
-      this.permisos.push(iterator.nombre_permiso)
-    }
+    const modulo = await this.permisosService.permisos(userData.data.id,'administradores')
+    this.permisos = modulo.data
   }
 
   // inicio datos que envio al componente tabla

@@ -40,10 +40,8 @@ export class FinalesComponent implements OnInit{
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.permisos(userData.data.id, 'finales')
-    for (const iterator of Permisos(modulo, 'usuarios','finales')) {
-      this.permisos.push(iterator.nombre_permiso)
-    }
+    const modulo = await this.permisosService.permisos(userData.data.id,'finales')
+    this.permisos = modulo.data
   }
 
   // inicio datos que envio al componente
