@@ -36,6 +36,11 @@ export class AsignarPermisosComponent implements OnInit{
     this.permisos = modulo.data
   }
 
+  async actualizarPermiso(idPermiso: string, idPadre: string, opcion: number){
+    console.log(idPermiso)
+    console.log(idPadre)
+    console.log(opcion)
+  }
 
   toggleCollapse(nombrePermiso: string, isToggle: boolean) {
 

@@ -20,9 +20,9 @@
               <div class="card-body pl-5">
                 @for (subModulos of modulos.children; track $index) {
                   @if(subModulos.asignado == "1"){
-                    <input class="form-check-input" type="checkbox" checked>
+                    <input class="form-check-input" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 0)" type="checkbox" checked>
                   }@else{
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 1)" type="checkbox">
                   }
                   {{subModulos.mpm_nombre_permiso}} <br>
                 }
@@ -48,18 +48,18 @@
               <div class="card">
                 <div class="card-header text-center">
                   @if(subModulos.asignado == "1"){
-                    <input class="form-check-input" type="checkbox" checked>
+                    <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 0)" checked>
                   }@else{
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 1)">
                   }
                   {{subModulos.mpm_nombre_permiso}}
                 </div>
                 <div class="card-body pl-5">
                   @for (acciones of subModulos.children; track $index) {
                     @if(acciones.asignado == "1"){
-                      <input class="form-check-input" type="checkbox" checked>
+                      <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(acciones.mpm_id, acciones.mpm_modulo_padre_id, 0)" checked>
                     }@else{
-                      <input class="form-check-input" type="checkbox">
+                      <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(acciones.mpm_id, acciones.mpm_modulo_padre_id, 1)">
                     }
                     {{acciones.mpm_nombre_permiso}} <br>
                   }
