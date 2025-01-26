@@ -32,14 +32,22 @@ export class AsignarPermisosComponent implements OnInit{
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.modulosService.listaPermisos(this.route.snapshot.queryParams['id'])
+    let userId = this.route.snapshot.queryParams['id']
+    const modulo = await this.modulosService.listaPermisos(+userId)
     this.permisos = modulo.data
   }
 
-  async actualizarPermiso(idPermiso: string, idPadre: string, opcion: number){
-    console.log(idPermiso)
-    console.log(idPadre)
-    console.log(opcion)
+  async actualizarPermiso(item: any){
+    let userId = this.route.snapshot.queryParams['id']
+    let opcion = ''
+    if(item.asignado != '0'){
+      item.asignado = '0'
+      opcion = '1'
+    }else{
+      item.asignado = '1'
+      opcion = '0'
+    }
+    const modulo = await this.modulosService.actualizarPermiso(+item.mpm_id, +item.mpm_modulo_padre_id, +opcion, +userId)
   }
 
   toggleCollapse(nombrePermiso: string, isToggle: boolean) {

@@ -9,7 +9,7 @@ export class ModulosService {
 
   constructor() { }
 
-  async listaPermisos(id: any){
+  async listaPermisos(id: number){
     let complemento = `modulos/getPermisosPorUsuario?userId=${id}`
     let urlCopleta = environment.apiUrl+complemento
     const data = axios.get(urlCopleta)
@@ -22,6 +22,16 @@ export class ModulosService {
 
     return await axios.request({
       method: 'get',
+      url: urlCopleta,
+    })
+  }
+
+  async actualizarPermiso(idPermiso: number, idPadre: number, opcion: number, userId: number){
+    let complemento = `asignacion/updateAsignacionPermiso?idPermiso=${idPermiso}&idPadre=${idPadre}&idUser=${userId}&opcion=${opcion}`
+    let urlCopleta = environment.apiUrl+complemento
+
+    return await axios.request({
+      method: 'put',
       url: urlCopleta,
     })
   }

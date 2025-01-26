@@ -32,15 +32,13 @@ export class ModulosComponent implements OnInit{
     localStorage.removeItem('submodulo')
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.permisos(userData.data.id, '')
-    for (const iterator of Permisos(modulo, 'modulo','')) {
-      this.permisos.push(iterator.nombre_permiso)
-    }
+    const modulo = await this.permisosService.permisos(userData.data.id,'modulos')
+    this.permisos = modulo.data
   }
 
   // inicio datos que envio al componente
   showcampoFiltro = true
-  endPoint = 'modulos/lista/0'
+  endPoint = 'modulos/getPermisosSobrePadre/0'
   columnas = [
     {
       title: 'ID',

@@ -4,39 +4,16 @@
 
   <div class="parent">
     @for (modulos of permisos; track $index) {
-      @if (modulos.mpm_nombre_permiso == 'modulo') {
+      @if (modulos.mpm_nombre_permiso != 'modulos') {
         <div class="card">
-          <div class="card-header">
+          <div class="card-header pl-5">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed btn-block text-left" (click)="toggleCollapse(modulos.mpm_nombre_permiso, modulos.mpm_toogle)" style="text-decoration: none">
-                {{modulos.mpm_nombre_permiso}}
-              </button>
-            </h5>
-          </div>
-        </div>
-        <div *ngIf="modulos.mpm_toogle">
-          <div class="item">
-            <div class="card">
-              <div class="card-body pl-5">
-                @for (subModulos of modulos.children; track $index) {
-                  @if(subModulos.asignado == "1"){
-                    <input class="form-check-input" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 0)" type="checkbox" checked>
-                  }@else{
-                    <input class="form-check-input" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 1)" type="checkbox">
-                  }
-                  {{subModulos.mpm_nombre_permiso}} <br>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-      }
-      @else {
-        <div class="card">
-          <div class="card-header">
-            <h5 class="mb-0">
-              <a class="btn btn-link collapsed btn-block text-left" (click)="toggleCollapse(modulos.mpm_nombre_permiso, modulos.mpm_toogle)" style="text-decoration: none">
+              @if(modulos.asignado == "1"){
+                <input class="form-check-input" (click)="actualizarPermiso(modulos)" type="checkbox" checked>
+              }@else{
+                <input class="form-check-input" (click)="actualizarPermiso(modulos)" type="checkbox">
+              }
+              <a class="btn btn-link collapsed btn-block text-left p-0" (click)="toggleCollapse(modulos.mpm_nombre_permiso, modulos.mpm_toogle)" style="text-decoration: none">
                 {{modulos.mpm_nombre_permiso}}
               </a>
             </h5>
@@ -48,24 +25,54 @@
               <div class="card">
                 <div class="card-header text-center">
                   @if(subModulos.asignado == "1"){
-                    <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 0)" checked>
+                    <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(subModulos)" checked>
                   }@else{
-                    <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(subModulos.mpm_id, subModulos.mpm_modulo_padre_id, 1)">
+                    <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(subModulos)">
                   }
                   {{subModulos.mpm_nombre_permiso}}
                 </div>
                 <div class="card-body pl-5">
                   @for (acciones of subModulos.children; track $index) {
                     @if(acciones.asignado == "1"){
-                      <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(acciones.mpm_id, acciones.mpm_modulo_padre_id, 0)" checked>
+                      <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(acciones)" checked>
                     }@else{
-                      <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(acciones.mpm_id, acciones.mpm_modulo_padre_id, 1)">
+                      <input class="form-check-input" type="checkbox" (click)="actualizarPermiso(acciones)">
                     }
                     {{acciones.mpm_nombre_permiso}} <br>
                   }
                 </div>
               </div>
             }
+          </div>
+        </div>
+        <br>
+      } @else {
+        <div class="card">
+          <div class="card-header pl-5">
+            @if(modulos.asignado == "1"){
+              <input class="form-check-input" (click)="actualizarPermiso(modulos)" type="checkbox" checked>
+            }@else{
+              <input class="form-check-input" (click)="actualizarPermiso(modulos)" type="checkbox">
+            }
+            <a class="btn btn-link collapsed btn-block text-left p-0" (click)="toggleCollapse(modulos.mpm_nombre_permiso, modulos.mpm_toogle)" style="text-decoration: none">
+              {{modulos.mpm_nombre_permiso}}
+            </a>
+          </div>
+        </div>
+        <div *ngIf="modulos.mpm_toogle">
+          <div class="item">
+            <div class="card">
+              <div class="card-body pl-5">
+                @for (subModulos of modulos.children; track $index) {
+                  @if(subModulos.asignado == "1"){
+                    <input class="form-check-input" (click)="actualizarPermiso(subModulos)" type="checkbox" checked>
+                  }@else{
+                    <input class="form-check-input" (click)="actualizarPermiso(subModulos)" type="checkbox">
+                  }
+                  {{subModulos.mpm_nombre_permiso}} <br>
+                }
+              </div>
+            </div>
           </div>
         </div>
         <br>
