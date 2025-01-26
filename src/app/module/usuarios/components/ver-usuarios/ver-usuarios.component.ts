@@ -42,23 +42,18 @@ export class VerUsuariosComponent implements OnInit{
 
   async ngOnInit() {
     await this.userService.refreshToken('authadmin');
-    const userData = await this.userService.getUser('authadmin');
-    const modulo = await this.permisosService.permisos(userData.data.id, '')
-    for (const iterator of Permisos(modulo, 'usuarios','administradores')) {
-      this.permisos.push(iterator.nombre_permiso)
-    }
 
-
-    if(this.route.snapshot.queryParams?.['rol'] === 'admin'){
-      this.usuarioReal = await this.userFinalService.getDataUser(
-        this.route.snapshot.queryParams?.['id']
+    switch (this.route.snapshot.queryParams?.['rol']) {
+      case 'admin':
+        this.usuarioReal = await this.userFinalService.getDataUser(
+          this.route.snapshot.queryParams?.['id']
+          )
+        break;
+      case 'user':
+        this.usuarioReal = await this.userPrincipalService.getDataUser(
+          this.route.snapshot.queryParams?.['id']
         )
-      }
-
-    if(this.route.snapshot.queryParams?.['rol'] === 'user'){
-      this.usuarioReal = await this.userPrincipalService.getDataUser(
-        this.route.snapshot.queryParams?.['id']
-      )
+        break;
     }
 
     this.user.push(this.usuarioReal.data)
