@@ -1,6 +1,6 @@
-import { CrearUsuariosComponent } from './usuarios/components/crear-usuarios/crear-usuarios.component';
-import { EditarUsuariosComponent } from "./usuarios/components/editar-usuarios/editar-usuarios.component";
-import { VerUsuariosComponent } from "./usuarios/components/ver-usuarios/ver-usuarios.component";
+import { CrearUsuariosComponent } from './users/components/crear-usuarios/crear-usuarios.component';
+import { EditarUsuariosComponent } from "./users/components/editar-usuarios/editar-usuarios.component";
+import { VerUsuariosComponent } from "./users/components/ver-usuarios/ver-usuarios.component";
 
 export class ListaComponentes {
   componentes: any[] = [

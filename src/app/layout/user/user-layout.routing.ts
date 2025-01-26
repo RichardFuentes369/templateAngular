@@ -3,8 +3,8 @@ import { Routes } from '@angular/router';
 import { userGuard } from '@guard/roles/user/user.guard';
 
 //componentes
-import { PerfilComponent } from '@module/basico/principal/user/perfil/perfil.component'
-import { ConfiguracionComponent } from '@module/basico/principal/user/configuracion/configuracion.component'
+import { PerfilComponent } from '@module/basic/principal/user/perfil/perfil.component'
+import { ConfiguracionComponent } from '@module/basic/principal/user/configuracion/configuracion.component'
 
 export const UserLayoutRoutes: Routes = [
   {

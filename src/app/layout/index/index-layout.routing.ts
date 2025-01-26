@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 
 import { indexGuard } from '@guard/roles/index/index.guard';
 
-import { InicioComponent } from '@module/basico/index/inicio/inicio.component'
-import { IndexComponent as IndexPublicaciones } from '@module/publicaciones/index/index.component'
-import { IngresoComponent } from '@module/basico/index/ingreso/ingreso.component'
+import { InicioComponent } from '@module/basic/index/inicio/inicio.component'
+import { IndexComponent as IndexPublicaciones } from '@module/posts/index/index.component'
+import { IngresoComponent } from '@module/basic/index/ingreso/ingreso.component'
 
 export const IndexLayoutRoutes: Routes = [
   {

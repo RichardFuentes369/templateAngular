@@ -42,7 +42,7 @@ const routes: Routes = [
       {
         path: 'menu',
         data: { breadcrumb: 'Menu' },
-        loadChildren: () => import('./module/basico/principal/admin/routes/menu.routing').then(x=>x.MenuRoutes)
+        loadChildren: () => import('./module/basic/principal/admin/routes/menu.routing').then(x=>x.MenuRoutes)
       },
       {
         path: '**',

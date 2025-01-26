@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { PrincipalService } from '@module/usuarios/principal/service/principal.service';
-import { FinalService } from '@module/usuarios/finales/service/final.service';
+import { PrincipalService } from '@module/users/principal/service/principal.service';
+import { FinalService } from '@module/users/finales/service/final.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
