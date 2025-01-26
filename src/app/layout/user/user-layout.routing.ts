@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { userGuard } from '@guard/roles/user/user.guard';
+import { finalGuard } from '@guard/roles/final/final.guard';
 
 //componentes
 import { PerfilComponent } from '@module/basic/principal/user/perfil/perfil.component'
@@ -17,7 +17,7 @@ export const UserLayoutRoutes: Routes = [
     title: 'Perfil',
     component: PerfilComponent,
     canActivate: [
-      userGuard
+      finalGuard
     ]
   },
   {
@@ -25,7 +25,7 @@ export const UserLayoutRoutes: Routes = [
     title: 'Configuracion',
     component: ConfiguracionComponent,
     canActivate: [
-      userGuard
+      finalGuard
     ]
   },
 ];
