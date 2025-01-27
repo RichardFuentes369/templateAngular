@@ -26,7 +26,7 @@ export class ModulosService {
     })
   }
 
-  async actualizarPermiso(idPermiso: number, idPadre: number, opcion: number, userId: number){
+  async actualizarPermiso(idPermiso: string, idPadre: string, opcion: string, userId: string){
     let complemento = `asignacion/updateAsignacionPermiso?idPermiso=${idPermiso}&idPadre=${idPadre}&idUser=${userId}&opcion=${opcion}`
     let urlCopleta = environment.apiUrl+complemento
 

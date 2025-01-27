@@ -39,15 +39,18 @@ export class AsignarPermisosComponent implements OnInit{
 
   async actualizarPermiso(item: any){
     let userId = this.route.snapshot.queryParams['id']
+
+    // http://localhost:4200/admin/menu/index-usuarios/administradores/asignar-administrador?id=1
+
     let opcion = ''
-    if(item.asignado != '0'){
-      item.asignado = '0'
-      opcion = '1'
-    }else{
+    if(item.asignado == null || item.asignado == '0'){
       item.asignado = '1'
       opcion = '0'
+    }else{
+      item.asignado = '0'
+      opcion = '1'
     }
-    const modulo = await this.modulosService.actualizarPermiso(+item.mpm_id, +item.mpm_modulo_padre_id, +opcion, +userId)
+    const modulo = await this.modulosService.actualizarPermiso(item.mpm_id, item.mpm_modulo_padre_id, opcion, userId)
   }
 
   toggleCollapse(nombrePermiso: string, isToggle: boolean) {
