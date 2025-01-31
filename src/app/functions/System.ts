@@ -30,3 +30,23 @@ export function Permisos(permisos: any, nombreModulo: string, nombreSubmodulo: s
   }
 }
 
+/*
+* Metodo para crear notificaciones con switalert
+* Notificaciones switalert
+* error, question, success, info
+* dialog
+*/
+import Swal from 'sweetalert2'
+export function swalert(
+  title: string,
+  text: string,
+  type: any
+){
+  Swal.fire({
+    icon: type,
+    title: title,
+    text: text,
+    confirmButtonText: 'Cool'
+  })
+}
+

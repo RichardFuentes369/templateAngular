@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
-import Swal from 'sweetalert2'
+import { swalert } from '@functions/System'
 import { LoginServiceService } from './service/login-service.service'
 
 import { CommonModule } from '@angular/common';
@@ -70,14 +70,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/user']);
       }
     }).catch(err =>{
-
       this.isPending = false;
-      Swal.fire({
-        title: err.response.data.message,
-        text: err.response.data.error,
-        icon: 'error',
-        confirmButtonText: 'Cool'
-      })
+      swalert(err.response.data.message, err.response.data.error, 'error')
     })
   }
 

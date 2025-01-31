@@ -5,6 +5,7 @@ import { ModulosService } from '@module/modules/service/modulos.service';
 import { PermisosService } from '@service/globales/permisos/permisos.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { swalert } from '@functions/System'
 
 @Component({
   selector: 'app-asignar-permisos',
@@ -48,7 +49,14 @@ export class AsignarPermisosComponent implements OnInit{
       item.asignado = '0'
       opcion = '1'
     }
-    const modulo = await this.modulosService.actualizarPermiso(item.mpm_id, item.mpm_modulo_padre_id, opcion, userId)
+
+    await this.modulosService.actualizarPermiso(item.mpm_id, item.mpm_modulo_padre_id, opcion, userId)
+    .then(response=>{
+      console.log(response)
+      // swalert(err.response.data.message, err.response.data.error, 'error')
+    }).catch(err =>{
+      swalert(err.response.data.message, err.response.data.error, 'error')
+    })
   }
 
   toggleCollapse(nombrePermiso: string, isToggle: boolean) {

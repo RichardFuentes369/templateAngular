@@ -65,8 +65,6 @@ export class TablecrudComponent implements OnInit {
         // dataTablesParameters.sortHeader = this.sortHeader;
         // dataTablesParameters.sortOrder = dataTablesParameters.order[0].dir;
 
-        console.log(window.location)
-
         this.http.get<any[]>(
             `${this.url}${this.endPoint}?page=${page}&limit=${dataTablesParameters.length}&field=id&order=asc`
         ).subscribe((post) => {
@@ -138,7 +136,6 @@ export class TablecrudComponent implements OnInit {
 
   reload(){
     this.datatableElement.dtInstance.then((dtInstance: any) => {
-      console.log(dtInstance)
       dtInstance.ajax.reload();
     });
   }
