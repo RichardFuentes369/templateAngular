@@ -53,12 +53,16 @@ export class ModulosComponent implements OnInit{
   // fin datos que envio al componente
 
   verData (_id: string){
-    localStorage.setItem('modulo', _id)
-    this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`]);
+    if(_id == '17'){
+      localStorage.setItem('submodulo', _id)
+      this.router.navigate([`/admin/menu/index-modulos/index-submodulos/index-permisos`]);
+    }else{
+      localStorage.setItem('modulo', _id)
+      this.router.navigate([`/admin/menu/index-modulos/index-submodulos/`]);
+    }
   }
   crearData (_id: string){
     console.log("crearData "+_id)
-    this.router.navigate(['/admin/menu/index-modulos/crear-modulo/']);
   }
 
   @ViewChild(TablecrudComponent)

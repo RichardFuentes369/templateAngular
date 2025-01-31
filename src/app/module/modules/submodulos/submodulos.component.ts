@@ -27,18 +27,15 @@ export class SubmodulosComponent implements OnInit{
 
   permisos: any[] = []
   moduloPadre: any = 0
-  isModule: boolean = false
 
   async ngOnInit() {
     localStorage.removeItem('submodulo')
     this.moduloPadre = localStorage.getItem('modulo')
+
     if(!this.moduloPadre){
       this.router.navigate([`/admin/menu/index-modulos`]);
     }
-    const idPermisoModulo = (await this.module.buscarPermiso(0,'modulo')).data.id
-    if(this.moduloPadre == idPermisoModulo){
-      this.isModule = true
-    }
+
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id,'modulos')

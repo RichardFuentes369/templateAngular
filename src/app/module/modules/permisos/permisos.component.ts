@@ -36,7 +36,13 @@ export class PermisosComponent implements OnInit{
     await this.userService.refreshToken('authadmin');
     const userData = await this.userService.getUser('authadmin');
     const modulo = await this.permisosService.permisos(userData.data.id,'modulos')
-    this.permisos = modulo.data
+
+    for (const permiso of modulo.data) {
+      if(permiso.permiso_nombre_permiso != 'ver'){
+        this.permisos.push(permiso)
+      }
+    }
+
   }
 
   // inicio datos que envio al componente
