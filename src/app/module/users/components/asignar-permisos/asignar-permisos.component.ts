@@ -52,10 +52,9 @@ export class AsignarPermisosComponent implements OnInit{
 
     await this.modulosService.actualizarPermiso(item.mpm_id, item.mpm_modulo_padre_id, opcion, userId)
     .then(response=>{
-      console.log(response)
-      // swalert(err.response.data.message, err.response.data.error, 'error')
+      swalert(response.data.title, response.data.message, 'success')
     }).catch(err =>{
-      swalert(err.response.data.message, err.response.data.error, 'error')
+      swalert(err.response.data.title, err.response.data.error, 'error')
     })
   }
 
