@@ -40,8 +40,6 @@ export class AsignarPermisosComponent implements OnInit{
   async actualizarPermiso(item: any){
     let userId = this.route.snapshot.queryParams['id']
 
-    // http://localhost:4200/admin/menu/index-usuarios/administradores/asignar-administrador?id=1
-
     let opcion = ''
     if(item.asignado == null || item.asignado == '0'){
       item.asignado = '1'

@@ -1,13 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-
-import Swal from 'sweetalert2';
 
 import { Config } from 'datatables.net';
 
 import { TablecrudService } from './service/tablecrud.service';
 
 import { HttpClient } from '@angular/common/http';
+import { environment } from '@environment/environment';
 
 import { DataTableDirective, DataTablesModule } from 'angular-datatables';
 import { TranslateModule } from '@ngx-translate/core';
@@ -32,6 +30,7 @@ export class TablecrudComponent implements OnInit {
   @Input()
   permisosAcciones: any[] = [];
 
+  url = environment.apiUrl
   idSeleccionado: string = '';
 
   constructor(
@@ -51,6 +50,7 @@ export class TablecrudComponent implements OnInit {
   }
 
   listar() {
+
     this.dtOptions = {
       paging: true,
       scrollY: '400',
@@ -65,8 +65,10 @@ export class TablecrudComponent implements OnInit {
         // dataTablesParameters.sortHeader = this.sortHeader;
         // dataTablesParameters.sortOrder = dataTablesParameters.order[0].dir;
 
+        console.log(window.location)
+
         this.http.get<any[]>(
-            `http://localhost:3000/api/${this.endPoint}?page=${page}&limit=${dataTablesParameters.length}&field=id&order=asc`
+            `${this.url}${this.endPoint}?page=${page}&limit=${dataTablesParameters.length}&field=id&order=asc`
         ).subscribe((post) => {
           const recordsTotal = post[0].pagination.totalRecord;
           const recordsFiltered = post.length;
